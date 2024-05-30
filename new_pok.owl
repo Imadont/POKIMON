@@ -1,0 +1,1561 @@
+@prefix : <http://www.PKIMON#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.PKIMON> .
+
+<http://www.PKIMON> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.PKIMON#Criteria_For_Selection
+:Criteria_For_Selection rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf rdfs:comment .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#anySimpleType
+xsd:anySimpleType rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.PKIMON#Interprets
+:Interprets rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :is_About .
+
+
+###  http://www.PKIMON#Is_Output_Of
+:Is_Output_Of rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :participates_In ;
+              owl:inverseOf :has_Output .
+
+
+###  http://www.PKIMON#Substitutes
+:Substitutes rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#bearer_Of
+:bearer_Of rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :inheres_In .
+
+
+###  http://www.PKIMON#concretizes
+:concretizes rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :is_Specifically_Dependant_On ;
+             owl:inverseOf :is_Concretized_By ;
+             rdfs:domain :IQE ;
+             rdfs:range :ICE .
+
+
+###  http://www.PKIMON#designates
+:designates rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :is_About .
+
+
+###  http://www.PKIMON#details
+:details rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :is_About ;
+         owl:inverseOf :is_Detailed_By .
+
+
+###  http://www.PKIMON#explains
+:explains rdf:type owl:ObjectProperty ;
+          owl:inverseOf :is_Explained_By .
+
+
+###  http://www.PKIMON#governs
+:governs rdf:type owl:ObjectProperty ;
+         owl:inverseOf :is_Governed_By ;
+         rdfs:domain :Information_Entity .
+
+
+###  http://www.PKIMON#has_Action_Specification
+:has_Action_Specification rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#has_Anomalic_Part
+:has_Anomalic_Part rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :has_Part ;
+                   owl:inverseOf :is_Anomalic_Part_Of .
+
+
+###  http://www.PKIMON#has_Dimension
+:has_Dimension rdf:type owl:ObjectProperty ;
+               rdfs:domain :Spatial_Space ;
+               rdfs:range :Spatial_Dimension .
+
+
+###  http://www.PKIMON#has_Disposition_To
+:has_Disposition_To rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#has_Disposition_To_Be_Represented_In
+:has_Disposition_To_Be_Represented_In rdf:type owl:ObjectProperty ;
+                                      rdfs:domain :Abstract_Model ;
+                                      rdfs:range :Reference_Space .
+
+
+###  http://www.PKIMON#has_Evaluation
+:has_Evaluation rdf:type owl:ObjectProperty ;
+                owl:inverseOf :is_Evlauation_Of .
+
+
+###  http://www.PKIMON#has_Generic_Dependant
+:has_Generic_Dependant rdf:type owl:ObjectProperty ;
+                       owl:inverseOf :is_Generically_Dependant_On ;
+                       rdfs:range :Generically_Dependent_Continuant .
+
+
+###  http://www.PKIMON#has_Input
+:has_Input rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :has_Participant ;
+           owl:inverseOf :is_Input_Of .
+
+
+###  http://www.PKIMON#has_Objective_Specification
+:has_Objective_Specification rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#has_Origin
+:has_Origin rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#has_Output
+:has_Output rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :has_Participant .
+
+
+###  http://www.PKIMON#has_Part
+:has_Part rdf:type owl:ObjectProperty ;
+          owl:inverseOf :is_Part_Of ;
+          rdf:type owl:TransitiveProperty .
+
+
+###  http://www.PKIMON#has_Participant
+:has_Participant rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :participates_In ;
+                 rdfs:domain :Process .
+
+
+###  http://www.PKIMON#has_Quality
+:has_Quality rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.PKIMON#has_Shape
+:has_Shape rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#has_Specific_Dependant
+:has_Specific_Dependant rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :is_Specifically_Dependant_On ;
+                        rdfs:range :Specifically_Dependent_Continuant .
+
+
+###  http://www.PKIMON#has_Structural_Part
+:has_Structural_Part rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :has_Part ;
+                     owl:inverseOf :is_Structural_Part_Of .
+
+
+###  http://www.PKIMON#inheres_In
+:inheres_In rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :is_Specifically_Dependant_On ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Quality
+                                        :Realizable_Entity
+                                      )
+                        ] .
+
+
+###  http://www.PKIMON#is_About
+:is_About rdf:type owl:ObjectProperty ;
+          owl:inverseOf :is_Subject_Of .
+
+
+###  http://www.PKIMON#is_Anomalic_Part_Of
+:is_Anomalic_Part_Of rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :is_Part_Of .
+
+
+###  http://www.PKIMON#is_Concretized_By
+:is_Concretized_By rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :is_Generically_Dependant_On .
+
+
+###  http://www.PKIMON#is_Detailed_By
+:is_Detailed_By rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :is_Subject_Of .
+
+
+###  http://www.PKIMON#is_Evlauation_Of
+:is_Evlauation_Of rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#is_Explained_By
+:is_Explained_By rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#is_Generically_Dependant_On
+:is_Generically_Dependant_On rdf:type owl:ObjectProperty ;
+                             rdfs:domain :Generically_Dependent_Continuant .
+
+
+###  http://www.PKIMON#is_Governed_By
+:is_Governed_By rdf:type owl:ObjectProperty ;
+                rdfs:range :Information_Entity .
+
+
+###  http://www.PKIMON#is_Input_Of
+:is_Input_Of rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :participates_In .
+
+
+###  http://www.PKIMON#is_Origin_Quality_Of
+:is_Origin_Quality_Of rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Origin .
+
+
+###  http://www.PKIMON#is_Part_Of
+:is_Part_Of rdf:type owl:ObjectProperty ,
+                     owl:TransitiveProperty .
+
+
+###  http://www.PKIMON#is_Prescribed_By
+:is_Prescribed_By rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :is_Subject_Of ;
+                  owl:inverseOf :prescribes ;
+                  rdfs:range :Plan_Specification .
+
+
+###  http://www.PKIMON#is_Satisfied_By
+:is_Satisfied_By rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :has_Specific_Dependant ;
+                 owl:inverseOf :satisfies .
+
+
+###  http://www.PKIMON#is_Simplified_By
+:is_Simplified_By rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :is_Subject_Of ;
+                  owl:inverseOf :simplifies .
+
+
+###  http://www.PKIMON#is_Specifically_Dependant_On
+:is_Specifically_Dependant_On rdf:type owl:ObjectProperty ;
+                              rdfs:domain :Specifically_Dependent_Continuant .
+
+
+###  http://www.PKIMON#is_Structural_Part_Of
+:is_Structural_Part_Of rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :is_Part_Of .
+
+
+###  http://www.PKIMON#is_Subject_Of
+:is_Subject_Of rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#participates_In
+:participates_In rdf:type owl:ObjectProperty ;
+                 rdfs:range :Process .
+
+
+###  http://www.PKIMON#plays_Role
+:plays_Role rdf:type owl:ObjectProperty .
+
+
+###  http://www.PKIMON#prescribes
+:prescribes rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :is_About .
+
+
+###  http://www.PKIMON#realizes
+:realizes rdf:type owl:ObjectProperty ;
+          rdfs:domain :Process ;
+          rdfs:range :Disposition .
+
+
+###  http://www.PKIMON#represents
+:represents rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :concretizes ;
+            rdfs:domain :Represented_Model ;
+            rdfs:range :Abstract_Model .
+
+
+###  http://www.PKIMON#satisfies
+:satisfies rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :is_Specifically_Dependant_On .
+
+
+###  http://www.PKIMON#simplifies
+:simplifies rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :is_About ;
+            rdfs:domain :Abstract_Model ;
+            rdfs:range :Abstract_Model .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.PKIMON#has_Time_Stamp
+:has_Time_Stamp rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Quality ;
+                rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.PKIMON#has_Unit_Of_Measure
+:has_Unit_Of_Measure rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Quality ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.PKIMON#has_Value
+:has_Value rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Quality .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.PKIMON#Abstract_Geological_Model
+:Abstract_Geological_Model rdf:type owl:Class ;
+                           rdfs:subClassOf :Abstract_Model ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :Interprets ;
+                                             owl:someValuesFrom owl:Thing
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :has_Part ;
+                                             owl:allValuesFrom :Abstract_Geological_Model
+                                           ] .
+
+
+###  http://www.PKIMON#Abstract_Model
+:Abstract_Model rdf:type owl:Class ;
+                rdfs:subClassOf :ICE ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :bearer_Of ;
+                                  owl:someValuesFrom :Origin
+                                ] .
+
+
+###  http://www.PKIMON#Action_Specification
+:Action_Specification rdf:type owl:Class ;
+                      rdfs:subClassOf :ICE .
+
+
+###  http://www.PKIMON#Adding_Entity_Algorithm
+:Adding_Entity_Algorithm rdf:type owl:Class ;
+                         rdfs:subClassOf :Algorithm .
+
+
+###  http://www.PKIMON#Adding_Entity_Process
+:Adding_Entity_Process rdf:type owl:Class ;
+                       rdfs:subClassOf :Planned_Process .
+
+
+###  http://www.PKIMON#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf :Independent_Continuant .
+
+
+###  http://www.PKIMON#Algorithm
+:Algorithm rdf:type owl:Class ;
+           rdfs:subClassOf :Plan_Specification .
+
+
+###  http://www.PKIMON#Amplitude
+:Amplitude rdf:type owl:Class ;
+           rdfs:subClassOf :Defining_Quality .
+
+
+###  http://www.PKIMON#Analysis
+:Analysis rdf:type owl:Class ;
+          rdfs:subClassOf :ICE .
+
+
+###  http://www.PKIMON#Anomaly
+:Anomaly rdf:type owl:Class ;
+         rdfs:subClassOf :Situation ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Is_Output_Of ;
+                           owl:someValuesFrom :Evaluation_Process
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :has_Anomalic_Part ;
+                           owl:someValuesFrom owl:Thing
+                         ] .
+
+
+###  http://www.PKIMON#Anthropic_Process
+:Anthropic_Process rdf:type owl:Class ;
+                   rdfs:subClassOf :Process .
+
+
+###  http://www.PKIMON#Anticline
+:Anticline rdf:type owl:Class ;
+           rdfs:subClassOf :Fold .
+
+
+###  http://www.PKIMON#Antiform
+:Antiform rdf:type owl:Class ;
+          rdfs:subClassOf :Fold .
+
+
+###  http://www.PKIMON#Assumed
+:Assumed rdf:type owl:Class ;
+         rdfs:subClassOf :Origin .
+
+
+###  http://www.PKIMON#Certainty
+:Certainty rdf:type owl:Class ;
+           rdfs:subClassOf :Quality .
+
+
+###  http://www.PKIMON#Code
+:Code rdf:type owl:Class ;
+      rdfs:subClassOf :Information_Structure .
+
+
+###  http://www.PKIMON#Complex_Modify
+:Complex_Modify rdf:type owl:Class ;
+                rdfs:subClassOf :Modifying_Entity_Process .
+
+
+###  http://www.PKIMON#Conceptual_Anomaly
+:Conceptual_Anomaly rdf:type owl:Class ;
+                    rdfs:subClassOf :Anomaly .
+
+
+###  http://www.PKIMON#Conceptual_Geological_Model
+:Conceptual_Geological_Model rdf:type owl:Class ;
+                             rdfs:subClassOf :Abstract_Geological_Model ,
+                                             [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                      owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :has_Disposition_To_Be_Represented_In ;
+                                                                                         owl:allValuesFrom :Spatial_Space
+                                                                                       ]
+                                                                    ]
+                                                                    [ rdf:type owl:Class ;
+                                                                      owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :has_Disposition_To_Be_Represented_In ;
+                                                                                         owl:allValuesFrom :Spatio_Temporal_Space
+                                                                                       ]
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                             rdfs:comment "a model missing its exact spatial locations (could have the global geometry without the location of its parts)" .
+
+
+###  http://www.PKIMON#Continuant
+:Continuant rdf:type owl:Class .
+
+
+###  http://www.PKIMON#Continuat_Aggregate
+:Continuat_Aggregate rdf:type owl:Class ;
+                     rdfs:subClassOf :Continuant .
+
+
+###  http://www.PKIMON#Decision_Algorithm
+:Decision_Algorithm rdf:type owl:Class ;
+                    rdfs:subClassOf :Algorithm .
+
+
+###  http://www.PKIMON#Decision_Process
+:Decision_Process rdf:type owl:Class ;
+                  rdfs:subClassOf :Planned_Process ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :has_Input ;
+                                    owl:someValuesFrom :Abstract_Geological_Model
+                                  ] .
+
+
+###  http://www.PKIMON#Defining_Quality
+:Defining_Quality rdf:type owl:Class ;
+                  rdfs:subClassOf :Quality .
+
+
+###  http://www.PKIMON#Deleting_Entity_Algorithm
+:Deleting_Entity_Algorithm rdf:type owl:Class ;
+                           rdfs:subClassOf :Algorithm .
+
+
+###  http://www.PKIMON#Deleting_Entity_Process
+:Deleting_Entity_Process rdf:type owl:Class ;
+                         rdfs:subClassOf :Planned_Process .
+
+
+###  http://www.PKIMON#Deterministic
+:Deterministic rdf:type owl:Class ;
+               rdfs:subClassOf :Technique .
+
+
+###  http://www.PKIMON#Deterministic_Specification
+:Deterministic_Specification rdf:type owl:Class ;
+                             rdfs:subClassOf :Action_Specification .
+
+
+###  http://www.PKIMON#Disposition
+:Disposition rdf:type owl:Class ;
+             rdfs:subClassOf :Realizable_Entity .
+
+
+###  http://www.PKIMON#Disposition_To_Be_Deleted
+:Disposition_To_Be_Deleted rdf:type owl:Class ;
+                           rdfs:subClassOf :Disposition .
+
+
+###  http://www.PKIMON#Disposition_To_Be_Enriched
+:Disposition_To_Be_Enriched rdf:type owl:Class ;
+                            rdfs:subClassOf :Disposition .
+
+
+###  http://www.PKIMON#Disposition_To_Be_Modified
+:Disposition_To_Be_Modified rdf:type owl:Class ;
+                            rdfs:subClassOf :Disposition .
+
+
+###  http://www.PKIMON#Estimation_Process
+:Estimation_Process rdf:type owl:Class ;
+                    rdfs:subClassOf :Planned_Process .
+
+
+###  http://www.PKIMON#Evaluation
+:Evaluation rdf:type owl:Class ;
+            rdfs:subClassOf :Quality .
+
+
+###  http://www.PKIMON#Evaluation_Algorithm
+:Evaluation_Algorithm rdf:type owl:Class ;
+                      rdfs:subClassOf :Algorithm .
+
+
+###  http://www.PKIMON#Evaluation_Process
+:Evaluation_Process rdf:type owl:Class ;
+                    rdfs:subClassOf :Planned_Process ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :has_Output ;
+                                      owl:someValuesFrom :Evaluation
+                                    ] .
+
+
+###  http://www.PKIMON#Excplicit_Modeling
+:Excplicit_Modeling rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.PKIMON#3D_Structural_Modeling> .
+
+
+###  http://www.PKIMON#Fault
+:Fault rdf:type owl:Class ;
+       rdfs:subClassOf :Geological_Structure .
+
+
+###  http://www.PKIMON#Feature_Space
+:Feature_Space rdf:type owl:Class ;
+               rdfs:subClassOf :Reference_Space ;
+               owl:disjointWith :Spatial_Space ,
+                                :Spatio_Temporal_Space ,
+                                :Temporal_Space ;
+               rdfs:comment "any feature space except of spatial and temporal spaces" .
+
+
+###  http://www.PKIMON#Fold
+:Fold rdf:type owl:Class ;
+      rdfs:subClassOf :Geological_Structure ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :has_Part ;
+                        owl:someValuesFrom :Shape
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :has_Structural_Part ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Fold_Hinge
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :has_Structural_Part ;
+                        owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Fold_Limb
+                      ] .
+
+
+###  http://www.PKIMON#Fold_Hinge
+:Fold_Hinge rdf:type owl:Class ;
+            rdfs:subClassOf :Geological_Structure .
+
+
+###  http://www.PKIMON#Fold_Limb
+:Fold_Limb rdf:type owl:Class ;
+           rdfs:subClassOf :Geological_Structure .
+
+
+###  http://www.PKIMON#Functional_Entity
+:Functional_Entity rdf:type owl:Class ;
+                   rdfs:subClassOf :Realizable_Entity .
+
+
+###  http://www.PKIMON#Generically_Dependent_Continuant
+:Generically_Dependent_Continuant rdf:type owl:Class ;
+                                  rdfs:subClassOf :Continuant .
+
+
+###  http://www.PKIMON#Geologic_Entity
+:Geologic_Entity rdf:type owl:Class ;
+                 rdfs:subClassOf :Independent_Continuant .
+
+
+###  http://www.PKIMON#Geologic_Situation
+:Geologic_Situation rdf:type owl:Class ;
+                    rdfs:subClassOf :Situation ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :has_Part ;
+                                      owl:someValuesFrom :Geologic_Entity
+                                    ] .
+
+
+###  http://www.PKIMON#Geological_Map_Legend
+:Geological_Map_Legend rdf:type owl:Class ;
+                       rdfs:subClassOf :Conceptual_Geological_Model ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :has_Disposition_To_Be_Represented_In ;
+                                         owl:allValuesFrom :Temporal_Space
+                                       ] ;
+                       rdfs:comment "The legend gives typically temporal and topological relations between objects without specifying shape and locations of the objects" .
+
+
+###  http://www.PKIMON#Geological_Process
+:Geological_Process rdf:type owl:Class ;
+                    rdfs:subClassOf :Natural_Process .
+
+
+###  http://www.PKIMON#Geological_Structure
+:Geological_Structure rdf:type owl:Class ;
+                      rdfs:subClassOf :Specifically_Dependent_Continuant ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :is_Specifically_Dependant_On ;
+                                        owl:someValuesFrom :Rock_Body
+                                      ] .
+
+
+###  http://www.PKIMON#Geological_Unit
+:Geological_Unit rdf:type owl:Class ;
+                 rdfs:subClassOf :Rock_Body .
+
+
+###  http://www.PKIMON#Hybrid
+:Hybrid rdf:type owl:Class ;
+        rdfs:subClassOf :Technique .
+
+
+###  http://www.PKIMON#Hybrid_Specification
+:Hybrid_Specification rdf:type owl:Class ;
+                      rdfs:subClassOf :Action_Specification .
+
+
+###  http://www.PKIMON#IA
+:IA rdf:type owl:Class ;
+    rdfs:subClassOf :Independent_Continuant ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :has_Generic_Dependant ;
+                      owl:someValuesFrom :ICE
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :has_Specific_Dependant ;
+                      owl:someValuesFrom :IQE
+                    ] .
+
+
+###  http://www.PKIMON#ICE
+:ICE rdf:type owl:Class ;
+     rdfs:subClassOf :Generically_Dependent_Continuant ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :is_About ;
+                       owl:someValuesFrom owl:Thing
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :is_Generically_Dependant_On ;
+                       owl:someValuesFrom :IA
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :has_Part ;
+                       owl:allValuesFrom :ICE
+                     ] .
+
+
+###  http://www.PKIMON#IQE
+:IQE rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :Quality
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :concretizes ;
+                                                  owl:someValuesFrom :ICE
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                       owl:onProperty :is_About ;
+                       owl:someValuesFrom owl:Thing
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :is_Specifically_Dependant_On ;
+                       owl:someValuesFrom :IA
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :is_Specifically_Dependant_On ;
+                       owl:someValuesFrom :Syntax
+                     ] .
+
+
+###  http://www.PKIMON#Implicit_Modeling
+:Implicit_Modeling rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.PKIMON#3D_Structural_Modeling> .
+
+
+###  http://www.PKIMON#Independent_Continuant
+:Independent_Continuant rdf:type owl:Class ;
+                        rdfs:subClassOf :Continuant .
+
+
+###  http://www.PKIMON#Information_Entity
+:Information_Entity rdf:type owl:Class ;
+                    rdfs:subClassOf :Independent_Continuant .
+
+
+###  http://www.PKIMON#Information_Structure
+:Information_Structure rdf:type owl:Class ;
+                       rdfs:subClassOf :Generically_Dependent_Continuant .
+
+
+###  http://www.PKIMON#Input
+:Input rdf:type owl:Class ;
+       rdfs:subClassOf :Role .
+
+
+###  http://www.PKIMON#Input_Selection
+:Input_Selection rdf:type owl:Class ;
+                 rdfs:subClassOf :Selection_Process .
+
+
+###  http://www.PKIMON#Instantiating_Process
+:Instantiating_Process rdf:type owl:Class ;
+                       rdfs:subClassOf :Planned_Process .
+
+
+###  http://www.PKIMON#Intelligent_Based
+:Intelligent_Based rdf:type owl:Class ;
+                   rdfs:subClassOf :Technique .
+
+
+###  http://www.PKIMON#Interpretation_Process
+:Interpretation_Process rdf:type owl:Class ;
+                        rdfs:subClassOf :Planned_Process ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :has_Output ;
+                                          owl:someValuesFrom :Abstract_Model
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :has_Part ;
+                                          owl:someValuesFrom :Planned_Process
+                                        ] .
+
+
+###  http://www.PKIMON#Interpretation_Selection
+:Interpretation_Selection rdf:type owl:Class ;
+                          rdfs:subClassOf :Selection_Process .
+
+
+###  http://www.PKIMON#Interpreted
+:Interpreted rdf:type owl:Class ;
+             rdfs:subClassOf :Origin .
+
+
+###  http://www.PKIMON#Inverse_Fault
+:Inverse_Fault rdf:type owl:Class ;
+               rdfs:subClassOf :Fault .
+
+
+###  http://www.PKIMON#Knowledge_Modeling
+:Knowledge_Modeling rdf:type owl:Class ;
+                    rdfs:subClassOf :Modeling_Process .
+
+
+###  http://www.PKIMON#Kriging
+:Kriging rdf:type owl:Class ;
+         rdfs:subClassOf :Algorithm .
+
+
+###  http://www.PKIMON#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf :Defining_Quality .
+
+
+###  http://www.PKIMON#Logical_Reasoning_Based
+:Logical_Reasoning_Based rdf:type owl:Class ;
+                         rdfs:subClassOf :Intelligent_Based .
+
+
+###  http://www.PKIMON#ML_Based
+:ML_Based rdf:type owl:Class ;
+          rdfs:subClassOf :Intelligent_Based .
+
+
+###  http://www.PKIMON#ML_Specification
+:ML_Specification rdf:type owl:Class ;
+                  rdfs:subClassOf :Action_Specification .
+
+
+###  http://www.PKIMON#Material_Entity
+:Material_Entity rdf:type owl:Class ;
+                 rdfs:subClassOf :Independent_Continuant ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :has_Part ;
+                                   owl:allValuesFrom :Material_Entity
+                                 ] .
+
+
+###  http://www.PKIMON#Modeling_Process
+:Modeling_Process rdf:type owl:Class ;
+                  rdfs:subClassOf :Anthropic_Process ,
+                                  :Planned_Process .
+
+
+###  http://www.PKIMON#Modifying_Entity_Algoirhtm
+:Modifying_Entity_Algoirhtm rdf:type owl:Class ;
+                            rdfs:subClassOf :Algorithm .
+
+
+###  http://www.PKIMON#Modifying_Entity_Process
+:Modifying_Entity_Process rdf:type owl:Class ;
+                          rdfs:subClassOf :Planned_Process .
+
+
+###  http://www.PKIMON#Natural_Law
+:Natural_Law rdf:type owl:Class ;
+             rdfs:subClassOf :Information_Entity .
+
+
+###  http://www.PKIMON#Natural_Process
+:Natural_Process rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Process
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :is_Governed_By ;
+                                                              owl:allValuesFrom :Natural_Law
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Process ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_Governed_By ;
+                                   owl:someValuesFrom :Natural_Law
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :has_Part ;
+                                   owl:allValuesFrom :Natural_Process
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :is_Governed_By ;
+                                   owl:allValuesFrom :Natural_Law
+                                 ] .
+
+
+###  http://www.PKIMON#Normal_Fault
+:Normal_Fault rdf:type owl:Class ;
+              rdfs:subClassOf :Fault .
+
+
+###  http://www.PKIMON#Objective_Specification
+:Objective_Specification rdf:type owl:Class ;
+                         rdfs:subClassOf :ICE .
+
+
+###  http://www.PKIMON#Observation_Process
+:Observation_Process rdf:type owl:Class ;
+                     rdfs:subClassOf :Anthropic_Process ,
+                                     :Planned_Process .
+
+
+###  http://www.PKIMON#Observed
+:Observed rdf:type owl:Class ;
+          rdfs:subClassOf :Origin .
+
+
+###  http://www.PKIMON#Occurent
+:Occurent rdf:type owl:Class .
+
+
+###  http://www.PKIMON#Origin
+:Origin rdf:type owl:Class ;
+        rdfs:subClassOf :Quality .
+
+
+###  http://www.PKIMON#Output
+:Output rdf:type owl:Class ;
+        rdfs:subClassOf :Role .
+
+
+###  http://www.PKIMON#Part
+:Part rdf:type owl:Class ;
+      rdfs:subClassOf :Role .
+
+
+###  http://www.PKIMON#Plan_Specification
+:Plan_Specification rdf:type owl:Class ;
+                    rdfs:subClassOf :ICE ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :has_Part ;
+                                      owl:someValuesFrom :Action_Specification
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :has_Part ;
+                                      owl:someValuesFrom :Objective_Specification
+                                    ] .
+
+
+###  http://www.PKIMON#Planned_Process
+:Planned_Process rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Process
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :bearer_Of ;
+                                                              owl:someValuesFrom :Technique
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :is_Prescribed_By ;
+                                                              owl:someValuesFrom :Plan_Specification
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf :Process ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :realizes ;
+                                   owl:someValuesFrom :Disposition
+                                 ] .
+
+
+###  http://www.PKIMON#Probabilistic
+:Probabilistic rdf:type owl:Class ;
+               rdfs:subClassOf :Technique .
+
+
+###  http://www.PKIMON#Procedure
+:Procedure rdf:type owl:Class ;
+           rdfs:subClassOf :Plan_Specification .
+
+
+###  http://www.PKIMON#Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :Occurent ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :has_Part ;
+                           owl:allValuesFrom :Process
+                         ] .
+
+
+###  http://www.PKIMON#Quality
+:Quality rdf:type owl:Class ;
+         rdfs:subClassOf :Specifically_Dependent_Continuant ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :inheres_In ;
+                           owl:allValuesFrom :Represented_Model
+                         ] .
+
+
+###  http://www.PKIMON#Quality_Anomaly
+:Quality_Anomaly rdf:type owl:Class ;
+                 rdfs:subClassOf :Anomaly .
+
+
+###  http://www.PKIMON#RBF
+:RBF rdf:type owl:Class ;
+     rdfs:subClassOf :Algorithm .
+
+
+###  http://www.PKIMON#Random
+:Random rdf:type owl:Class ;
+        rdfs:subClassOf :Technique .
+
+
+###  http://www.PKIMON#Random_Specification
+:Random_Specification rdf:type owl:Class ;
+                      rdfs:subClassOf :Action_Specification .
+
+
+###  http://www.PKIMON#Realizable_Entity
+:Realizable_Entity rdf:type owl:Class ;
+                   rdfs:subClassOf :Specifically_Dependent_Continuant .
+
+
+###  http://www.PKIMON#Reasoning_Based_Specification
+:Reasoning_Based_Specification rdf:type owl:Class ;
+                               rdfs:subClassOf :Action_Specification .
+
+
+###  http://www.PKIMON#Reasoning_Process
+:Reasoning_Process rdf:type owl:Class ;
+                   rdfs:subClassOf :Planned_Process .
+
+
+###  http://www.PKIMON#Reference_Space
+:Reference_Space rdf:type owl:Class ;
+                 rdfs:subClassOf :Independent_Continuant .
+
+
+###  http://www.PKIMON#Representational_Quality
+:Representational_Quality rdf:type owl:Class ;
+                          rdfs:subClassOf :Quality .
+
+
+###  http://www.PKIMON#Represented_Geological_Model
+:Represented_Geological_Model rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Represented_Model
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :represents ;
+                                                                           owl:someValuesFrom :Abstract_Geological_Model
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Represented_Model ;
+                              rdfs:comment "The spatial dimensions of the represented model should be the same as the abstract model" .
+
+
+###  http://www.PKIMON#Represented_Model
+:Represented_Model rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :IQE
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :represents ;
+                                                                owl:someValuesFrom :Abstract_Model
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :IQE .
+
+
+###  http://www.PKIMON#Resolution
+:Resolution rdf:type owl:Class ;
+            rdfs:subClassOf :Representational_Quality .
+
+
+###  http://www.PKIMON#Retrieving_Related_Information
+:Retrieving_Related_Information rdf:type owl:Class ;
+                                rdfs:subClassOf :Planned_Process .
+
+
+###  http://www.PKIMON#Rock_Body
+:Rock_Body rdf:type owl:Class ;
+           rdfs:subClassOf :Material_Entity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_Shape ;
+                             owl:someValuesFrom :Shape
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_Shape ;
+                             owl:allValuesFrom :Shape
+                           ] .
+
+
+###  http://www.PKIMON#Role
+:Role rdf:type owl:Class ;
+      rdfs:subClassOf :Realizable_Entity .
+
+
+###  http://www.PKIMON#Scale
+:Scale rdf:type owl:Class ;
+       rdfs:subClassOf :Representational_Quality .
+
+
+###  http://www.PKIMON#Selection
+:Selection rdf:type owl:Class ;
+           rdfs:subClassOf :Continuat_Aggregate ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_Part ;
+                             owl:someValuesFrom owl:Thing
+                           ] .
+
+
+###  http://www.PKIMON#Selection_Algorithm
+:Selection_Algorithm rdf:type owl:Class ;
+                     rdfs:subClassOf :Algorithm .
+
+
+###  http://www.PKIMON#Selection_Process
+:Selection_Process rdf:type owl:Class ;
+                   rdfs:subClassOf :Planned_Process ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :has_Output ;
+                                     owl:someValuesFrom :Selection
+                                   ] .
+
+
+###  http://www.PKIMON#Shape
+:Shape rdf:type owl:Class ;
+       rdfs:subClassOf :Defining_Quality ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :is_Specifically_Dependant_On ;
+                         owl:someValuesFrom :Independent_Continuant
+                       ] .
+
+
+###  http://www.PKIMON#Simple_Modify
+:Simple_Modify rdf:type owl:Class ;
+               rdfs:subClassOf :Modifying_Entity_Process .
+
+
+###  http://www.PKIMON#Situation
+:Situation rdf:type owl:Class ;
+           rdfs:subClassOf :Specifically_Dependent_Continuant ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_Part ;
+                             owl:someValuesFrom owl:Thing
+                           ] ;
+           rdfs:comment "Some portion of reality including possible, real, imaginary and impossible objects" .
+
+
+###  http://www.PKIMON#Situation_Selection
+:Situation_Selection rdf:type owl:Class ;
+                     rdfs:subClassOf :Selection_Process .
+
+
+###  http://www.PKIMON#Size
+:Size rdf:type owl:Class ;
+      rdfs:subClassOf :Defining_Quality .
+
+
+###  http://www.PKIMON#Space_Time_Geological_Model
+:Space_Time_Geological_Model rdf:type owl:Class ;
+                             rdfs:subClassOf :Abstract_Geological_Model ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :has_Disposition_To_Be_Represented_In ;
+                                               owl:someValuesFrom :Spatial_Space
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :has_Disposition_To_Be_Represented_In ;
+                                               owl:someValuesFrom :Spatio_Temporal_Space
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :has_Disposition_To_Be_Represented_In ;
+                                               owl:someValuesFrom :Temporal_Space
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :satisfies ;
+                                               owl:someValuesFrom :Conceptual_Geological_Model
+                                             ] ;
+                             rdfs:comment "A model located both in space and time" .
+
+
+###  http://www.PKIMON#Spatial_Dimension
+:Spatial_Dimension rdf:type owl:Class ;
+                   rdfs:subClassOf :Defining_Quality .
+
+
+###  http://www.PKIMON#Spatial_Space
+:Spatial_Space rdf:type owl:Class ;
+               rdfs:subClassOf :Reference_Space ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :has_Dimension ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Spatial_Dimension
+                               ] ;
+               owl:disjointWith :Temporal_Space .
+
+
+###  http://www.PKIMON#Spatio_Temporal_Space
+:Spatio_Temporal_Space rdf:type owl:Class ;
+                       rdfs:subClassOf :Reference_Space .
+
+
+###  http://www.PKIMON#Specifically_Dependent_Continuant
+:Specifically_Dependent_Continuant rdf:type owl:Class ;
+                                   rdfs:subClassOf :Continuant .
+
+
+###  http://www.PKIMON#Strategy
+:Strategy rdf:type owl:Class ;
+          rdfs:subClassOf :Plan_Specification .
+
+
+###  http://www.PKIMON#Strike_Slip_Fault
+:Strike_Slip_Fault rdf:type owl:Class ;
+                   rdfs:subClassOf :Fault .
+
+
+###  http://www.PKIMON#Summary
+:Summary rdf:type owl:Class ;
+         rdfs:subClassOf :ICE .
+
+
+###  http://www.PKIMON#Syncline
+:Syncline rdf:type owl:Class ;
+          rdfs:subClassOf :Fold .
+
+
+###  http://www.PKIMON#Synform
+:Synform rdf:type owl:Class ;
+         rdfs:subClassOf :Fold .
+
+
+###  http://www.PKIMON#Syntax
+:Syntax rdf:type owl:Class ;
+        rdfs:subClassOf :Plan_Specification .
+
+
+###  http://www.PKIMON#Technique
+:Technique rdf:type owl:Class ;
+           rdfs:subClassOf :Quality .
+
+
+###  http://www.PKIMON#Temporal_Space
+:Temporal_Space rdf:type owl:Class ;
+                rdfs:subClassOf :Reference_Space .
+
+
+###  http://www.PKIMON#Unplanned_Process
+:Unplanned_Process rdf:type owl:Class ;
+                   rdfs:subClassOf :Process .
+
+
+###  http://www.PKIMON#User_Based
+:User_Based rdf:type owl:Class ;
+            rdfs:subClassOf :Technique .
+
+
+###  http://www.PKIMON#User_Based_Specification
+:User_Based_Specification rdf:type owl:Class ;
+                          rdfs:subClassOf :Action_Specification .
+
+
+###  http://www.PKIMON#Wavelength
+:Wavelength rdf:type owl:Class ;
+            rdfs:subClassOf :Defining_Quality .
+
+
+###  http://www.PKIMON#Word
+:Word rdf:type owl:Class ;
+      rdfs:subClassOf :Information_Structure .
+
+
+###  http://www.PKIMON#Workflow
+:Workflow rdf:type owl:Class ;
+          rdfs:subClassOf :Plan_Specification .
+
+
+###  http://www.PKIMON#1D
+<http://www.PKIMON#1D> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf :Spatial_Dimension .
+
+
+###  http://www.PKIMON#2D
+<http://www.PKIMON#2D> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf :Spatial_Dimension .
+
+
+###  http://www.PKIMON#3D
+<http://www.PKIMON#3D> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf :Spatial_Dimension .
+
+
+###  http://www.PKIMON#3D_Structural_Modeling
+<http://www.PKIMON#3D_Structural_Modeling> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf :Modeling_Process .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.PKIMON#Action_Spec_Deter_Tech1
+:Action_Spec_Deter_Tech1 rdf:type owl:NamedIndividual ,
+                                  :Deterministic_Specification .
+
+
+###  http://www.PKIMON#Algo_Selection_Algo1
+:Algo_Selection_Algo1 rdf:type owl:NamedIndividual ,
+                               :Selection_Algorithm ;
+                      :has_Part :Action_Spec_Deter_Tech1 ,
+                                :Obj_Spec_1_Selec1 .
+
+
+###  http://www.PKIMON#Info_1
+:Info_1 rdf:type owl:NamedIndividual ,
+                 :Space_Time_Geological_Model ;
+        :has_Origin :observed_origin ;
+        :is_About :sample_1_Carbo .
+
+
+###  http://www.PKIMON#Info_2
+:Info_2 rdf:type owl:NamedIndividual ,
+                 :Space_Time_Geological_Model ;
+        :has_Origin :observed_origin ;
+        :is_About :sample_2_Carbo .
+
+
+###  http://www.PKIMON#Info_3
+:Info_3 rdf:type owl:NamedIndividual ,
+                 :Space_Time_Geological_Model ;
+        :has_Origin :observed_origin ;
+        :is_About :sample_3_Perm .
+
+
+###  http://www.PKIMON#Info_4
+:Info_4 rdf:type owl:NamedIndividual ,
+                 :Space_Time_Geological_Model ;
+        :has_Origin :observed_origin ;
+        :is_About :sample_4_Perm .
+
+
+###  http://www.PKIMON#Obj_Spec_1_Selec1
+:Obj_Spec_1_Selec1 rdf:type owl:NamedIndividual ,
+                            :Objective_Specification .
+
+
+###  http://www.PKIMON#Pro_Situation_Selec_Pr1
+:Pro_Situation_Selec_Pr1 rdf:type owl:NamedIndividual ,
+                                  :Situation_Selection ;
+                         :bearer_Of :Tech1_Deter1 ;
+                         :has_Input :Situ_12_for_inter ,
+                                    :Situ_34_for_inter ;
+                         :has_Output :Selection_1_situ_for_interp ;
+                         :is_Prescribed_By :Algo_Selection_Algo1 .
+
+
+###  http://www.PKIMON#Selection_1_situ_for_interp
+:Selection_1_situ_for_interp rdf:type owl:NamedIndividual ,
+                                      :Selection ;
+                             :has_Part :Situ_12_for_inter .
+
+
+###  http://www.PKIMON#Situ_12_for_inter
+:Situ_12_for_inter rdf:type owl:NamedIndividual ,
+                            :Geologic_Situation ;
+                   :has_Part :sample_1_Carbo ,
+                             :sample_2_Carbo .
+
+
+###  http://www.PKIMON#Situ_34_for_inter
+:Situ_34_for_inter rdf:type owl:NamedIndividual ,
+                            :Geologic_Situation ;
+                   :has_Part :sample_3_Perm ,
+                             :sample_4_Perm .
+
+
+###  http://www.PKIMON#Tech1_Deter1
+:Tech1_Deter1 rdf:type owl:NamedIndividual ,
+                       :Deterministic .
+
+
+###  http://www.PKIMON#action_spec_eva1_user_based
+:action_spec_eva1_user_based rdf:type owl:NamedIndividual ,
+                                      :User_Based_Specification .
+
+
+###  http://www.PKIMON#action_spec_rand
+:action_spec_rand rdf:type owl:NamedIndividual ,
+                           :Action_Specification .
+
+
+###  http://www.PKIMON#algo_decision
+:algo_decision rdf:type owl:NamedIndividual ,
+                        :Algorithm .
+
+
+###  http://www.PKIMON#algo_eva1
+:algo_eva1 rdf:type owl:NamedIndividual ,
+                    :Algorithm ;
+           :has_Action_Specification :action_spec_eva1_user_based ;
+           :has_Objective_Specification :obj_spec_eva1 .
+
+
+###  http://www.PKIMON#amplitude_fold1
+:amplitude_fold1 rdf:type owl:NamedIndividual ,
+                          :Amplitude ;
+                 :has_Value "amplitude" .
+
+
+###  http://www.PKIMON#assumed_origin
+:assumed_origin rdf:type owl:NamedIndividual .
+
+
+###  http://www.PKIMON#decision1_keep_model
+:decision1_keep_model rdf:type owl:NamedIndividual ,
+                               :Objective_Specification .
+
+
+###  http://www.PKIMON#decision2_update_model
+:decision2_update_model rdf:type owl:NamedIndividual ,
+                                 :Objective_Specification .
+
+
+###  http://www.PKIMON#decision3_delete_model
+:decision3_delete_model rdf:type owl:NamedIndividual ,
+                                 :Objective_Specification .
+
+
+###  http://www.PKIMON#evaluation_of_abstract_conc_model1
+:evaluation_of_abstract_conc_model1 rdf:type owl:NamedIndividual ,
+                                             :Evaluation ;
+                                    :is_Evlauation_Of :model1_about_fold1_conc ;
+                                    :has_Value "acceptable" .
+
+
+###  http://www.PKIMON#evaluation_of_abstract_time_space_model1
+:evaluation_of_abstract_time_space_model1 rdf:type owl:NamedIndividual ,
+                                                   :Evaluation ;
+                                          :has_Quality :scale_of_model_fold1 ;
+                                          :is_Evlauation_Of :model1_about_fold1_timespace_loc ;
+                                          :has_Value "not acceptable" .
+
+
+###  http://www.PKIMON#fold1
+:fold1 rdf:type owl:NamedIndividual ,
+                :Fold ;
+       :has_Quality :amplitude_fold1 ,
+                    :location_fold1 ,
+                    :wavelength_fold1 ;
+       :is_Specifically_Dependant_On :rock_part_holding_fold1 .
+
+
+###  http://www.PKIMON#imad_carboniferous_unit
+:imad_carboniferous_unit rdf:type owl:NamedIndividual ,
+                                  :Geological_Unit .
+
+
+###  http://www.PKIMON#interpreted_origin
+:interpreted_origin rdf:type owl:NamedIndividual .
+
+
+###  http://www.PKIMON#location_fold1
+:location_fold1 rdf:type owl:NamedIndividual ,
+                         :Location ;
+                :has_Value "location_fold1" .
+
+
+###  http://www.PKIMON#model1_about_fold1_conc
+:model1_about_fold1_conc rdf:type owl:NamedIndividual ,
+                                  :Abstract_Geological_Model ;
+                         :has_Origin :interpreted_origin ;
+                         :is_About :fold1 .
+
+
+###  http://www.PKIMON#model1_about_fold1_timespace_loc
+:model1_about_fold1_timespace_loc rdf:type owl:NamedIndividual ,
+                                           :Space_Time_Geological_Model ;
+                                  :has_Origin :interpreted_origin ;
+                                  :is_About :fold1 ;
+                                  :satisfies :model1_about_fold1_conc .
+
+
+###  http://www.PKIMON#obj_spec_decision
+:obj_spec_decision rdf:type owl:NamedIndividual ,
+                            :Objective_Specification .
+
+
+###  http://www.PKIMON#obj_spec_eva1
+:obj_spec_eva1 rdf:type owl:NamedIndividual ,
+                        :Objective_Specification .
+
+
+###  http://www.PKIMON#observed_origin
+:observed_origin rdf:type owl:NamedIndividual .
+
+
+###  http://www.PKIMON#pro_decision1
+:pro_decision1 rdf:type owl:NamedIndividual ,
+                        :Decision_Process ;
+               :is_Prescribed_By :algo_decision .
+
+
+###  http://www.PKIMON#pro_ev_abstr_time_spc1
+:pro_ev_abstr_time_spc1 rdf:type owl:NamedIndividual ,
+                                 :Evaluation_Process ;
+                        :has_Input :model1_about_fold1_timespace_loc ;
+                        :has_Output :evaluation_of_abstract_time_space_model1 ;
+                        :is_Prescribed_By :algo_eva1 .
+
+
+###  http://www.PKIMON#pro_ev_abstract_conc1
+:pro_ev_abstract_conc1 rdf:type owl:NamedIndividual ,
+                                :Evaluation_Process ;
+                       :has_Input :model1_about_fold1_conc ;
+                       :has_Output :evaluation_of_abstract_conc_model1 ;
+                       :is_Prescribed_By :algo_eva1 .
+
+
+###  http://www.PKIMON#resolutuion_of_represented_model_fold1
+:resolutuion_of_represented_model_fold1 rdf:type owl:NamedIndividual ,
+                                                 :Resolution .
+
+
+###  http://www.PKIMON#rock_part_holding_fold1
+:rock_part_holding_fold1 rdf:type owl:NamedIndividual ,
+                                  :Rock_Body .
+
+
+###  http://www.PKIMON#sample_1_Carbo
+:sample_1_Carbo rdf:type owl:NamedIndividual ,
+                         :Rock_Body .
+
+
+###  http://www.PKIMON#sample_2_Carbo
+:sample_2_Carbo rdf:type owl:NamedIndividual ,
+                         :Rock_Body .
+
+
+###  http://www.PKIMON#sample_3_Perm
+:sample_3_Perm rdf:type owl:NamedIndividual ,
+                        :Rock_Body .
+
+
+###  http://www.PKIMON#sample_4_Perm
+:sample_4_Perm rdf:type owl:NamedIndividual ,
+                        :Rock_Body .
+
+
+###  http://www.PKIMON#scale_of_model_fold1
+:scale_of_model_fold1 rdf:type owl:NamedIndividual ,
+                               :Scale .
+
+
+###  http://www.PKIMON#shape_inheres_in_fold1_part
+:shape_inheres_in_fold1_part rdf:type owl:NamedIndividual ,
+                                      :Shape ;
+                             :inheres_In :rock_part_holding_fold1 .
+
+
+###  http://www.PKIMON#tech_random
+:tech_random rdf:type owl:NamedIndividual ,
+                      :Random .
+
+
+###  http://www.PKIMON#tech_user_based
+:tech_user_based rdf:type owl:NamedIndividual ,
+                          :User_Based .
+
+
+###  http://www.PKIMON#wavelength_fold1
+:wavelength_fold1 rdf:type owl:NamedIndividual ,
+                           :Wavelength ;
+                  :has_Value "wavelength_fold1" .
+
+
+###  http://www.PKIMON#3d_represented_model_fold1
+<http://www.PKIMON#3d_represented_model_fold1> rdf:type owl:NamedIndividual ,
+                                                                                                                  :Represented_Geological_Model ;
+                                                                                                         :has_Quality :resolutuion_of_represented_model_fold1 ,
+                                                                                                                      :scale_of_model_fold1 ;
+                                                                                                         :represents :model1_about_fold1_timespace_loc .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
