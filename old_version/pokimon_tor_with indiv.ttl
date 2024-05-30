@@ -1468,7 +1468,8 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 
 ###  http://www.PKIMON#observed_origin
-:observed_origin rdf:type owl:NamedIndividual .
+:observed_origin rdf:type owl:NamedIndividual ,
+                          :Observed .
 
 
 ###  http://www.PKIMON#pro_decision1

@@ -1012,6 +1012,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                  rdfs:subClassOf :Independent_Continuant .
 
 
+###  http://www.PKIMON#Relative_Location
+:Relative_Location rdf:type owl:Class ;
+                   rdfs:subClassOf :Defining_Quality .
+
+
 ###  http://www.PKIMON#Representational_Quality
 :Representational_Quality rdf:type owl:Class ;
                           rdfs:subClassOf :Quality .
