@@ -383,7 +383,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.PKIMON#Analysis
 :Analysis rdf:type owl:Class ;
-          rdfs:subClassOf :ICE .
+          rdfs:subClassOf :Textual_Content_Entity .
 
 
 ###  http://www.PKIMON#Anomaly
@@ -508,6 +508,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                              rdfs:subClassOf :Action_Specification .
 
 
+###  http://www.PKIMON#Diagram
+:Diagram rdf:type owl:Class ;
+         rdfs:subClassOf :Figure .
+
+
 ###  http://www.PKIMON#Disposition
 :Disposition rdf:type owl:Class ;
              rdfs:subClassOf :Realizable_Entity .
@@ -526,6 +531,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.PKIMON#Disposition_To_Be_Modified
 :Disposition_To_Be_Modified rdf:type owl:Class ;
                             rdfs:subClassOf :Disposition .
+
+
+###  http://www.PKIMON#Drawing_Image
+:Drawing_Image rdf:type owl:Class ;
+               rdfs:subClassOf :Image .
 
 
 ###  http://www.PKIMON#Estimation_Process
@@ -569,6 +579,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                                 :Spatio_Temporal_Space ,
                                 :Temporal_Space ;
                rdfs:comment "any feature space except of spatial and temporal spaces" .
+
+
+###  http://www.PKIMON#Figure
+:Figure rdf:type owl:Class ;
+        rdfs:subClassOf :ICE .
 
 
 ###  http://www.PKIMON#Fold
@@ -653,6 +668,16 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                  rdfs:subClassOf :Rock_Body .
 
 
+###  http://www.PKIMON#Geophysical_Image
+:Geophysical_Image rdf:type owl:Class ;
+                   rdfs:subClassOf :Image .
+
+
+###  http://www.PKIMON#Graph
+:Graph rdf:type owl:Class ;
+       rdfs:subClassOf :Diagram .
+
+
 ###  http://www.PKIMON#Hybrid
 :Hybrid rdf:type owl:Class ;
         rdfs:subClassOf :Technique .
@@ -715,6 +740,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                        owl:onProperty :is_Specifically_Dependant_On ;
                        owl:someValuesFrom :Syntax
                      ] .
+
+
+###  http://www.PKIMON#Image
+:Image rdf:type owl:Class ;
+       rdfs:subClassOf :Figure .
 
 
 ###  http://www.PKIMON#Implicit_Modeling
@@ -1139,6 +1169,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
       rdfs:subClassOf :Defining_Quality .
 
 
+###  http://www.PKIMON#Sketch
+:Sketch rdf:type owl:Class ;
+        rdfs:subClassOf :Diagram .
+
+
 ###  http://www.PKIMON#Space_Time_Geological_Model
 :Space_Time_Geological_Model rdf:type owl:Class ;
                              rdfs:subClassOf :Abstract_Geological_Model ,
@@ -1199,7 +1234,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.PKIMON#Summary
 :Summary rdf:type owl:Class ;
-         rdfs:subClassOf :ICE .
+         rdfs:subClassOf :Textual_Content_Entity .
 
 
 ###  http://www.PKIMON#Syncline
@@ -1225,6 +1260,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.PKIMON#Temporal_Space
 :Temporal_Space rdf:type owl:Class ;
                 rdfs:subClassOf :Reference_Space .
+
+
+###  http://www.PKIMON#Textual_Content_Entity
+:Textual_Content_Entity rdf:type owl:Class ;
+                        rdfs:subClassOf :ICE .
 
 
 ###  http://www.PKIMON#Unplanned_Process
