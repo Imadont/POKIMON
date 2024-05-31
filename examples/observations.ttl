@@ -13,7 +13,7 @@
 #    Individuals
 #################################################################
 
-###  http://www.pokimon/observation#boy__unit_perm
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#boy__unit_perm
 :boy__unit_perm rdf:type owl:NamedIndividual .
 
 
@@ -25,28 +25,28 @@
 ###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#info_1
 :info_1 rdf:type owl:NamedIndividual ,
                  <http://www.PKIMON#Space_Time_Geological_Model> ;
-        <http://www.PKIMON#has_Origin> :observed_origin ;
+        <http://www.PKIMON#bearer_Of> :observed_origin ;
         <http://www.PKIMON#is_About> :sample_1_carbo .
 
 
 ###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#info_2
 :info_2 rdf:type owl:NamedIndividual ,
                  <http://www.PKIMON#Space_Time_Geological_Model> ;
-        <http://www.PKIMON#has_Origin> :observed_origin ;
+        <http://www.PKIMON#bearer_Of> :observed_origin ;
         <http://www.PKIMON#is_About> :sample_2_carbo .
 
 
 ###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#info_3
 :info_3 rdf:type owl:NamedIndividual ,
                  <http://www.PKIMON#Space_Time_Geological_Model> ;
-        <http://www.PKIMON#has_Origin> :observed_origin ;
+        <http://www.PKIMON#bearer_Of> :observed_origin ;
         <http://www.PKIMON#is_About> :sample_3_perm .
 
 
 ###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#info_4
 :info_4 rdf:type owl:NamedIndividual ,
                  <http://www.PKIMON#Space_Time_Geological_Model> ;
-        <http://www.PKIMON#has_Origin> :observed_origin ;
+        <http://www.PKIMON#bearer_Of> :observed_origin ;
         <http://www.PKIMON#is_About> :sample_4_perm .
 
 

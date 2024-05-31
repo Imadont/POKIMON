@@ -383,7 +383,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.PKIMON#Analysis
 :Analysis rdf:type owl:Class ;
-          rdfs:subClassOf :Textual_Content_Entity .
+          rdfs:subClassOf :Proposition_Content_Entity .
 
 
 ###  http://www.PKIMON#Anomaly
@@ -419,14 +419,14 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
          rdfs:subClassOf :Origin .
 
 
+###  http://www.PKIMON#Attribute_Content_Entity
+:Attribute_Content_Entity rdf:type owl:Class ;
+                          rdfs:subClassOf :ICE .
+
+
 ###  http://www.PKIMON#Certainty
 :Certainty rdf:type owl:Class ;
            rdfs:subClassOf :Quality .
-
-
-###  http://www.PKIMON#Code
-:Code rdf:type owl:Class ;
-      rdfs:subClassOf :Information_Structure .
 
 
 ###  http://www.PKIMON#Complex_Modify
@@ -469,6 +469,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                      rdfs:subClassOf :Continuant .
 
 
+###  http://www.PKIMON#Cross_Section
+:Cross_Section rdf:type owl:Class ;
+               rdfs:subClassOf :Transect .
+
+
 ###  http://www.PKIMON#Decision_Algorithm
 :Decision_Algorithm rdf:type owl:Class ;
                     rdfs:subClassOf :Algorithm .
@@ -498,6 +503,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                          rdfs:subClassOf :Planned_Process .
 
 
+###  http://www.PKIMON#Description
+:Description rdf:type owl:Class ;
+             rdfs:subClassOf :Proposition_Content_Entity .
+
+
 ###  http://www.PKIMON#Deterministic
 :Deterministic rdf:type owl:Class ;
                rdfs:subClassOf :Technique .
@@ -506,11 +516,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.PKIMON#Deterministic_Specification
 :Deterministic_Specification rdf:type owl:Class ;
                              rdfs:subClassOf :Action_Specification .
-
-
-###  http://www.PKIMON#Diagram
-:Diagram rdf:type owl:Class ;
-         rdfs:subClassOf :Figure .
 
 
 ###  http://www.PKIMON#Disposition
@@ -533,9 +538,9 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                             rdfs:subClassOf :Disposition .
 
 
-###  http://www.PKIMON#Drawing_Image
-:Drawing_Image rdf:type owl:Class ;
-               rdfs:subClassOf :Image .
+###  http://www.PKIMON#Drawing
+:Drawing rdf:type owl:Class ;
+         rdfs:subClassOf :Image .
 
 
 ###  http://www.PKIMON#Estimation_Process
@@ -579,11 +584,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                                 :Spatio_Temporal_Space ,
                                 :Temporal_Space ;
                rdfs:comment "any feature space except of spatial and temporal spaces" .
-
-
-###  http://www.PKIMON#Figure
-:Figure rdf:type owl:Class ;
-        rdfs:subClassOf :ICE .
 
 
 ###  http://www.PKIMON#Fold
@@ -668,14 +668,19 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                  rdfs:subClassOf :Rock_Body .
 
 
-###  http://www.PKIMON#Geophysical_Image
-:Geophysical_Image rdf:type owl:Class ;
-                   rdfs:subClassOf :Image .
+###  http://www.PKIMON#Geometric_Volumetric_Figure
+:Geometric_Volumetric_Figure rdf:type owl:Class ;
+                             rdfs:subClassOf :Physical_Volumetric_Figure .
 
 
-###  http://www.PKIMON#Graph
-:Graph rdf:type owl:Class ;
-       rdfs:subClassOf :Diagram .
+###  http://www.PKIMON#Geophysical_Surfacic_Figure
+:Geophysical_Surfacic_Figure rdf:type owl:Class ;
+                             rdfs:subClassOf :Physical_Surfacic_Figure .
+
+
+###  http://www.PKIMON#Geophysical_Volumetric_Figure
+:Geophysical_Volumetric_Figure rdf:type owl:Class ;
+                               rdfs:subClassOf :Physical_Volumetric_Figure .
 
 
 ###  http://www.PKIMON#Hybrid
@@ -744,7 +749,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.PKIMON#Image
 :Image rdf:type owl:Class ;
-       rdfs:subClassOf :Figure .
+       rdfs:subClassOf :Physical_Surfacic_Figure .
 
 
 ###  http://www.PKIMON#Implicit_Modeling
@@ -760,11 +765,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.PKIMON#Information_Entity
 :Information_Entity rdf:type owl:Class ;
                     rdfs:subClassOf :Independent_Continuant .
-
-
-###  http://www.PKIMON#Information_Structure
-:Information_Structure rdf:type owl:Class ;
-                       rdfs:subClassOf :Generically_Dependent_Continuant .
 
 
 ###  http://www.PKIMON#Input
@@ -843,6 +843,16 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.PKIMON#ML_Specification
 :ML_Specification rdf:type owl:Class ;
                   rdfs:subClassOf :Action_Specification .
+
+
+###  http://www.PKIMON#Machine_Learning_Content_Entity
+:Machine_Learning_Content_Entity rdf:type owl:Class ;
+                                 rdfs:subClassOf :Attribute_Content_Entity .
+
+
+###  http://www.PKIMON#Map
+:Map rdf:type owl:Class ;
+     rdfs:subClassOf :Physical_Surfacic_Figure .
 
 
 ###  http://www.PKIMON#Material_Entity
@@ -940,6 +950,21 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
       rdfs:subClassOf :Role .
 
 
+###  http://www.PKIMON#Photography
+:Photography rdf:type owl:Class ;
+             rdfs:subClassOf :Image .
+
+
+###  http://www.PKIMON#Physical_Surfacic_Figure
+:Physical_Surfacic_Figure rdf:type owl:Class ;
+                          rdfs:subClassOf :Surfacic_Figure .
+
+
+###  http://www.PKIMON#Physical_Volumetric_Figure
+:Physical_Volumetric_Figure rdf:type owl:Class ;
+                            rdfs:subClassOf :Volumetric_Figure .
+
+
 ###  http://www.PKIMON#Plan_Specification
 :Plan_Specification rdf:type owl:Class ;
                     rdfs:subClassOf :ICE ,
@@ -991,6 +1016,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                            owl:onProperty :has_Part ;
                            owl:allValuesFrom :Process
                          ] .
+
+
+###  http://www.PKIMON#Proposition_Content_Entity
+:Proposition_Content_Entity rdf:type owl:Class ;
+                            rdfs:subClassOf :Attribute_Content_Entity .
 
 
 ###  http://www.PKIMON#Quality
@@ -1112,6 +1142,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
        rdfs:subClassOf :Representational_Quality .
 
 
+###  http://www.PKIMON#Seismic_Profile
+:Seismic_Profile rdf:type owl:Class ;
+                 rdfs:subClassOf :Geophysical_Surfacic_Figure .
+
+
 ###  http://www.PKIMON#Selection
 :Selection rdf:type owl:Class ;
            rdfs:subClassOf :Continuat_Aggregate ,
@@ -1171,7 +1206,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.PKIMON#Sketch
 :Sketch rdf:type owl:Class ;
-        rdfs:subClassOf :Diagram .
+        rdfs:subClassOf :Image .
 
 
 ###  http://www.PKIMON#Space_Time_Geological_Model
@@ -1227,6 +1262,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
           rdfs:subClassOf :Plan_Specification .
 
 
+###  http://www.PKIMON#Stratigraphic_Column
+:Stratigraphic_Column rdf:type owl:Class ;
+                      rdfs:subClassOf :Conceptual_Geological_Model .
+
+
 ###  http://www.PKIMON#Strike_Slip_Fault
 :Strike_Slip_Fault rdf:type owl:Class ;
                    rdfs:subClassOf :Fault .
@@ -1234,7 +1274,12 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.PKIMON#Summary
 :Summary rdf:type owl:Class ;
-         rdfs:subClassOf :Textual_Content_Entity .
+         rdfs:subClassOf :Proposition_Content_Entity .
+
+
+###  http://www.PKIMON#Surfacic_Figure
+:Surfacic_Figure rdf:type owl:Class ;
+                 rdfs:subClassOf :Visual_Content_Entity .
 
 
 ###  http://www.PKIMON#Syncline
@@ -1262,9 +1307,9 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                 rdfs:subClassOf :Reference_Space .
 
 
-###  http://www.PKIMON#Textual_Content_Entity
-:Textual_Content_Entity rdf:type owl:Class ;
-                        rdfs:subClassOf :ICE .
+###  http://www.PKIMON#Transect
+:Transect rdf:type owl:Class ;
+          rdfs:subClassOf :Physical_Surfacic_Figure .
 
 
 ###  http://www.PKIMON#Unplanned_Process
@@ -1282,14 +1327,20 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                           rdfs:subClassOf :Action_Specification .
 
 
+###  http://www.PKIMON#Visual_Content_Entity
+:Visual_Content_Entity rdf:type owl:Class ;
+                       rdfs:subClassOf :Attribute_Content_Entity ;
+                       rdfs:comment "any type of figure" .
+
+
+###  http://www.PKIMON#Volumetric_Figure
+:Volumetric_Figure rdf:type owl:Class ;
+                   rdfs:subClassOf :Visual_Content_Entity .
+
+
 ###  http://www.PKIMON#Wavelength
 :Wavelength rdf:type owl:Class ;
             rdfs:subClassOf :Defining_Quality .
-
-
-###  http://www.PKIMON#Word
-:Word rdf:type owl:Class ;
-      rdfs:subClassOf :Information_Structure .
 
 
 ###  http://www.PKIMON#Workflow
