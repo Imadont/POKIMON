@@ -138,8 +138,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.PKIMON#has_Part
 :has_Part rdf:type owl:ObjectProperty ;
-          owl:inverseOf :is_Part_Of ;
-          rdf:type owl:TransitiveProperty .
+          owl:inverseOf :is_Part_Of .
 
 
 ###  http://www.PKIMON#has_Participant
@@ -228,8 +227,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 
 ###  http://www.PKIMON#is_Part_Of
-:is_Part_Of rdf:type owl:ObjectProperty ,
-                     owl:TransitiveProperty .
+:is_Part_Of rdf:type owl:ObjectProperty .
 
 
 ###  http://www.PKIMON#is_Prescribed_By
