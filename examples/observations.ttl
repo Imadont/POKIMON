@@ -1,4 +1,4 @@
-@prefix : <http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#> .
+@prefix : <http://www.pk.observation#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -7,86 +7,142 @@
 @base <http://www.pokimon/observation> .
 
 <http://www.pokimon/observation> rdf:type owl:Ontology ;
-                                  owl:imports <http://www.PKIMON> .
+                                  owl:imports <http://www.POKIMON> .
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#boy_unit_perm
-:boy_unit_perm rdf:type owl:NamedIndividual ,
-                        <http://www.PKIMON#Geological_Unit> .
-
-
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#imad_unit_carbo
-:imad_unit_carbo rdf:type owl:NamedIndividual ,
-                          <http://www.PKIMON#Geological_Unit> .
-
-
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#info_1
+###  http://www.pk.observation#info_1
 :info_1 rdf:type owl:NamedIndividual ,
-                 <http://www.PKIMON#Space_Time_Geological_Model> ;
-        <http://www.PKIMON#bearer_Of> :observed_origin ;
-        <http://www.PKIMON#is_About> :sample_1_carbo .
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#is_About> :sample_1_carbo .
 
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#info_2
+###  http://www.pk.observation#info_2
 :info_2 rdf:type owl:NamedIndividual ,
-                 <http://www.PKIMON#Space_Time_Geological_Model> ;
-        <http://www.PKIMON#bearer_Of> :observed_origin ;
-        <http://www.PKIMON#is_About> :sample_2_carbo .
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#is_About> :sample_2_carbo .
 
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#info_3
+###  http://www.pk.observation#info_3
 :info_3 rdf:type owl:NamedIndividual ,
-                 <http://www.PKIMON#Space_Time_Geological_Model> ;
-        <http://www.PKIMON#bearer_Of> :observed_origin ;
-        <http://www.PKIMON#is_About> :sample_3_perm .
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#is_About> :sample_3_carbo .
 
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#info_4
+###  http://www.pk.observation#info_4
 :info_4 rdf:type owl:NamedIndividual ,
-                 <http://www.PKIMON#Space_Time_Geological_Model> ;
-        <http://www.PKIMON#bearer_Of> :observed_origin ;
-        <http://www.PKIMON#is_About> :sample_4_perm .
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#is_About> :sample_4_carbo .
 
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#observed_origin
+###  http://www.pk.observation#observed_origin
 :observed_origin rdf:type owl:NamedIndividual ,
-                          <http://www.PKIMON#Observed> .
+                          <http://www.POKIMON#Observed> .
 
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#original_location
+###  http://www.pk.observation#original_location
 :original_location rdf:type owl:NamedIndividual ,
-                            <http://www.PKIMON#Relative_Location> .
+                            <http://www.POKIMON#Relative_Location> .
 
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#sample_1_carbo
+###  http://www.pk.observation#sample_1_carbo
 :sample_1_carbo rdf:type owl:NamedIndividual ,
-                         <http://www.PKIMON#Rock_Body> ;
-                <http://www.PKIMON#has_Quality> :original_location ;
-                <http://www.PKIMON#is_Part_Of> :imad_unit_carbo .
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :original_location ;
+                <http://www.POKIMON#is_Part_Of> :st_laoui_unit_carbo .
 
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#sample_2_carbo
+###  http://www.pk.observation#sample_2_carbo
 :sample_2_carbo rdf:type owl:NamedIndividual ,
-                         <http://www.PKIMON#Rock_Body> ;
-                <http://www.PKIMON#has_Quality> :original_location ;
-                <http://www.PKIMON#is_Part_Of> :imad_unit_carbo .
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :original_location ;
+                <http://www.POKIMON#is_Part_Of> :st_laoui_unit_carbo .
 
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#sample_3_perm
-:sample_3_perm rdf:type owl:NamedIndividual ,
-                        <http://www.PKIMON#Rock_Body> ;
-               <http://www.PKIMON#has_Quality> :original_location ;
-               <http://www.PKIMON#is_Part_Of> :boy_unit_perm .
+###  http://www.pk.observation#sample_5_perm
+:sample_5_perm rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#has_Quality> :original_location ;
+               <http://www.POKIMON#is_Part_Of> :st_imad_unit_perm .
 
 
-###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-873#sample_4_perm
-:sample_4_perm rdf:type owl:NamedIndividual ,
-                        <http://www.PKIMON#Rock_Body> ;
-               <http://www.PKIMON#has_Quality> :original_location ;
-               <http://www.PKIMON#is_Part_Of> :boy_unit_perm .
+###  http://www.pk.observation#sample_6_perm
+:sample_6_perm rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#has_Quality> :original_location ;
+               <http://www.POKIMON#is_Part_Of> :st_imad_unit_perm .
+
+
+###  http://www.pk.observation#st_imad_unit_perm
+:st_imad_unit_perm rdf:type owl:NamedIndividual ,
+                            <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.pk.observation#st_laoui_unit_carbo
+:st_laoui_unit_carbo rdf:type owl:NamedIndividual ,
+                              <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.pokimon/observation#info_5
+:info_5 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#is_About> :sample_5_perm .
+
+
+###  http://www.pokimon/observation#info_6
+:info_6 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#is_About> :sample_6_perm .
+
+
+###  http://www.pokimon/observation#info_7
+:info_7 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#is_About> :sample_7_perm .
+
+
+###  http://www.pokimon/observation#info_8
+:info_8 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#is_About> :sample_8_perm .
+
+
+###  http://www.pokimon/observation#sample_3_carbo
+:sample_3_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Part> :st_laoui_unit_carbo ;
+                <http://www.POKIMON#has_Quality> :original_location .
+
+
+###  http://www.pokimon/observation#sample_4_carbo
+:sample_4_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :original_location ;
+                <http://www.POKIMON#is_Part_Of> :st_laoui_unit_carbo .
+
+
+###  http://www.pokimon/observation#sample_7_perm
+:sample_7_perm rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#has_Quality> :original_location ;
+               <http://www.POKIMON#is_Part_Of> :st_imad_unit_perm .
+
+
+###  http://www.pokimon/observation#sample_8_perm
+:sample_8_perm rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#has_Quality> :original_location ;
+               <http://www.POKIMON#is_Part_Of> :st_imad_unit_perm .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

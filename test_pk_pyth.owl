@@ -1,0 +1,2150 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.POKIMON#"
+     xml:base="http://www.POKIMON"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.POKIMON"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.POKIMON#Criteria_For_Selection -->
+
+    <owl:AnnotationProperty rdf:about="http://www.POKIMON#Criteria_For_Selection">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#anySimpleType -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#anySimpleType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.POKIMON#Interprets -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#Interprets">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_About"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#Is_Output_Of -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#Is_Output_Of">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#participates_In"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#has_Output"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#Substitutes -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#Substitutes"/>
+    
+
+
+    <!-- http://www.POKIMON#bearer_Of -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#bearer_Of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#inheres_In"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#concretizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#concretizes">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_Specifically_Dependant_On"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Concretized_By"/>
+        <rdfs:domain rdf:resource="http://www.POKIMON#IQE"/>
+        <rdfs:range rdf:resource="http://www.POKIMON#ICE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#designates -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#designates">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_About"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#details -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#details">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_About"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Detailed_By"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#explains -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#explains">
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Explained_By"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#governs -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#governs">
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Governed_By"/>
+        <rdfs:domain rdf:resource="http://www.POKIMON#Information_Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Action_Specification -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Action_Specification"/>
+    
+
+
+    <!-- http://www.POKIMON#has_Anomalic_Part -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Anomalic_Part">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#has_Part"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Anomalic_Part_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Dimension -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Dimension">
+        <rdfs:domain rdf:resource="http://www.POKIMON#Spatial_Space"/>
+        <rdfs:range rdf:resource="http://www.POKIMON#Spatial_Dimension"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Disposition_To -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Disposition_To"/>
+    
+
+
+    <!-- http://www.POKIMON#has_Disposition_To_Be_Represented_In -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Disposition_To_Be_Represented_In">
+        <rdfs:domain rdf:resource="http://www.POKIMON#Abstract_Model"/>
+        <rdfs:range rdf:resource="http://www.POKIMON#Reference_Space"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Evaluation -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Evaluation">
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Evlauation_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Generic_Dependant -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Generic_Dependant">
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Generically_Dependant_On"/>
+        <rdfs:range rdf:resource="http://www.POKIMON#Generically_Dependent_Continuant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Input -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Input">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#has_Participant"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Input_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Objective_Specification -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Objective_Specification"/>
+    
+
+
+    <!-- http://www.POKIMON#has_Origin -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Origin"/>
+    
+
+
+    <!-- http://www.POKIMON#has_Output -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Output">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#has_Participant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Part -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Part">
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Part_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Participant -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Participant">
+        <owl:inverseOf rdf:resource="http://www.POKIMON#participates_In"/>
+        <rdfs:domain rdf:resource="http://www.POKIMON#Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Quality -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Quality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Shape -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Shape"/>
+    
+
+
+    <!-- http://www.POKIMON#has_Specific_Dependant -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Specific_Dependant">
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Specifically_Dependant_On"/>
+        <rdfs:range rdf:resource="http://www.POKIMON#Specifically_Dependent_Continuant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Structural_Part -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Structural_Part">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#has_Part"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Structural_Part_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#inheres_In -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#inheres_In">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_Specifically_Dependant_On"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.POKIMON#Quality"/>
+                    <rdf:Description rdf:about="http://www.POKIMON#Realizable_Entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_About -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_About">
+        <owl:inverseOf rdf:resource="http://www.POKIMON#is_Subject_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Anomalic_Part_Of -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Anomalic_Part_Of">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_Part_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Concretized_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Concretized_By">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_Generically_Dependant_On"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Detailed_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Detailed_By">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_Subject_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Evlauation_Of -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Evlauation_Of"/>
+    
+
+
+    <!-- http://www.POKIMON#is_Explained_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Explained_By"/>
+    
+
+
+    <!-- http://www.POKIMON#is_Generically_Dependant_On -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Generically_Dependant_On">
+        <rdfs:domain rdf:resource="http://www.POKIMON#Generically_Dependent_Continuant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Governed_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Governed_By">
+        <rdfs:range rdf:resource="http://www.POKIMON#Information_Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Input_Of -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Input_Of">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#participates_In"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Origin_Quality_Of -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Origin_Quality_Of">
+        <rdfs:domain rdf:resource="http://www.POKIMON#Origin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Part_Of -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Part_Of"/>
+    
+
+
+    <!-- http://www.POKIMON#is_Prescribed_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Prescribed_By">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_Subject_Of"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#prescribes"/>
+        <rdfs:range rdf:resource="http://www.POKIMON#Plan_Specification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Satisfied_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Satisfied_By">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#has_Specific_Dependant"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#satisfies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Simplified_By -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Simplified_By">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_Subject_Of"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#simplifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Specifically_Dependant_On -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Specifically_Dependant_On">
+        <rdfs:domain rdf:resource="http://www.POKIMON#Specifically_Dependent_Continuant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Structural_Part_Of -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Structural_Part_Of">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_Part_Of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#is_Subject_Of -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#is_Subject_Of"/>
+    
+
+
+    <!-- http://www.POKIMON#participates_In -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#participates_In">
+        <rdfs:range rdf:resource="http://www.POKIMON#Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#plays_Role -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#plays_Role"/>
+    
+
+
+    <!-- http://www.POKIMON#prescribes -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#prescribes">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_About"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#realizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#realizes">
+        <rdfs:domain rdf:resource="http://www.POKIMON#Process"/>
+        <rdfs:range rdf:resource="http://www.POKIMON#Disposition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#represents -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#represents">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#concretizes"/>
+        <rdfs:domain rdf:resource="http://www.POKIMON#Represented_Model"/>
+        <rdfs:range rdf:resource="http://www.POKIMON#Abstract_Model"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#satisfies -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#satisfies">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_Specifically_Dependant_On"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.POKIMON#simplifies -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#simplifies">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#is_About"/>
+        <rdfs:domain rdf:resource="http://www.POKIMON#Abstract_Model"/>
+        <rdfs:range rdf:resource="http://www.POKIMON#Abstract_Model"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.POKIMON#has_Time_Stamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.POKIMON#has_Time_Stamp">
+        <rdfs:domain rdf:resource="http://www.POKIMON#Quality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Unit_Of_Measure -->
+
+    <owl:DatatypeProperty rdf:about="http://www.POKIMON#has_Unit_Of_Measure">
+        <rdfs:domain rdf:resource="http://www.POKIMON#Quality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.POKIMON#has_Value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.POKIMON#has_Value">
+        <rdfs:domain rdf:resource="http://www.POKIMON#Quality"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.POKIMON#Abstract_Geological_Model -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Abstract_Geological_Model">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Abstract_Model"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#Interprets"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Abstract_Geological_Model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Abstract_Model -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Abstract_Model">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#ICE"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#bearer_Of"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Origin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Action_Specification -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Action_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#ICE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Adding_Entity_Algorithm -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Adding_Entity_Algorithm">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Adding_Entity_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Adding_Entity_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Agent -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Agent">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Independent_Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Algorithm -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Algorithm">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Plan_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Amplitude -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Amplitude">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Defining_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Analysis -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Analysis">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Proposition_Content_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Anomaly -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Anomaly">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#Is_Output_Of"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Evaluation_Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Anomalic_Part"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Anthropic_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Anthropic_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Anticline -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Anticline">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Fold"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Antiform -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Antiform">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Fold"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Assumed -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Assumed">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Origin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Attribute_Content_Entity -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Attribute_Content_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#ICE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Certainty -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Certainty">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Complex_Modify -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Complex_Modify">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Modifying_Entity_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Conceptual_Anomaly -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Conceptual_Anomaly">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Anomaly"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Conceptual_Geological_Model -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Conceptual_Geological_Model">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Abstract_Geological_Model"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.POKIMON#has_Disposition_To_Be_Represented_In"/>
+                                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Spatial_Space"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.POKIMON#has_Disposition_To_Be_Represented_In"/>
+                                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Spatio_Temporal_Space"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>a model missing its exact spatial locations (could have the global geometry without the location of its parts)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Continuant -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Continuant"/>
+    
+
+
+    <!-- http://www.POKIMON#Continuat_Aggregate -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Continuat_Aggregate">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Cross_Section -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Cross_Section">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Transect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Decision_Algorithm -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Decision_Algorithm">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Decision_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Decision_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Input"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Abstract_Geological_Model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Defining_Quality -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Defining_Quality">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Deleting_Entity_Algorithm -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Deleting_Entity_Algorithm">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Deleting_Entity_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Deleting_Entity_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Description -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Description">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Proposition_Content_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Deterministic -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Deterministic">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Deterministic_Specification -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Deterministic_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Action_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Disposition -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Disposition">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Realizable_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Disposition_To_Be_Deleted -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Disposition_To_Be_Deleted">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Disposition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Disposition_To_Be_Enriched -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Disposition_To_Be_Enriched">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Disposition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Disposition_To_Be_Modified -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Disposition_To_Be_Modified">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Disposition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Drawing -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Drawing">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Estimation_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Estimation_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Evaluation -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Evaluation">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Evaluation_Algorithm -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Evaluation_Algorithm">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Evaluation_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Evaluation_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Output"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Evaluation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Excplicit_Modeling -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Excplicit_Modeling">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#3D_Structural_Modeling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Fault -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Fault">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Geological_Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Feature_Space -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Feature_Space">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Reference_Space"/>
+        <owl:disjointWith rdf:resource="http://www.POKIMON#Spatial_Space"/>
+        <owl:disjointWith rdf:resource="http://www.POKIMON#Spatio_Temporal_Space"/>
+        <owl:disjointWith rdf:resource="http://www.POKIMON#Temporal_Space"/>
+        <rdfs:comment>any feature space except of spatial and temporal spaces</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Fold -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Fold">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Geological_Structure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Shape"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Structural_Part"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.POKIMON#Fold_Hinge"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Structural_Part"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.POKIMON#Fold_Limb"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Fold_Hinge -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Fold_Hinge">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Geological_Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Fold_Limb -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Fold_Limb">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Geological_Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Functional_Entity -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Functional_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Realizable_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Generically_Dependent_Continuant -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Generically_Dependent_Continuant">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Geologic_Entity -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Geologic_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Independent_Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Geologic_Situation -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Geologic_Situation">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Geologic_Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Geological_Map_Legend -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Geological_Map_Legend">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Conceptual_Geological_Model"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Disposition_To_Be_Represented_In"/>
+                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Temporal_Space"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The legend gives typically temporal and topological relations between objects without specifying shape and locations of the objects</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Geological_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Geological_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Natural_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Geological_Structure -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Geological_Structure">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Specifically_Dependent_Continuant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#is_Specifically_Dependant_On"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Rock_Body"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Geological_Unit -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Geological_Unit">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Rock_Body"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Geometric_Volumetric_Figure -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Geometric_Volumetric_Figure">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Physical_Volumetric_Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Geophysical_Surfacic_Figure -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Geophysical_Surfacic_Figure">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Physical_Surfacic_Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Geophysical_Volumetric_Figure -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Geophysical_Volumetric_Figure">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Physical_Volumetric_Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Hybrid -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Hybrid">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Hybrid_Specification -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Hybrid_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Action_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#IA -->
+
+    <owl:Class rdf:about="http://www.POKIMON#IA">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Independent_Continuant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Generic_Dependant"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#ICE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Specific_Dependant"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#IQE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#ICE -->
+
+    <owl:Class rdf:about="http://www.POKIMON#ICE">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Generically_Dependent_Continuant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#is_About"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#is_Generically_Dependant_On"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#IA"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:allValuesFrom rdf:resource="http://www.POKIMON#ICE"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#IQE -->
+
+    <owl:Class rdf:about="http://www.POKIMON#IQE">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.POKIMON#Quality"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.POKIMON#concretizes"/>
+                        <owl:someValuesFrom rdf:resource="http://www.POKIMON#ICE"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#is_About"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#is_Specifically_Dependant_On"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#IA"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#is_Specifically_Dependant_On"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Syntax"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Image -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Image">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Physical_Surfacic_Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Implicit_Modeling -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Implicit_Modeling">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#3D_Structural_Modeling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Independent_Continuant -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Independent_Continuant">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Information_Entity -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Information_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Independent_Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Input -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Input">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Input_Selection -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Input_Selection">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Selection_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Instantiating_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Instantiating_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Intelligent_Based -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Intelligent_Based">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Interpretation_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Interpretation_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Output"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Abstract_Model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Planned_Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Interpretation_Selection -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Interpretation_Selection">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Selection_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Interpreted -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Interpreted">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Origin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Inverse_Fault -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Inverse_Fault">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Fault"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Knowledge_Modeling -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Knowledge_Modeling">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Modeling_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Kriging -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Kriging">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Location -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Location">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Defining_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Logical_Reasoning_Based -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Logical_Reasoning_Based">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Intelligent_Based"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#ML_Based -->
+
+    <owl:Class rdf:about="http://www.POKIMON#ML_Based">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Intelligent_Based"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#ML_Specification -->
+
+    <owl:Class rdf:about="http://www.POKIMON#ML_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Action_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Machine_Learning_Content_Entity -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Machine_Learning_Content_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Attribute_Content_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Map -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Map">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Physical_Surfacic_Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Material_Entity -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Material_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Independent_Continuant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Material_Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Modeling_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Modeling_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Anthropic_Process"/>
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Modifying_Entity_Algoirhtm -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Modifying_Entity_Algoirhtm">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Modifying_Entity_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Modifying_Entity_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Natural_Law -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Natural_Law">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Information_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Natural_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Natural_Process">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.POKIMON#Process"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.POKIMON#is_Governed_By"/>
+                        <owl:allValuesFrom rdf:resource="http://www.POKIMON#Natural_Law"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#is_Governed_By"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Natural_Law"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Natural_Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#is_Governed_By"/>
+                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Natural_Law"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Normal_Fault -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Normal_Fault">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Fault"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Objective_Specification -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Objective_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#ICE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Observation_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Observation_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Anthropic_Process"/>
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Observed -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Observed">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Origin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Occurent -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Occurent"/>
+    
+
+
+    <!-- http://www.POKIMON#Origin -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Origin">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Output -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Output">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Part -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Part">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Photography -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Photography">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Physical_Surfacic_Figure -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Physical_Surfacic_Figure">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Surfacic_Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Physical_Volumetric_Figure -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Physical_Volumetric_Figure">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Volumetric_Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Plan_Specification -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Plan_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#ICE"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Action_Specification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Objective_Specification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Planned_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Planned_Process">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.POKIMON#Process"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.POKIMON#bearer_Of"/>
+                        <owl:someValuesFrom rdf:resource="http://www.POKIMON#Technique"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.POKIMON#is_Prescribed_By"/>
+                        <owl:someValuesFrom rdf:resource="http://www.POKIMON#Plan_Specification"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#realizes"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Disposition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Probabilistic -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Probabilistic">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Procedure -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Procedure">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Plan_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Occurent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Proposition_Content_Entity -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Proposition_Content_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Attribute_Content_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Quality -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Quality">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Specifically_Dependent_Continuant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#inheres_In"/>
+                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Represented_Model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Quality_Anomaly -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Quality_Anomaly">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Anomaly"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#RBF -->
+
+    <owl:Class rdf:about="http://www.POKIMON#RBF">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Random -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Random">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Random_Specification -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Random_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Action_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Realizable_Entity -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Realizable_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Specifically_Dependent_Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Reasoning_Based_Specification -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Reasoning_Based_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Action_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Reasoning_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Reasoning_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Reference_Space -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Reference_Space">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Independent_Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Relative_Location -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Relative_Location">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Defining_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Representational_Quality -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Representational_Quality">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Represented_Geological_Model -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Represented_Geological_Model">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.POKIMON#Represented_Model"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.POKIMON#represents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.POKIMON#Abstract_Geological_Model"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Represented_Model"/>
+        <rdfs:comment>The spatial dimensions of the represented model should be the same as the abstract model</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Represented_Model -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Represented_Model">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.POKIMON#IQE"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.POKIMON#represents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.POKIMON#Abstract_Model"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#IQE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Resolution -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Resolution">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Representational_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Retrieving_Related_Information -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Retrieving_Related_Information">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Rock_Body -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Rock_Body">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Material_Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Shape"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Shape"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Shape"/>
+                <owl:allValuesFrom rdf:resource="http://www.POKIMON#Shape"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Role -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Role">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Realizable_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Scale -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Scale">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Representational_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Seismic_Profile -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Seismic_Profile">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Geophysical_Surfacic_Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Selection -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Selection">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Continuat_Aggregate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Selection_Algorithm -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Selection_Algorithm">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Selection_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Selection_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Planned_Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Output"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Selection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Shape -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Shape">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Defining_Quality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#is_Specifically_Dependant_On"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Independent_Continuant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Simple_Modify -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Simple_Modify">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Modifying_Entity_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Situation -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Situation">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Specifically_Dependent_Continuant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Part"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Some portion of reality including possible, real, imaginary and impossible objects</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Situation_Selection -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Situation_Selection">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Selection_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Size -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Size">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Defining_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Sketch -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Sketch">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Space_Time_Geological_Model -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Space_Time_Geological_Model">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Abstract_Geological_Model"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Disposition_To_Be_Represented_In"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Spatial_Space"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Disposition_To_Be_Represented_In"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Spatio_Temporal_Space"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Disposition_To_Be_Represented_In"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Temporal_Space"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#satisfies"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#Conceptual_Geological_Model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A model located both in space and time</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Spatial_Dimension -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Spatial_Dimension">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Defining_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Spatial_Space -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Spatial_Space">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Reference_Space"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#has_Dimension"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.POKIMON#Spatial_Dimension"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.POKIMON#Temporal_Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Spatio_Temporal_Space -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Spatio_Temporal_Space">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Reference_Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Specifically_Dependent_Continuant -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Specifically_Dependent_Continuant">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Strategy -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Strategy">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Plan_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Stratigraphic_Column -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Stratigraphic_Column">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Conceptual_Geological_Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Strike_Slip_Fault -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Strike_Slip_Fault">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Fault"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Summary -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Summary">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Proposition_Content_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Surfacic_Figure -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Surfacic_Figure">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Visual_Content_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Syncline -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Syncline">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Fold"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Synform -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Synform">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Fold"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Syntax -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Syntax">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Plan_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Technique -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Technique">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Temporal_Space -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Temporal_Space">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Reference_Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Transect -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Transect">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Physical_Surfacic_Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Unplanned_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Unplanned_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#User_Based -->
+
+    <owl:Class rdf:about="http://www.POKIMON#User_Based">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Technique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#User_Based_Specification -->
+
+    <owl:Class rdf:about="http://www.POKIMON#User_Based_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Action_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Visual_Content_Entity -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Visual_Content_Entity">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Attribute_Content_Entity"/>
+        <rdfs:comment>any type of figure</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Volumetric_Figure -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Volumetric_Figure">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Visual_Content_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Wavelength -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Wavelength">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Defining_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#Workflow -->
+
+    <owl:Class rdf:about="http://www.POKIMON#Workflow">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Plan_Specification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#1D -->
+
+    <owl:Class rdf:about="http://www.POKIMON#1D">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Spatial_Dimension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#2D -->
+
+    <owl:Class rdf:about="http://www.POKIMON#2D">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Spatial_Dimension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#3D -->
+
+    <owl:Class rdf:about="http://www.POKIMON#3D">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Spatial_Dimension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#3D_Structural_Modeling -->
+
+    <owl:Class rdf:about="http://www.POKIMON#3D_Structural_Modeling">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#Modeling_Process"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
