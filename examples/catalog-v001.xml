@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.pk.process_select_situation" uri="pk_pr_select_situation.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.initial-situations" uri="initial_situations.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.initial_anomaly" uri="pk_initial_anomaly.owl"/>
     <uri id="User Entered Import Resolution" name="http://www.pk.initial_inputs" uri="pk_initial_inputs.owl"/>
     <uri id="User Entered Import Resolution" name="http://www.pokimon/observation" uri="observations.ttl"/>
     <uri id="User Entered Import Resolution" name="http://www.pk.observation" uri="observations.ttl"/>

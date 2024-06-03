@@ -19,7 +19,7 @@
         <http://www.POKIMON#bearer_Of> :interpreted_origin ;
         <http://www.POKIMON#explains> <http://www.pk.observation#info_3> ,
                                       <http://www.pk.observation#info_4> ;
-        <http://www.POKIMON#is_About> :part_1_interpreted_carbo .
+        <http://www.POKIMON#is_About> :part_9_interpreted_carbo .
 
 
 ###  http://www.pk.initial_inputs#interpreted_origin
@@ -27,8 +27,8 @@
                              <http://www.POKIMON#Interpreted> .
 
 
-###  http://www.pk.initial_inputs#part_1_interpreted_carbo
-:part_1_interpreted_carbo rdf:type owl:NamedIndividual ,
+###  http://www.pk.initial_inputs#part_9_interpreted_carbo
+:part_9_interpreted_carbo rdf:type owl:NamedIndividual ,
                                    <http://www.POKIMON#Rock_Body> ;
                           <http://www.POKIMON#has_Quality> <http://www.pk.observation#original_location> ;
                           <http://www.POKIMON#is_Part_Of> <http://www.pk.observation#st_laoui_unit_carbo> .
