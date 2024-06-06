@@ -32,9 +32,9 @@
                                                           :conc_model_about_fold_1 .
 
 
-###  http://www.pk.info_retrieval#context_for_selected_situ2
-:context_for_selected_situ2 rdf:type owl:NamedIndividual ,
-                                     <http://www.POKIMON#Context> .
+###  http://www.pk.info_retrieval#context_for_selected_situ2_anom
+:context_for_selected_situ2_anom rdf:type owl:NamedIndividual ,
+                                          <http://www.POKIMON#Context> .
 
 
 ###  http://www.pk.info_retrieval#disposition_of_situ_1_to_be_explained

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.pk.process_of_evaluation" uri="pk_process_of_evaluation.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.conceptual_model_realization" uri="pk_conceptual_model_realization.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.conc_choos_conc" uri="pk_conceptual_model_choosing.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.info_retrieval" uri="pk_info_retrieval.owl"/>
     <uri id="User Entered Import Resolution" name="http://www.pk.process_select_situation" uri="pk_pr_select_situation.owl"/>
     <uri id="User Entered Import Resolution" name="http://www.pk.initial-situations" uri="initial_situations.owl"/>
     <uri id="User Entered Import Resolution" name="http://www.pk.initial_anomaly" uri="pk_initial_anomaly.owl"/>
