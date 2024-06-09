@@ -1,0 +1,83 @@
+PREFIX : <http://www.PKIMON#>
+
+prefix to be changed according to the used uri/ontology iri
+
+
+###########################################
+to get all triples where individuals are related by an object_property: 
+
+SELECT ?subject ?predicate ?object 
+
+WHERE {
+    ?subject ?predicate ?object .
+    ?predicate rdf:type owl:ObjectProperty .
+}
+############################################
+ to get all triples where individuals are related by an data_property: 
+
+SELECT ?subject ?predicate ?object 
+
+WHERE {
+    ?subject ?predicate ?object .
+    ?predicate rdf:type owl:DataProperty .
+}
+
+###########################################
+to get all triples : 
+SELECT ?subject ?predicate ?object 
+
+WHERE {
+    ?subject ?predicate ?object .
+
+}
+
+###########################################
+ to get all instances related by has_Part property: 
+
+SELECT ?subject ?predicate ?object 
+
+WHERE {
+    ?subject ?predicate ?object .
+    ?subject  :has_Part ?object .
+}
+
+
+without showin the has_Part column 
+SELECT ?subject  ?object 
+
+WHERE {
+    ?subject ?predicate ?object .
+    ?subject  :is_About ?object .
+}
+###########################################
+to get all instances of the class space_time_geological_model:
+ 
+SELECT ?Space_Time_Geological_Model  
+
+WHERE {
+    ?Space_Time_Geological_Model rdf:type :Space_Time_Geological_Model  .
+
+}
+
+###########################################
+
+to get all instances of the class space_time_geological_mod, related instances and the predicate without showing the class type assertion
+SELECT ?Space_Time_Geological_Model  ?predicate  ?object 
+
+WHERE {
+    ?Space_Time_Geological_Model rdf:type :Space_Time_Geological_Model  .
+    ?Space_Time_Geological_Model ?predicate ?object .
+    FILTER(?predicate != rdf:type)
+}
+###########################################
+
+
+to get all instances of the class space_time_geological_mod, related instances by the predicate is_About 
+SELECT ?Space_Time_Geological_Model  ?predicate  ?object 
+
+WHERE {
+    ?Space_Time_Geological_Model rdf:type :Space_Time_Geological_Model  .
+    ?Space_Time_Geological_Model :is_About ?object .
+
+}
+###########################################

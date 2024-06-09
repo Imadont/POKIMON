@@ -16,13 +16,17 @@
 ###  http://www.pk.info_retrieval#conc_model_about_fault1
 :conc_model_about_fault1 rdf:type owl:NamedIndividual ,
                                   <http://www.POKIMON#Conceptual_Geological_Model> ;
-                         <http://www.POKIMON#is_About> :fault_1 .
+                         <http://www.POKIMON#has_Part> :descr_11_fault1 ;
+                         <http://www.POKIMON#is_About> :fault_1 ;
+                         <http://www.POKIMON#satisfies> :fact_inter_fault1 .
 
 
 ###  http://www.pk.info_retrieval#conc_model_about_fold_1
 :conc_model_about_fold_1 rdf:type owl:NamedIndividual ,
                                   <http://www.POKIMON#Conceptual_Geological_Model> ;
-                         <http://www.POKIMON#is_About> :fold_1 .
+                         <http://www.POKIMON#has_Part> :descr_10_fold1 ;
+                         <http://www.POKIMON#is_About> :fold_1 ;
+                         <http://www.POKIMON#satisfies> :fact_inter_fold1 .
 
 
 ###  http://www.pk.info_retrieval#context_for_selected_situ1
@@ -37,6 +41,16 @@
                                           <http://www.POKIMON#Context> .
 
 
+###  http://www.pk.info_retrieval#descr_10_fold1
+:descr_10_fold1 rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.info_retrieval#descr_11_fault1
+:descr_11_fault1 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Description> .
+
+
 ###  http://www.pk.info_retrieval#disposition_of_situ_1_to_be_explained
 :disposition_of_situ_1_to_be_explained rdf:type owl:NamedIndividual ,
                                                 <http://www.POKIMON#Disposition> .
@@ -45,6 +59,18 @@
 ###  http://www.pk.info_retrieval#disposition_of_situ_2_to_be_updated
 :disposition_of_situ_2_to_be_updated rdf:type owl:NamedIndividual ,
                                               <http://www.POKIMON#Disposition> .
+
+
+###  http://www.pk.info_retrieval#fact_inter_fault1
+:fact_inter_fault1 rdf:type owl:NamedIndividual ,
+                            <http://www.POKIMON#Interpreted_Fact> ;
+                   <http://www.POKIMON#is_About> :fault_1 .
+
+
+###  http://www.pk.info_retrieval#fact_inter_fold1
+:fact_inter_fold1 rdf:type owl:NamedIndividual ,
+                           <http://www.POKIMON#Interpreted_Fact> ;
+                  <http://www.POKIMON#is_About> :fold_1 .
 
 
 ###  http://www.pk.info_retrieval#fault_1

@@ -44,12 +44,12 @@
 
 ###  http://www.pk.conceptual_model_realization#location2_part9
 :location2_part9 rdf:type owl:NamedIndividual ,
-                          <http://www.POKIMON#Location> .
+                          <http://www.POKIMON#Original_Spatial_Location> .
 
 
 ###  http://www.pk.conceptual_model_realization#location_fold1
 :location_fold1 rdf:type owl:NamedIndividual ,
-                         <http://www.POKIMON#Location> .
+                         <http://www.POKIMON#Original_Spatial_Location> .
 
 
 ###  http://www.pk.conceptual_model_realization#obj_spec_realization

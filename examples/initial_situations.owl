@@ -15,21 +15,21 @@
 
 ###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-900#situ_1
 :situ_1 rdf:type owl:NamedIndividual ,
-                 <http://www.POKIMON#Geologic_Situation> ;
+                 <http://www.POKIMON#Situation> ;
         <http://www.POKIMON#has_Part> <http://www.pk.observation#info_1> ,
                                       <http://www.pk.observation#info_2> .
 
 
 ###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-900#situ_2
 :situ_2 rdf:type owl:NamedIndividual ,
-                 <http://www.POKIMON#Geologic_Situation> ;
+                 <http://www.POKIMON#Situation> ;
         <http://www.POKIMON#has_Part> <http://www.pk.observation#info_5> ,
                                       <http://www.pk.observation#info_6> .
 
 
 ###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-900#situ_3
 :situ_3 rdf:type owl:NamedIndividual ,
-                 <http://www.POKIMON#Geologic_Situation> ;
+                 <http://www.POKIMON#Situation> ;
         <http://www.POKIMON#has_Part> <http://www.pk.observation#info_1> ,
                                       <http://www.pk.observation#info_2> ,
                                       <http://www.pk.observation#info_5> .
