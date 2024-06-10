@@ -1,0 +1,60 @@
+PREFIX pok: <http://www.POKIMON#>
+
+
+
+
+###########################################
+all instances of space_time_geological_model
+
+SELECT ?subject 
+WHERE {
+   ?subject rdf:type pok:Space_Time_Geological_Model .
+
+}
+
+############################################
+all instances of space_time_geological_model that bear an origin (instance of origin or its subclasses)
+
+SELECT ?subject ?object
+
+WHERE {
+   ?subject rdf:type pok:Space_Time_Geological_Model .
+    ?subject  pok:bearer_Of   ?object .
+     {?object rdf:type pok:Origin} UNION {?object rdf:type/rdfs:subClassOf* pok:Origin}
+}
+############################################
+all instances of space_time_geological_model that bear an observed origin
+
+SELECT ?subject ?object
+
+WHERE {
+   ?subject rdf:type pok:Space_Time_Geological_Model .
+   ?subject  pok:bearer_Of   ?object .
+   ?object rdf:type pok:Observed_Origin .
+}
+
+############################################
+all instances of space_time_geological_model that are related to an observed fact
+
+SELECT ?subject ?object
+
+WHERE {
+   ?subject rdf:type pok:Space_Time_Geological_Model .
+   ?subject  pok:satisfies   ?object .
+   ?object rdf:type pok:Observed_Fact .
+}
+
+
+############################################
+all instances of geological_model that are about a rock_body that is part of an instance of a geological unit 
+
+
+SELECT ?subject ?predicate ?object ?predicate2 ?object2
+WHERE {
+    	{?subject rdf:type pok:Geological_Model} UNION {?subject rdf:type/rdfs:subClassOf* pok:Geological_Model}	         
+   	?subject pok:is_About ?object.     
+   	?object rdf:type pok:Rock_Body .                    
+   	?object pok:is_Part_Of ?object2.     
+	?object2 rdf:type pok:st_imad_unit_perm.         #### issues with showin the predicates and also shwoing only is_Part_of the instance not all class in object2
+    	               
+}

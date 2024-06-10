@@ -1,4 +1,4 @@
-PREFIX : <http://www.PKIMON#>
+PREFIX pok: <http://www.POKIMON#>
 
 prefix to be changed according to the used uri/ontology iri
 

@@ -1,0 +1,29 @@
+PREFIX pok: <http://www.POKIMON#>
+
+
+
+
+###########################################
+all instances of Planned_Process that are related to an algorithm
+
+
+SELECT ?processes ?related ?algo 
+WHERE {
+	?processes rdf:type/rdfs:subClassOf* pok:Planned_Process ;
+			   ?related ?algo .
+	?algo rdf:type pok:Algorithm.
+	   }
+
+############################################
+all instances of Planned_Process that are related to an algorithm and their inputs and outputs
+
+
+SELECT DISTINCT ?processes ?related ?algo ?inputs  ?outputs
+WHERE {
+	?processes rdf:type/rdfs:subClassOf* pok:Planned_Process ;
+			   ?related ?algo .
+	?algo rdf:type pok:Algorithm.
+	?processes pok:has_Input ?inputs.
+	?processes pok:has_Output ?outputs.
+	
+}
