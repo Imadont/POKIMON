@@ -45,8 +45,6 @@ WHERE {
 }
 
 
-############################################
-all instances of geological_model that are about a rock_body that is part of an instance of a geological unit 
 
 
 SELECT ?subject ?predicate ?object ?predicate2 ?object2
@@ -57,4 +55,17 @@ WHERE {
    	?object pok:is_Part_Of ?object2.     
 	?object2 rdf:type pok:st_imad_unit_perm.         #### issues with showin the predicates and also shwoing only is_Part_of the instance not all class in object2
     	               
+}
+
+############################################
+all instances of geological_model that are about a rock_body that is part of an instance of a geological unit 
+you can change rdf:type to only 'a' 
+
+SELECT DISTINCT ?subject ?x 
+WHERE  {
+	{?subject rdf:type pok:Geological_Model} UNION {?subject rdf:type/rdfs:subClassOf* pok:Geological_Model}	         
+   	?subject pok:is_About ?x. 
+    	?x rdf:type pok:Rock_Body .   
+            ?x <http://www.POKIMON#is_Part_Of> st:st_imad_unit_perm.   	   
+  	               
 }

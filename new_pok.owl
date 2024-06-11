@@ -1049,7 +1049,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#Physical_Surfacic_Figure
 :Physical_Surfacic_Figure rdf:type owl:Class ;
-                          rdfs:subClassOf :Surfacial_Figure .
+                          rdfs:subClassOf :Planar_Figure .
 
 
 ###  http://www.POKIMON#Physical_Volumetric_Figure
@@ -1068,6 +1068,12 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                                       owl:onProperty :has_Part ;
                                       owl:someValuesFrom :Objective_Specification
                                     ] .
+
+
+###  http://www.POKIMON#Planar_Figure
+:Planar_Figure rdf:type owl:Class ;
+               rdfs:subClassOf :Figurative_Content_Entity ;
+               rdfs:comment "an ICE about 2D entities" .
 
 
 ###  http://www.POKIMON#Planned_Process
@@ -1381,12 +1387,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Summary
 :Summary rdf:type owl:Class ;
          rdfs:subClassOf :Proposition_Content_Entity .
-
-
-###  http://www.POKIMON#Surfacial_Figure
-:Surfacial_Figure rdf:type owl:Class ;
-                  rdfs:subClassOf :Figurative_Content_Entity ;
-                  rdfs:comment "an ICE about 2D entities" .
 
 
 ###  http://www.POKIMON#Syncline
