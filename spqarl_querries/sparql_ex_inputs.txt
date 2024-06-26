@@ -61,11 +61,17 @@ WHERE {
 all instances of geological_model that are about a rock_body that is part of an instance of a geological unit 
 you can change rdf:type to only 'a' 
 
-SELECT DISTINCT ?subject ?x 
-WHERE  {
-	{?subject rdf:type pok:Geological_Model} UNION {?subject rdf:type/rdfs:subClassOf* pok:Geological_Model}	         
-   	?subject pok:is_About ?x. 
-    	?x rdf:type pok:Rock_Body .   
-            ?x <http://www.POKIMON#is_Part_Of> st:st_imad_unit_perm.   	   
-  	               
+PREFIX pok: <http://www.POKIMON#>
+PREFIX unit: <http://www.pk.observation#>
+
+SELECT ?subject ?predicate ?object ?predicate2 ?object2
+WHERE {
+    	{?subject rdf:type pok:Geological_Model} UNION {?subject rdf:type/rdfs:subClassOf* pok:Geological_Model}	         
+   	?subject pok:is_About ?object.     
+   	?object rdf:type pok:Rock_Body .   
+	?object pok:is_Part_Of unit:formation_brejeira_carbo                    
+     	               
 }
+
+
+	BIND(CONCAT( ?subject, "is_About", ?object, "is_Part_Of", ?object2) AS ?SpaceTimeGeologicalModel_isAbout_RockBody_isPartOf_Unit)                  

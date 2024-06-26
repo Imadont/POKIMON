@@ -34,12 +34,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
             rdfs:subPropertyOf :is_About .
 
 
-###  http://www.POKIMON#Is_Output_Of
-:Is_Output_Of rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :participates_In ;
-              owl:inverseOf :has_Output .
-
-
 ###  http://www.POKIMON#Substitutes
 :Substitutes rdf:type owl:ObjectProperty .
 
@@ -139,7 +133,8 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#has_Output
 :has_Output rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :has_Participant .
+            rdfs:subPropertyOf :has_Participant ;
+            owl:inverseOf :is_Output_Of .
 
 
 ###  http://www.POKIMON#has_Part
@@ -174,6 +169,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 :has_Structural_Part rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :has_Part ;
                      owl:inverseOf :is_Structural_Part_Of .
+
+
+###  http://www.POKIMON#hosts
+:hosts rdf:type owl:ObjectProperty ;
+       owl:inverseOf :is_Hosted_By .
 
 
 ###  http://www.POKIMON#inheres_In
@@ -236,6 +236,10 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                 rdfs:range :Information_Entity .
 
 
+###  http://www.POKIMON#is_Hosted_By
+:is_Hosted_By rdf:type owl:ObjectProperty .
+
+
 ###  http://www.POKIMON#is_Input_Of
 :is_Input_Of rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :participates_In .
@@ -244,6 +248,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#is_Origin_Quality_Of
 :is_Origin_Quality_Of rdf:type owl:ObjectProperty ;
                       rdfs:domain :Origin .
+
+
+###  http://www.POKIMON#is_Output_Of
+:is_Output_Of rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :participates_In .
 
 
 ###  http://www.POKIMON#is_Part_Of
@@ -399,12 +408,12 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 :Anomaly rdf:type owl:Class ;
          rdfs:subClassOf :Situation ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty :Is_Output_Of ;
-                           owl:someValuesFrom :Evaluation_Process
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty :has_Anomalic_Part ;
                            owl:someValuesFrom owl:Thing
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :is_Output_Of ;
+                           owl:someValuesFrom :Evaluation_Process
                          ] ;
          rdfs:comment "A specific situation where some entities are not inconsistent according to a rule, law or any entity that governs these entities" .
 
@@ -684,10 +693,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty :satisfies ;
                                     owl:someValuesFrom :Scientific_Information_Entity
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :has_Part ;
-                                    owl:allValuesFrom :Geological_Model
                                   ] .
 
 

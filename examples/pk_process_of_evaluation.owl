@@ -25,10 +25,10 @@
                                                          :obj_spec_evaluation .
 
 
-###  http://www.pk.process_of_evaluation#evaluation_info9_updated
-:evaluation_info9_updated rdf:type owl:NamedIndividual ,
-                                   <http://www.POKIMON#Evaluation> ;
-                          <http://www.POKIMON#inheres_In> <http://www.pk.initial_inputs#info_9> .
+###  http://www.pk.process_of_evaluation#evaluation_info12_updated
+:evaluation_info12_updated rdf:type owl:NamedIndividual ,
+                                    <http://www.POKIMON#Evaluation> ;
+                           <http://www.POKIMON#inheres_In> <http://www.pk.initial_inputs#info_12> .
 
 
 ###  http://www.pk.process_of_evaluation#evaluation_spc_tm_mod_fold1
@@ -42,14 +42,13 @@
                               <http://www.POKIMON#Objective_Specification> .
 
 
-###  http://www.pk.process_of_evaluation#pr_evaluation_info9_updated
-:pr_evaluation_info9_updated rdf:type owl:NamedIndividual ,
-                                      <http://www.POKIMON#Planned_Process> ;
-                             <http://www.POKIMON#bearer_Of> :technique_evaluation_probabilistic_info_9_updated ;
-                             <http://www.POKIMON#has_Input> <http://www.pk.info_retrieval#context_for_selected_situ2_anom> ,
-                                                            <http://www.pk.initial_inputs#info_9> ;
-                             <http://www.POKIMON#has_Output> :evaluation_info9_updated ;
-                             <http://www.POKIMON#is_Prescribed_By> :algo_evaluation_of_models .
+###  http://www.pk.process_of_evaluation#pr_evaluation_info12_updated
+:pr_evaluation_info12_updated rdf:type owl:NamedIndividual ,
+                                       <http://www.POKIMON#Planned_Process> ;
+                              <http://www.POKIMON#bearer_Of> :technique_evaluation_probabilistic_info_12_updated ;
+                              <http://www.POKIMON#has_Input> <http://www.pk.info_retrieval#context_for_selected_situ2_anom> ;
+                              <http://www.POKIMON#has_Output> :evaluation_info12_updated ;
+                              <http://www.POKIMON#is_Prescribed_By> :algo_evaluation_of_models .
 
 
 ###  http://www.pk.process_of_evaluation#pr_evaluation_spc_tm_mod_fold1
@@ -62,9 +61,9 @@
                                 <http://www.POKIMON#is_Prescribed_By> :algo_evaluation_of_models .
 
 
-###  http://www.pk.process_of_evaluation#technique_evaluation_probabilistic_info_9_updated
-:technique_evaluation_probabilistic_info_9_updated rdf:type owl:NamedIndividual ,
-                                                            <http://www.POKIMON#Probabilistic> .
+###  http://www.pk.process_of_evaluation#technique_evaluation_probabilistic_info_12_updated
+:technique_evaluation_probabilistic_info_12_updated rdf:type owl:NamedIndividual ,
+                                                             <http://www.POKIMON#Probabilistic> .
 
 
 ###  http://www.pk.process_of_evaluation#technique_probabilistic_evaluation

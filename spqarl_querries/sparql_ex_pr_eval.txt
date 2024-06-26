@@ -1,0 +1,26 @@
+PREFIX pok: <http://www.POKIMON#>
+PREFIX st: <http://www.pk.observation#>
+PREFIX pkcmc: <http://www.pk.conc_choos_conc#>
+
+
+SELECT DISTINCT ?process  ?algo ?input ?output ?technique ?obj_spec
+WHERE  {
+	{?process rdf:type pok:Planned_Process} UNION {?process rdf:type/rdfs:subClassOf* pok:Planned_Process}	         
+   	?process pok:is_Prescribed_By ?algo; 
+			pok:has_Input ?input; 
+			pok:has_Output ?output;
+			pok:bearer_Of ?technique. 
+	?input a/rdfs:subClassOf* pok:Model .
+	?output a pok:Evaluation
+}
+
+
+PREFIX pok: <http://www.POKIMON#>
+
+
+SELECT ?dec ?process
+WHERE { 
+	?dec rdf:type pok:Decision.
+	?dec pok:is_Output_Of ?process.
+
+ }

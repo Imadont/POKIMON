@@ -27,3 +27,19 @@ WHERE {
 	?processes pok:has_Output ?outputs.
 	
 }
+
+############################################
+
+PREFIX pok: <http://www.POKIMON#>
+PREFIX st: <http://www.pk.observation#>
+
+
+
+SELECT DISTINCT ?subject ?x 
+WHERE  {
+	{?subject rdf:type pok:Geological_Model} UNION {?subject rdf:type/rdfs:subClassOf* pok:Geological_Model}	         
+   	?subject pok:is_About ?x. 
+    	?x rdf:type pok:Rock_Body .   
+            ?x pok:is_Part_Of st:st_imad_unit_perm.   	   
+  	               
+}

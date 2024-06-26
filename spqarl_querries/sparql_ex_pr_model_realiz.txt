@@ -1,0 +1,36 @@
+PREFIX pok: <http://www.POKIMON#>
+PREFIX st: <http://www.pk.observation#>
+PREFIX pkcmc: <http://www.pk.conc_choos_conc#>
+
+SELECT DISTINCT ?process  ?algo ?input ?output ?technique ?obj_spec
+WHERE  {
+	{?process rdf:type pok:Planned_Process} UNION {?process rdf:type/rdfs:subClassOf* pok:Planned_Process}	         
+   	?process pok:is_Prescribed_By ?algo; 
+			pok:has_Input ?input; 
+			pok:has_Output ?output;
+			pok:bearer_Of ?technique. 
+	?algo pok:has_Part ?obj_spec.
+	?obj_spec a pkcmc:obj_spec_conc_mod_chosings. 
+}
+
+
+
+PREFIX pok: <http://www.POKIMON#>
+PREFIX cmrz:  <http://www.pk.conceptual_model_realization#>
+
+SELECT DISTINCT ?process  ?algo ?output ?technique 
+WHERE  {
+	?process pok:is_Prescribed_By ?algo;  pok:has_Output ?output; pok:bearer_Of ?technique.
+	 {BIND(cmrz:pr_realization_of_fold1  AS ?process)}
+	}
+
+
+PREFIX cmrz:  <http://www.pk.conceptual_model_realization#>
+PREFIX infret: <http://www.pk.info_retrieval#>
+
+SELECT DISTINCT ?geomodel  ?relation ?related_ins
+WHERE {
+	BIND( infret:conc_model_about_fold_1 AS ?geomodel).
+  	?geomodel ?relation ?related_ins .
+ 	FILTER (?relation != rdf:type) .
+}
