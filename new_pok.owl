@@ -48,10 +48,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
              rdfs:range :Information_Content_Entity .
 
 
-###  http://www.POKIMON#defines
-:defines rdf:type owl:ObjectProperty .
-
-
 ###  http://www.POKIMON#designates
 :designates rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :is_About .
@@ -63,8 +59,9 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
          owl:inverseOf :is_Detailed_By .
 
 
-###  http://www.POKIMON#disrepects
-:disrepects rdf:type owl:ObjectProperty .
+###  http://www.POKIMON#dissatisfies
+:dissatisfies rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :is_Specifically_Dependant_On .
 
 
 ###  http://www.POKIMON#explains
@@ -219,6 +216,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                 rdfs:subPropertyOf :is_Subject_Of .
 
 
+###  http://www.POKIMON#is_Dissatisfied_By
+:is_Dissatisfied_By rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :has_Specific_Dependant .
+
+
 ###  http://www.POKIMON#is_Evaluation_Of
 :is_Evaluation_Of rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :inheres_In .
@@ -333,10 +335,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
             rdfs:subPropertyOf :concretizes ;
             rdfs:domain :Represented_Model ;
             rdfs:range :Model .
-
-
-###  http://www.POKIMON#respects
-:respects rdf:type owl:ObjectProperty .
 
 
 ###  http://www.POKIMON#satisfies
@@ -459,6 +457,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                 rdfs:subClassOf :Origin .
 
 
+###  http://www.POKIMON#Breccia
+:Breccia rdf:type owl:Class ;
+         rdfs:subClassOf :Rock_Material .
+
+
 ###  http://www.POKIMON#Certainty
 :Certainty rdf:type owl:Class ;
            rdfs:subClassOf :Non_Physical_Temporal_Quality .
@@ -484,6 +487,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Connectionist_Content_Entity
 :Connectionist_Content_Entity rdf:type owl:Class ;
                               rdfs:subClassOf :Depiction_Content_Entity .
+
+
+###  http://www.POKIMON#Constraint
+:Constraint rdf:type owl:Class ;
+            rdfs:subClassOf :Information_Entity .
 
 
 ###  http://www.POKIMON#Context
@@ -628,6 +636,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Fault
 :Fault rdf:type owl:Class ;
        rdfs:subClassOf :Specifically_Dependent_Geological_Structure .
+
+
+###  http://www.POKIMON#Fault_Core_Zone
+:Fault_Core_Zone rdf:type owl:Class ;
+                 rdfs:subClassOf :Spatial_Region .
 
 
 ###  http://www.POKIMON#Feature_Space
@@ -784,6 +797,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Image
 :Image rdf:type owl:Class ;
        rdfs:subClassOf :Physical_Surfacic_Figure .
+
+
+###  http://www.POKIMON#Immaterial_Entity
+:Immaterial_Entity rdf:type owl:Class ;
+                   rdfs:subClassOf :Independent_Continuant .
 
 
 ###  http://www.POKIMON#Implicit_Modeling
@@ -1167,11 +1185,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                       rdfs:subClassOf :Action_Specification .
 
 
-###  http://www.POKIMON#Realism
-:Realism rdf:type owl:Class ;
-         rdfs:subClassOf :Information_Entity .
-
-
 ###  http://www.POKIMON#Realizable_Entity
 :Realizable_Entity rdf:type owl:Class ;
                    rdfs:subClassOf :Specifically_Dependent_Continuant .
@@ -1245,6 +1258,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                              owl:onProperty :has_Shape ;
                              owl:allValuesFrom :Shape
                            ] .
+
+
+###  http://www.POKIMON#Rock_Material
+:Rock_Material rdf:type owl:Class ;
+               rdfs:subClassOf :Material_Entity .
 
 
 ###  http://www.POKIMON#Role
@@ -1359,6 +1377,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Spatial_Location
 :Spatial_Location rdf:type owl:Class ;
                   rdfs:subClassOf :Physical_Quality .
+
+
+###  http://www.POKIMON#Spatial_Region
+:Spatial_Region rdf:type owl:Class ;
+                rdfs:subClassOf :Immaterial_Entity .
 
 
 ###  http://www.POKIMON#Spatial_Space

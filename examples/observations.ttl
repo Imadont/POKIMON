@@ -324,12 +324,12 @@
 
 ###  http://www.pk.observation#minimal_size_for_obj_in_gmdlng_1
 :minimal_size_for_obj_in_gmdlng_1 rdf:type owl:NamedIndividual ,
-                                           <http://www.POKIMON#Size> .
+                                           <http://www.POKIMON#Constraint> .
 
 
 ###  http://www.pk.observation#minimal_wavelength_for_folds_in_gmdlng_1
 :minimal_wavelength_for_folds_in_gmdlng_1 rdf:type owl:NamedIndividual ,
-                                                   <http://www.POKIMON#Wavelength> .
+                                                   <http://www.POKIMON#Constraint> .
 
 
 ###  http://www.pk.observation#observed_origin
@@ -339,9 +339,7 @@
 
 ###  http://www.pk.observation#realism_for_geomodelling_pr1
 :realism_for_geomodelling_pr1 rdf:type owl:NamedIndividual ,
-                                       <http://www.POKIMON#Realism> ;
-                              <http://www.POKIMON#defines> :minimal_size_for_obj_in_gmdlng_1 ,
-                                                           :minimal_wavelength_for_folds_in_gmdlng_1 .
+                                       <http://www.POKIMON#Constraint> .
 
 
 ###  http://www.pk.observation#sample_10_trias
@@ -394,7 +392,8 @@
 
 
 ###  http://www.pk.observation#sample_6_carbo
-:sample_6_carbo rdf:type owl:NamedIndividual ;
+:sample_6_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
                 <http://www.POKIMON#has_Quality> :loc_orig_6 ;
                 <http://www.POKIMON#is_Part_Of> :formation_brejeira_carbo .
 

@@ -22,13 +22,14 @@
 #################################################################
 
 ###  http://www.pk.conceptual_model_realization#spc_time_mod_fold1
-<http://www.pk.conceptual_model_realization#spc_time_mod_fold1> <http://www.POKIMON#respects> <http://www.pk.observation#realism_for_geomodelling_pr1> ;
-                                                                <http://www.POKIMON#satisfies> <http://www.pk.info_retrieval#fact_inter_fold1> ,
+<http://www.pk.conceptual_model_realization#spc_time_mod_fold1> <http://www.POKIMON#satisfies> <http://www.pk.info_retrieval#fact_inter_fold1> ,
                                                                                                <http://www.pk.observation#fact_ob_1> ,
                                                                                                <http://www.pk.observation#fact_ob_2> ,
                                                                                                <http://www.pk.observation#fact_ob_3> ,
                                                                                                <http://www.pk.observation#fact_ob_4> ,
-                                                                                               <http://www.pk.observation#fact_ob_5> .
+                                                                                               <http://www.pk.observation#fact_ob_5> ,
+                                                                                               <http://www.pk.observation#minimal_size_for_obj_in_gmdlng_1> ,
+                                                                                               <http://www.pk.observation#minimal_wavelength_for_folds_in_gmdlng_1> .
 
 
 ###  http://www.pk.process_of_decision#act_spec_user_based_decision

@@ -13,20 +13,24 @@
 #    Individuals
 #################################################################
 
+###  http://www.pk.conceptual_model_realization#spc_time_mod_fold1
+<http://www.pk.conceptual_model_realization#spc_time_mod_fold1> <http://www.POKIMON#is_Output_Of> :pr_interpretation_iter1_fold1 .
+
+
 ###  http://www.pk_pr_interpret#pr_interpretation_iter1_fold1
 :pr_interpretation_iter1_fold1 rdf:type owl:NamedIndividual ,
                                         <http://www.POKIMON#Interpretation_Process> ;
-                               <http://www.POKIMON#has_Input> <http://www.pk.observation#info_1> ,
-                                                              <http://www.pk.observation#info_10> ,
-                                                              <http://www.pk.observation#info_11> ,
-                                                              <http://www.pk.observation#info_2> ,
-                                                              <http://www.pk.observation#info_3> ,
-                                                              <http://www.pk.observation#info_4> ,
-                                                              <http://www.pk.observation#info_5> ,
-                                                              <http://www.pk.observation#info_6> ,
-                                                              <http://www.pk.observation#info_7> ,
-                                                              <http://www.pk.observation#info_8> ,
-                                                              <http://www.pk.observation#info_9> ;
+                               <http://www.POKIMON#has_Input> <http://www.pk.observation#fact_ob_1> ,
+                                                              <http://www.pk.observation#fact_ob_2> ,
+															  <http://www.pk.observation#fact_ob_3> ,
+															  <http://www.pk.observation#fact_ob_4> ,
+															  <http://www.pk.observation#fact_ob_5> ,
+															  <http://www.pk.observation#fact_ob_6> ,
+															  <http://www.pk.observation#fact_ob_7> ,
+															  <http://www.pk.observation#fact_ob_8> ,
+															  <http://www.pk.observation#fact_ob_9> ,
+															  <http://www.pk.observation#fact_ob_10> ,
+															  <http://www.pk.observation#fact_ob_11> ;
                                <http://www.POKIMON#has_Output> <http://www.pk.conceptual_model_realization#spc_time_mod_fold1> ;
                                <http://www.POKIMON#has_Part> <http://www.pk.conc_choos_conc#pr_choosing_conc_model_fold1> ,
                                                              <http://www.pk.conceptual_model_realization#pr_realization_of_fold1> ,

@@ -49,6 +49,11 @@
                           <http://www.POKIMON#Amplitude> .
 
 
+###  http://www.pk.conceptual_model_realization#dce_proposition_desc_fold1
+:dce_proposition_desc_fold1 rdf:type owl:NamedIndividual ,
+                                     <http://www.POKIMON#Proposition_Content_Entity> .
+
+
 ###  http://www.pk.conceptual_model_realization#loc_rock_body_hos_fold1
 :loc_rock_body_hos_fold1 rdf:type owl:NamedIndividual ,
                                   <http://www.POKIMON#Original_Spatial_Location> .
@@ -113,6 +118,7 @@
 ###  http://www.pk.conceptual_model_realization#spc_time_mod_fold1
 :spc_time_mod_fold1 rdf:type owl:NamedIndividual ,
                              <http://www.POKIMON#Space_Time_Geological_Model> ;
+                    <http://www.POKIMON#has_Part> :dce_proposition_desc_fold1 ;
                     <http://www.POKIMON#satisfies> <http://www.pk.info_retrieval#conc_model_about_fold_1> .
 
 
