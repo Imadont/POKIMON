@@ -34,7 +34,8 @@
 ###  http://www.pk.process_of_evaluation#evaluation_spc_tm_mod_fold1
 :evaluation_spc_tm_mod_fold1 rdf:type owl:NamedIndividual ,
                                       <http://www.POKIMON#Evaluation> ;
-                             <http://www.POKIMON#inheres_In> <http://www.pk.conceptual_model_realization#spc_time_mod_fold1> .
+                             <http://www.POKIMON#inheres_In> <http://www.pk.conceptual_model_realization#spc_time_mod_fold1> ;
+                             <http://www.POKIMON#has_Value> "satisfactory" .
 
 
 ###  http://www.pk.process_of_evaluation#obj_spec_evaluation

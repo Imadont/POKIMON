@@ -14,15 +14,39 @@
 #    Individuals
 #################################################################
 
+###  http://www.pk.process_select_situation#act_spec_sequential_selection
+:act_spec_sequential_selection rdf:type owl:NamedIndividual ,
+                                        <http://www.POKIMON#Deterministic_Specification> .
+
+
 ###  http://www.pk.process_select_situation#act_spec_sit_selec1_rand
 :act_spec_sit_selec1_rand rdf:type owl:NamedIndividual ,
                                    <http://www.POKIMON#Random_Specification> .
 
 
+###  http://www.pk.process_select_situation#act_spec_user_based_selection_situ
+:act_spec_user_based_selection_situ rdf:type owl:NamedIndividual ,
+                                             <http://www.POKIMON#User_Based_Specification> .
+
+
 ###  http://www.pk.process_select_situation#algo_pro_sit_select1
 :algo_pro_sit_select1 rdf:type owl:NamedIndividual ,
-                               <http://www.POKIMON#Algorithm> ;
+                               <http://www.POKIMON#Selection_Algorithm> ;
                       <http://www.POKIMON#has_Part> :act_spec_sit_selec1_rand ,
+                                                    :obj_spec_selec_sit .
+
+
+###  http://www.pk.process_select_situation#algo_pro_sit_select2
+:algo_pro_sit_select2 rdf:type owl:NamedIndividual ,
+                               <http://www.POKIMON#Selection_Algorithm> ;
+                      <http://www.POKIMON#has_Part> :act_spec_sequential_selection ,
+                                                    :obj_spec_selec_sit .
+
+
+###  http://www.pk.process_select_situation#algo_pro_sit_select3
+:algo_pro_sit_select3 rdf:type owl:NamedIndividual ,
+                               <http://www.POKIMON#Selection_Algorithm> ;
+                      <http://www.POKIMON#has_Part> :act_spec_user_based_selection_situ ,
                                                     :obj_spec_selec_sit .
 
 
@@ -33,7 +57,7 @@
 
 ###  http://www.pk.process_select_situation#pro_situ_select_1
 :pro_situ_select_1 rdf:type owl:NamedIndividual ,
-                            <http://www.POKIMON#Planned_Process> ;
+                            <http://www.POKIMON#Selection_Process> ;
                    <http://www.POKIMON#bearer_Of> :random_technique_for_selection_1 ;
                    <http://www.POKIMON#has_Input> <http://www.pk.init_situations#situ_1> ,
                                                   <http://www.pk.init_situations#situ_2> ,

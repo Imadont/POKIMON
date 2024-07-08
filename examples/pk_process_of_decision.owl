@@ -21,6 +21,16 @@
 #    Individuals
 #################################################################
 
+###  http://www.pk.conceptual_model_realization#spc_time_mod_fold1
+<http://www.pk.conceptual_model_realization#spc_time_mod_fold1> <http://www.POKIMON#respects> <http://www.pk.observation#realism_for_geomodelling_pr1> ;
+                                                                <http://www.POKIMON#satisfies> <http://www.pk.info_retrieval#fact_inter_fold1> ,
+                                                                                               <http://www.pk.observation#fact_ob_1> ,
+                                                                                               <http://www.pk.observation#fact_ob_2> ,
+                                                                                               <http://www.pk.observation#fact_ob_3> ,
+                                                                                               <http://www.pk.observation#fact_ob_4> ,
+                                                                                               <http://www.pk.observation#fact_ob_5> .
+
+
 ###  http://www.pk.process_of_decision#act_spec_user_based_decision
 :act_spec_user_based_decision rdf:type owl:NamedIndividual ,
                                        <http://www.POKIMON#Action_Specification> .
@@ -37,7 +47,8 @@
 :decision_to_keep_spc_model_fold1 rdf:type owl:NamedIndividual ,
                                            <http://www.POKIMON#Decision> ;
                                   <http://www.POKIMON#is_About> <http://www.pk.conceptual_model_realization#spc_time_mod_fold1> ;
-                                  <http://www.POKIMON#is_Output_Of> :pr_decision_model_fold1 .
+                                  <http://www.POKIMON#is_Output_Of> :pr_decision_model_fold1 ;
+                                  <http://www.POKIMON#has_Value> 1 .
 
 
 ###  http://www.pk.process_of_decision#decision_to_keep_updated_info12
