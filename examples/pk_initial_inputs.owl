@@ -33,7 +33,6 @@
                                        <http://www.pk.observation#info_8> ,
                                        <http://www.pk.observation#info_9> ;
          <http://www.POKIMON#has_Part> :descr_12 ;
-         <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :part_12_interpreted_trias ;
          <http://www.POKIMON#is_About> :part_12_interpreted_trias ;
          <http://www.POKIMON#satisfies> :fact_inte_12 .
 

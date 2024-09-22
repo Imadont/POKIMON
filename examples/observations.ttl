@@ -162,7 +162,6 @@
                  <http://www.POKIMON#Space_Time_Geological_Model> ;
         <http://www.POKIMON#bearer_Of> :observed_origin ;
         <http://www.POKIMON#has_Part> :descr_1 ;
-        <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_1_carbo ;
         <http://www.POKIMON#is_About> :sample_1_carbo ;
         <http://www.POKIMON#satisfies> :fact_ob_1 .
 
@@ -172,7 +171,6 @@
                   <http://www.POKIMON#Space_Time_Geological_Model> ;
          <http://www.POKIMON#bearer_Of> :observed_origin ;
          <http://www.POKIMON#has_Part> :descr_10 ;
-         <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_10_trias ;
          <http://www.POKIMON#is_About> :sample_10_trias ;
          <http://www.POKIMON#satisfies> :fact_ob_10 .
 
@@ -182,7 +180,6 @@
                   <http://www.POKIMON#Space_Time_Geological_Model> ;
          <http://www.POKIMON#bearer_Of> :observed_origin ;
          <http://www.POKIMON#has_Part> :descr_11 ;
-         <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_11_trias ;
          <http://www.POKIMON#is_About> :sample_11_trias ;
          <http://www.POKIMON#satisfies> :fact_ob_11 .
 
@@ -192,7 +189,6 @@
                  <http://www.POKIMON#Space_Time_Geological_Model> ;
         <http://www.POKIMON#bearer_Of> :observed_origin ;
         <http://www.POKIMON#has_Part> :descr_2 ;
-        <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_2_carbo ;
         <http://www.POKIMON#is_About> :sample_2_carbo ;
         <http://www.POKIMON#satisfies> :fact_ob_2 .
 
@@ -202,7 +198,6 @@
                  <http://www.POKIMON#Space_Time_Geological_Model> ;
         <http://www.POKIMON#bearer_Of> :observed_origin ;
         <http://www.POKIMON#has_Part> :descr_3 ;
-        <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_3_carbo ;
         <http://www.POKIMON#is_About> :sample_3_carbo ;
         <http://www.POKIMON#satisfies> :fact_ob_3 .
 
@@ -212,7 +207,6 @@
                  <http://www.POKIMON#Space_Time_Geological_Model> ;
         <http://www.POKIMON#bearer_Of> :observed_origin ;
         <http://www.POKIMON#has_Part> :descr_4 ;
-        <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_4_carbo ;
         <http://www.POKIMON#is_About> :sample_4_carbo ;
         <http://www.POKIMON#satisfies> :fact_ob_4 .
 
@@ -222,7 +216,6 @@
                  <http://www.POKIMON#Space_Time_Geological_Model> ;
         <http://www.POKIMON#bearer_Of> :observed_origin ;
         <http://www.POKIMON#has_Part> :descr_5 ;
-        <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_5_carbo ;
         <http://www.POKIMON#is_About> :sample_5_carbo ;
         <http://www.POKIMON#satisfies> :fact_ob_5 .
 
@@ -232,7 +225,6 @@
                  <http://www.POKIMON#Space_Time_Geological_Model> ;
         <http://www.POKIMON#bearer_Of> :observed_origin ;
         <http://www.POKIMON#has_Part> :descr_6 ;
-        <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_6_carbo ;
         <http://www.POKIMON#is_About> :sample_6_carbo ;
         <http://www.POKIMON#satisfies> :fact_ob_6 .
 
@@ -242,7 +234,6 @@
                  <http://www.POKIMON#Space_Time_Geological_Model> ;
         <http://www.POKIMON#bearer_Of> :observed_origin ;
         <http://www.POKIMON#has_Part> :descr_7 ;
-        <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_7_carbo ;
         <http://www.POKIMON#is_About> :sample_7_carbo ;
         <http://www.POKIMON#satisfies> :fact_ob_7 .
 
@@ -252,7 +243,6 @@
                  <http://www.POKIMON#Space_Time_Geological_Model> ;
         <http://www.POKIMON#bearer_Of> :observed_origin ;
         <http://www.POKIMON#has_Part> :descr_8 ;
-        <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_8_trias ;
         <http://www.POKIMON#is_About> :sample_8_trias ;
         <http://www.POKIMON#satisfies> :fact_ob_8 .
 
@@ -262,7 +252,6 @@
                  <http://www.POKIMON#Space_Time_Geological_Model> ;
         <http://www.POKIMON#bearer_Of> :observed_origin ;
         <http://www.POKIMON#has_Part> :descr_9 ;
-        <http://www.POKIMON#inherits_All_Geological_Qualities_Of> :sample_9_trias ;
         <http://www.POKIMON#is_About> :sample_9_trias ;
         <http://www.POKIMON#satisfies> :fact_ob_9 .
 

@@ -47,7 +47,7 @@
 ###  http://www.pk_rejected_model_fold2#spc_tm_geomodel_fold0
 :spc_tm_geomodel_fold0 rdf:type owl:NamedIndividual ,
                                 <http://www.POKIMON#Space_Time_Geological_Model> ;
-                       <http://www.POKIMON#dissatisfy> <http://www.pk.observation#minimal_wavelength_for_folds_in_gmdlng_1> ;
+                       <http://www.POKIMON#contradicts> <http://www.pk.observation#minimal_wavelength_for_folds_in_gmdlng_1> ;
                        <http://www.POKIMON#has_Evaluation> :evaluation_fold0 ;
                        <http://www.POKIMON#is_Subject_Of> :decision_fold0 ;
                        <http://www.POKIMON#satisfies> <http://www.pk.observation#fact_ob_1> ,

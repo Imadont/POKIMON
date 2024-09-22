@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.POKIMON" uri="file:/D:/ownCloud/modeling%20formalization/POKIMON/new_pok.owl"/>
     <uri id="User Entered Import Resolution" name="http://www.pk.process_of_decision" uri="pk_process_of_decision.owl"/>
     <uri id="User Entered Import Resolution" name="http://www.pk.init_situations" uri="pk_init_situations.owl"/>
     <uri id="User Entered Import Resolution" name="http://www.pk.process_of_evaluation" uri="pk_process_of_evaluation.owl"/>
