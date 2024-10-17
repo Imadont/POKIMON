@@ -34,6 +34,10 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
             rdfs:subPropertyOf :is_About .
 
 
+###  http://www.POKIMON#alters_For_Representation
+:alters_For_Representation rdf:type owl:ObjectProperty .
+
+
 ###  http://www.POKIMON#bearer_Of
 :bearer_Of rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :has_Specific_Dependant ;
@@ -315,6 +319,10 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
             rdfs:subPropertyOf :is_About .
 
 
+###  http://www.POKIMON#provides_Representation_For
+:provides_Representation_For rdf:type owl:ObjectProperty .
+
+
 ###  http://www.POKIMON#realizes
 :realizes rdf:type owl:ObjectProperty ;
           rdfs:domain :Process ;
@@ -417,11 +425,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                            owl:someValuesFrom :Evaluation_Process
                          ] ;
          rdfs:comment "A specific situation where some entities are not inconsistent according to a rule, law or any entity that governs these entities" .
-
-
-###  http://www.POKIMON#Anthropic_Process
-:Anthropic_Process rdf:type owl:Class ;
-                   rdfs:subClassOf :Process .
 
 
 ###  http://www.POKIMON#Anticline
@@ -1005,8 +1008,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#Modeling_Process
 :Modeling_Process rdf:type owl:Class ;
-                  rdfs:subClassOf :Anthropic_Process ,
-                                  :Planned_Process .
+                  rdfs:subClassOf :Planned_Process .
 
 
 ###  http://www.POKIMON#Modifying_Entity_Algoirhtm
@@ -1021,7 +1023,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#Natural_Process
 :Natural_Process rdf:type owl:Class ;
-                 owl:equivalentClass [ owl:intersectionOf ( :Process
+                 owl:equivalentClass [ owl:intersectionOf ( :Unplanned_Process
                                                             [ rdf:type owl:Restriction ;
                                                               owl:onProperty :is_Governed_By ;
                                                               owl:allValuesFrom :Geological_Law
@@ -1029,7 +1031,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                                                           ) ;
                                        rdf:type owl:Class
                                      ] ;
-                 rdfs:subClassOf :Process ,
+                 rdfs:subClassOf :Unplanned_Process ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :is_Governed_By ;
                                    owl:someValuesFrom :Geological_Law
@@ -1075,8 +1077,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#Observation_Process
 :Observation_Process rdf:type owl:Class ;
-                     rdfs:subClassOf :Anthropic_Process ,
-                                     :Planned_Process .
+                     rdfs:subClassOf :Planned_Process .
 
 
 ###  http://www.POKIMON#Observed_Fact
@@ -1533,6 +1534,14 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#Unplanned_Process
 :Unplanned_Process rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :Process
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :is_Governed_By ;
+                                                                owl:allValuesFrom :Norm
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
                    rdfs:subClassOf :Process .
 
 
