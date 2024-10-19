@@ -909,6 +909,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                    rdfs:subClassOf :Technique .
 
 
+###  http://www.POKIMON#Interpolation_Process
+:Interpolation_Process rdf:type owl:Class ;
+                       rdfs:subClassOf :Estimation_Process .
+
+
 ###  http://www.POKIMON#Interpretation_Process
 :Interpretation_Process rdf:type owl:Class ;
                         rdfs:subClassOf :Planned_Process ,

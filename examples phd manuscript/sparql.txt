@@ -1,6 +1,19 @@
 
 PREFIX pok: <http://www.POKIMON#>
 
+### select geomodels and the DCEs that provide representation for these models
+
+SELECT DISTINCT ?geomodels  ?dep_cont_ent 										
+WHERE  {
+ 	 {?geomodels rdf:type pok:Geomodel} UNION 
+		{?geomodels rdf:type/rdfs:subClassOf* pok:Geomodel}
+	?dep_cont_ent pok:provides_Representation_For ?geomodels .
+}
+
+
+
+
+
 SELECT DISTINCT ?inter_prss  ?inputs ?outputs ?parts
 WHERE  {
    	?inter_prss rdf:type pok:Interpretation_Process;
