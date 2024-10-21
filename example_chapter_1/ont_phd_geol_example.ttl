@@ -1,0 +1,289 @@
+@prefix : <http://www.example.org/phd_geo_example#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/phd_geo_example#> .
+
+<http://www.example.org/phd_geo_example#> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.example.org/phd_geo_example#resultFrom
+:resultFrom rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.example.org/phd_geo_example#cuts
+:cuts rdf:type owl:ObjectProperty ;
+      rdfs:domain :Fault ;
+      rdfs:range :GeologicalUnit ;
+      rdfs:label "cuts" .
+
+
+###  http://www.example.org/phd_geo_example#isOlderThan
+:isOlderThan rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isYoungerThan ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Fault
+                                         :GeologicalUnit
+                                       )
+                         ] ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Fault
+                                        :GeologicalUnit
+                                      )
+                        ] ;
+             rdfs:label "isOlderThan" .
+
+
+###  http://www.example.org/phd_geo_example#isYoungerThan
+:isYoungerThan rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Fault
+                                           :GeologicalUnit
+                                         )
+                           ] ;
+               rdfs:range [ rdf:type owl:Class ;
+                            owl:unionOf ( :Fault
+                                          :GeologicalUnit
+                                        )
+                          ] ;
+               rdfs:label "isYoungerThan" .
+
+
+###  http://www.example.org/phd_geo_example#resultsFrom
+:resultsFrom rdf:type owl:ObjectProperty ;
+             rdfs:domain :GeologicalObject ;
+             rdfs:range :Event .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.example.org/phd_geo_example#hasTimeOfOccurrence
+:hasTimeOfOccurrence rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Event ;
+                     rdfs:range xsd:float ;
+                     rdfs:label "hasTimeOfOccurrence" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.example.org/phd_geo_example#DepositionEvent
+:DepositionEvent rdf:type owl:Class ;
+                 rdfs:subClassOf :Event .
+
+
+###  http://www.example.org/phd_geo_example#Event
+:Event rdf:type owl:Class ;
+       rdfs:label "Event" .
+
+
+###  http://www.example.org/phd_geo_example#Fault
+:Fault rdf:type owl:Class ;
+       rdfs:subClassOf :GeologicalObject ;
+       rdfs:label "Fault" .
+
+
+###  http://www.example.org/phd_geo_example#FaultingEvent
+:FaultingEvent rdf:type owl:Class ;
+               rdfs:subClassOf :Event .
+
+
+###  http://www.example.org/phd_geo_example#GeologicalObject
+:GeologicalObject rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :resultsFrom ;
+                                    owl:someValuesFrom :Event
+                                  ] .
+
+
+###  http://www.example.org/phd_geo_example#GeologicalUnit
+:GeologicalUnit rdf:type owl:Class ;
+                rdfs:subClassOf :GeologicalObject ;
+                rdfs:label "GeologicalUnit" .
+
+
+###  http://www.example.org/phd_geo_example#ListricFault
+:ListricFault rdf:type owl:Class ;
+              rdfs:subClassOf :Fault ;
+              rdfs:label "ListricFault" .
+
+
+###  http://www.example.org/phd_geo_example#Shear
+:Shear rdf:type owl:Class ;
+       rdfs:subClassOf :Fault .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.example.org/phd_geo_example#SASZ
+:SASZ rdf:type owl:NamedIndividual ,
+               :Shear ;
+      :resultsFrom :faulting_event_SASZ .
+
+
+###  http://www.example.org/phd_geo_example#depos_cenozoic
+:depos_cenozoic rdf:type owl:NamedIndividual ,
+                         :DepositionEvent ;
+                :hasTimeOfOccurrence 30 .
+
+
+###  http://www.example.org/phd_geo_example#depos_ordovician
+:depos_ordovician rdf:type owl:NamedIndividual ,
+                           :DepositionEvent ;
+                  :hasTimeOfOccurrence "450.0"^^xsd:float .
+
+
+###  http://www.example.org/phd_geo_example#faulting_event_SASZ
+:faulting_event_SASZ rdf:type owl:NamedIndividual ,
+                              :FaultingEvent ;
+                     :hasTimeOfOccurrence "300.0"^^xsd:float .
+
+
+###  http://www.example.org/phd_geo_example#gres_armoricain
+:gres_armoricain rdf:type owl:NamedIndividual ,
+                          :GeologicalUnit ;
+                 :resultsFrom :depos_ordovician .
+
+
+###  http://www.example.org/phd_geo_example#neogene_units
+:neogene_units rdf:type owl:NamedIndividual ,
+                        :GeologicalUnit ;
+               :resultsFrom :depos_cenozoic .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:fault rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:unit rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:objA rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:objB rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:eventA rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:eventB rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:timeA rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:timeB rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S2" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Fault ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :fault
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :GeologicalUnit ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :unit
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :isOlderThan ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :unit ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :fault
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :cuts ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :fault ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :unit
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S1" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :GeologicalObject ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :objA
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :GeologicalObject ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :objB
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :resultsFrom ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :objA ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :eventA
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :resultsFrom ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :objB ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :eventB
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasTimeOfOccurrence ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :eventA ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> :timeA
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasTimeOfOccurrence ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> :eventB ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> :timeB
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#arguments> ( :timeA
+                                                                                                                                                                      :timeB
+                                                                                                                                                                    )
+                                                                                                                       ] ;
+                                                                                                             rdf:rest rdf:nil
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :isOlderThan ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :objB ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :objA
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
