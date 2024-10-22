@@ -92,6 +92,12 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                    owl:inverseOf :is_Anomalic_Part_Of .
 
 
+###  http://www.POKIMON#has_Depiction_Component
+:has_Depiction_Component rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         owl:inverseOf :provides_Depiction_For .
+
+
 ###  http://www.POKIMON#has_Dimension
 :has_Dimension rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :has_Quality ;
@@ -158,6 +164,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
              rdfs:subPropertyOf :bearer_Of ;
              owl:inverseOf :is_Quality_Of ;
              rdfs:range :Quality .
+
+
+###  http://www.POKIMON#has_Semantic_Component
+:has_Semantic_Component rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :provides_Semantic_Component .
 
 
 ###  http://www.POKIMON#has_Shape
@@ -319,8 +330,12 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
             rdfs:subPropertyOf :is_About .
 
 
-###  http://www.POKIMON#provides_Representation_For
-:provides_Representation_For rdf:type owl:ObjectProperty .
+###  http://www.POKIMON#provides_Depiction_For
+:provides_Depiction_For rdf:type owl:ObjectProperty .
+
+
+###  http://www.POKIMON#provides_Semantic_Component
+:provides_Semantic_Component rdf:type owl:ObjectProperty .
 
 
 ###  http://www.POKIMON#realizes
@@ -1362,6 +1377,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                                      owl:onProperty :has_Output ;
                                      owl:someValuesFrom :Selection
                                    ] .
+
+
+###  http://www.POKIMON#Semantic_Content_Entity
+:Semantic_Content_Entity rdf:type owl:Class ;
+                         rdfs:subClassOf :Information_Content_Entity .
 
 
 ###  http://www.POKIMON#Shape
