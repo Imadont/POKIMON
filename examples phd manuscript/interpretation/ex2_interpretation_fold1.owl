@@ -13,10 +13,6 @@
 #    Individuals
 #################################################################
 
-###  http://www.ex2_creation_of_model_fold1#geomodel_fold1
-<http://www.ex2_creation_of_model_fold1#geomodel_fold1> <http://www.POKIMON#satisfies> <http://www.ex2_creation_of_model_fold1#fact_intepreted_fold1> .
-
-
 ###  http://www.ex2_interpretation_fold1#algo_interpretation
 :algo_interpretation rdf:type owl:NamedIndividual ,
                               <http://www.POKIMON#Algorithm> .

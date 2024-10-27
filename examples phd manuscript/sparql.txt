@@ -1,17 +1,77 @@
 
 PREFIX pok: <http://www.POKIMON#>
 
+############################################
+## use case 1
+
 ### select geomodels and the DCEs that provide representation for these models
 
-SELECT DISTINCT ?geomodels  ?dep_cont_ent 										
+SELECT DISTINCT  ?geomodels   ?sema_cont ?depic_cont								?a											
 WHERE  {
  	 {?geomodels rdf:type pok:Geomodel} UNION 
 		{?geomodels rdf:type/rdfs:subClassOf* pok:Geomodel}
-	?dep_cont_ent pok:provides_Representation_For ?geomodels .
+	?geomodels pok:has_Depiction_Component ?depic_cont ;
+		pok:has_Semantic_Component ?sema_cont
+
 }
 
 
+## objects describes by the semantic comp of geomodels
+SELECT DISTINCT  ?sema_cont ?geol_ent						?a
+WHERE  {
+	?sema_cont  rdf:type pok:Semantic_Content_Entity;
+		pok:has_Semantic_Component ?geol_ent	
 
+}
+ORDER BY ?sema_cont
+
+############################################
+## use case 2
+
+SELECT DISTINCT ?space_time_geom  ?concept_geom ?geol_ent 										
+WHERE  {
+	?space_time_geom rdf:type pok:Space_Time_Geological_Model;
+		pok:satisfies ?concept_geom;
+		pok:describes ?geol_ent
+}
+ORDER BY ?space_time_geom
+
+
+############################################
+## use case 3
+### substitution
+SELECT ?geomodels  ?relation ?relatedModel							
+WHERE { 
+  ?geomodels rdf:type pok:Space_Time_Geological_Model;
+            ?relation ?relatedModel .
+  ?relatedModel rdf:type pok:Space_Time_Geological_Model.
+}
+### simplification
+SELECT ?geomodels  ?relation ?relatedModel							
+WHERE { 
+  ?geomodels rdf:type pok:Space_Time_Geological_Model;
+            ?relation ?relatedModel .
+  ?relatedModel rdf:type pok:Space_Time_Geological_Model.
+}
+
+### altering 
+SELECT ?geomodels  ?geol_ent							
+WHERE  {
+ 	 {?geomodels rdf:type pok:Geomodel} UNION 
+		{?geomodels rdf:type/rdfs:subClassOf* pok:Geomodel}
+	?dep_cont_ent pok:describes ?geol_ent
+}
+### reference model
+SELECT DISTINCT ?geomodels  ?geol_ent 														
+WHERE  {
+ 	 {?geomodels rdf:type pok:Geomodel} UNION 
+		{?geomodels rdf:type/rdfs:subClassOf* pok:Geomodel}
+	?geomodels pok:describes ?geol_ent .
+}
+ORDER BY ?geomodels ?geol_ent
+
+############################################
+## use case 4
 
 
 SELECT DISTINCT ?inter_prss  ?inputs ?outputs ?parts
@@ -28,83 +88,22 @@ WHERE  {
 			pok:has_Part?parts;
 } ORDER BY ?parts
 
+############################################
+## use case 5
 
-# 
-
-#situations
-
-PREFIX pok: <http://www.POKIMON#>
-
-SELECT DISTINCT ?situations  ?parts ?subjets ?information  ?observed_facts  ?outputs
+SELECT DISTINCT ?interpolation_process ?algo ?inputs														
 WHERE  {
-   	?situations rdf:type Situation ;	
-			pok:has_Part ?parts.
-	?parts		pok:is_About ?subjets;
-} ORDER BY ?siutations
-
-
-## final geomodel 
-
-SELECT ?geomodels ?parts   											?info ?b
-WHERE { 
-	{?geomodels rdf:type pok:Geomodel} UNION 
-	{?geomodels rdf:type/rdfs:subClassOf* pok:Geomodel}
-	?geomodels pok:has_Part ?parts
-} ORDER BY ?geomodels	    
-
-
-
-## algorithm for selection
-SELECT DISTINCT   ?algorithms  ?parts ?parts_classes								 ?outputs 			?results
-WHERE  {
-   	?algorithms rdf:type pok:Selection_Algorithm;
-			pok:has_Part ?parts.
-  	?parts rdf:type ?parts_classes .
-  FILTER (?parts_classes != owl:NamedIndividual)
-
-
-## satsification of geological knowledge
-
-SELECT ?geomodels ?norms   											?info ?b
-WHERE { 
-	{?geomodels rdf:type pok:Geomodel} UNION 
-	{?geomodels rdf:type/rdfs:subClassOf* pok:Geomodel}
-	?geomodels pok:satisfies ?norms.
-	?norms rdf:type pok:Geological_Principle.
-} ORDER BY ?geomodels	
-
-
-
-# geomodels and asserted relations
-PREFIX gmd: <http://www.ex2_creation_of_model_fold1#>
-SELECT  DISTINCT ?geomodel  ?relation ?related_ins							?rend
-WHERE {
-  	?geomodel ?relation ?related_ins .
-	?geomodel rdf:type pok:Space_Time_Geological_Model
- 	FILTER (?relation != rdf:type) .
+ 	?interpolation_process rdf:type pok:Interpolation_Process;
+		pok:is_Prescribed_By ?algo;
+		ppk:has_Input ?inputs
+	?geomodels pok:describes ?geol_ent .
 }
+ORDER BY ?geomodels ?geol_ent
 
-
-# show decisions /evaluations (must change by evaluation)
-
-
-SELECT ?geomodels ?decisions ?values								?info ?b
-WHERE {
-	{ ?geomodels rdf:type pok:Geomodel   } UNION 
-	{?geomodels rdf:type/rdfs:subClassOf* pok:Geomodel  }
-	?decisions rdf:type pok:Decision;
-             		pok:is_About ?geomodels;
-			pok:has_Value ?values
-   }
-
-## this query works but it changes the values (be careful)
-
-SELECT ?geomodels ?decisions (STR(?valuesxml) AS ?values) 							?info ?b
-WHERE { {
-    	?geomodels rdf:type pok:Geomodel} UNION 
-	{?geomodels rdf:type/rdfs:subClassOf* pok:Geomodel}
-	?decisions rdf:type pok:Decision;
-            		pok:is_About ?geomodels.
-	OPTIONAL {?decisions pok:has_Value ?valuesxml.
-  }}
-
+SELECT DISTINCT ?geomodels  ?geol_ent 														
+WHERE  {
+ 	 {?geomodels rdf:type pok:Geomodel} UNION 
+		{?geomodels rdf:type/rdfs:subClassOf* pok:Geomodel}
+	?geomodels pok:describes ?geol_ent .
+}
+ORDER BY ?geomodels ?geol_ent

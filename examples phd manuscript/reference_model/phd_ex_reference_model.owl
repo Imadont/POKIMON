@@ -1,0 +1,128 @@
+@prefix : <http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.phd_ex_reference_model> .
+
+<http://www.phd_ex_reference_model> rdf:type owl:Ontology ;
+                                     owl:imports <http://www.POKIMON> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#altering_conceptual_geomodel
+:altering_conceptual_geomodel rdf:type owl:NamedIndividual ,
+                                       <http://www.POKIMON#Conceptual_Geological_Model> ;
+                              <http://www.POKIMON#alters_For_Representation> :realistic_conceptual_geomodel ;
+                              <http://www.POKIMON#has_Semantic_Component> :contact_B1_A ,
+                                                             :contact_B2_B1 ,
+                                                             :contact_C_B2 ,
+                                                             :contact_D_C ,
+                                                             :unit_A ,
+                                                             :unit_B1 ,
+                                                             :unit_B2 ,
+                                                             :unit_C ,
+                                                             :unit_D ;
+                              <http://www.POKIMON#satisfies> :lithostratigraphic_criteria ,
+                                                             :tectonostratigraphic_criteria .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#contact_B1_A
+:contact_B1_A rdf:type owl:NamedIndividual ,
+                       <http://www.POKIMON#Conformable_Contact> ;
+              <http://www.POKIMON#has_Overlying_rock_Body> :unit_B1 ;
+              <http://www.POKIMON#has_Underlying_rock_Body> :unit_A .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#contact_B2_B1
+:contact_B2_B1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Conformable_Contact> ;
+               <http://www.POKIMON#has_Overlying_rock_Body> :unit_B2 ;
+               <http://www.POKIMON#has_Underlying_rock_Body> :unit_B1 .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#contact_B_A
+:contact_B_A rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Conformable_Contact> ;
+             <http://www.POKIMON#has_Overlying_rock_Body> :unit_B ;
+             <http://www.POKIMON#has_Underlying_rock_Body> :unit_A .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#contact_C_B
+:contact_C_B rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Conformable_Contact> ;
+             <http://www.POKIMON#has_Overlying_rock_Body> :unit_C ;
+             <http://www.POKIMON#has_Underlying_rock_Body> :unit_B .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#contact_C_B2
+:contact_C_B2 rdf:type owl:NamedIndividual ,
+                       <http://www.POKIMON#Conformable_Contact> ;
+              <http://www.POKIMON#has_Overlying_rock_Body> :unit_C ;
+              <http://www.POKIMON#has_Underlying_rock_Body> :unit_B2 .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#contact_D_C
+:contact_D_C rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Conformable_Contact> ;
+             <http://www.POKIMON#has_Overlying_rock_Body> :unit_D ;
+             <http://www.POKIMON#has_Underlying_rock_Body> :unit_C .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#lithostratigraphic_criteria
+:lithostratigraphic_criteria rdf:type owl:NamedIndividual ,
+                                      <http://www.POKIMON#Criterium_Unit_Distinction> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#realistic_conceptual_geomodel
+:realistic_conceptual_geomodel rdf:type owl:NamedIndividual ,
+                                        <http://www.POKIMON#Conceptual_Geological_Model> ;
+                               <http://www.POKIMON#has_Semantic_Component> :contact_B_A ,
+                                                              :contact_C_B ,
+                                                              :contact_D_C ,
+                                                              :unit_A ,
+                                                              :unit_B ,
+                                                              :unit_C ,
+                                                              :unit_D ;
+                               <http://www.POKIMON#satisfies> :lithostratigraphic_criteria .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#tectonostratigraphic_criteria
+:tectonostratigraphic_criteria rdf:type owl:NamedIndividual ,
+                                        <http://www.POKIMON#Criterium_Unit_Distinction> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#unit_A
+:unit_A rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#unit_B
+:unit_B rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#unit_B1
+:unit_B1 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#unit_B2
+:unit_B2 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#unit_C
+:unit_C rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1323#unit_D
+:unit_D rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

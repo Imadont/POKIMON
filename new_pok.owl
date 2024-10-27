@@ -57,6 +57,10 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
              rdfs:subPropertyOf :is_Specifically_Dependant_On .
 
 
+###  http://www.POKIMON#describes
+:describes rdf:type owl:ObjectProperty .
+
+
 ###  http://www.POKIMON#designates
 :designates rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :is_About .
@@ -64,7 +68,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#details
 :details rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :is_About ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
          owl:inverseOf :is_Detailed_By .
 
 
@@ -94,8 +98,8 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#has_Depiction_Component
 :has_Depiction_Component rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf owl:topObjectProperty ;
-                         owl:inverseOf :provides_Depiction_For .
+                         rdfs:subPropertyOf :has_Part ;
+                         owl:inverseOf :provides_Depiction_Component_For .
 
 
 ###  http://www.POKIMON#has_Dimension
@@ -148,6 +152,10 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
             owl:inverseOf :is_Output_Of .
 
 
+###  http://www.POKIMON#has_Overlying_rock_Body
+:has_Overlying_rock_Body rdf:type owl:ObjectProperty .
+
+
 ###  http://www.POKIMON#has_Part
 :has_Part rdf:type owl:ObjectProperty ;
           owl:inverseOf :is_Part_Of .
@@ -168,7 +176,8 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#has_Semantic_Component
 :has_Semantic_Component rdf:type owl:ObjectProperty ;
-                        owl:inverseOf :provides_Semantic_Component .
+                        rdfs:subPropertyOf :has_Part ;
+                        owl:inverseOf :provides_Semantic_Component_For .
 
 
 ###  http://www.POKIMON#has_Shape
@@ -185,6 +194,10 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 :has_Structural_Part rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :has_Part ;
                      owl:inverseOf :is_Structural_Part_Of .
+
+
+###  http://www.POKIMON#has_Underlying_rock_Body
+:has_Underlying_rock_Body rdf:type owl:ObjectProperty .
 
 
 ###  http://www.POKIMON#hosts
@@ -257,9 +270,9 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
              rdfs:subPropertyOf :participates_In .
 
 
-###  http://www.POKIMON#is_Origin_Quality_Of
-:is_Origin_Quality_Of rdf:type owl:ObjectProperty ;
-                      rdfs:domain :Origin .
+###  http://www.POKIMON#is_Origin_Of
+:is_Origin_Of rdf:type owl:ObjectProperty ;
+              rdfs:domain :Origin .
 
 
 ###  http://www.POKIMON#is_Output_Of
@@ -330,12 +343,14 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
             rdfs:subPropertyOf :is_About .
 
 
-###  http://www.POKIMON#provides_Depiction_For
-:provides_Depiction_For rdf:type owl:ObjectProperty .
+###  http://www.POKIMON#provides_Depiction_Component_For
+:provides_Depiction_Component_For rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf :is_Part_Of .
 
 
-###  http://www.POKIMON#provides_Semantic_Component
-:provides_Semantic_Component rdf:type owl:ObjectProperty .
+###  http://www.POKIMON#provides_Semantic_Component_For
+:provides_Semantic_Component_For rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf :is_Part_Of .
 
 
 ###  http://www.POKIMON#realizes
@@ -359,7 +374,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#simplifies
 :simplifies rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :is_About ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
             rdfs:domain :Model ;
             rdfs:range :Model .
 
@@ -493,6 +508,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                              rdfs:comment "a model missing its exact spatial locations (could have the global geometry without the location of its parts)" .
 
 
+###  http://www.POKIMON#Conformable_Contact
+:Conformable_Contact rdf:type owl:Class ;
+                     rdfs:subClassOf :Contact .
+
+
 ###  http://www.POKIMON#Connectionist_Content_Entity
 :Connectionist_Content_Entity rdf:type owl:Class ;
                               rdfs:subClassOf :Depiction_Content_Entity .
@@ -501,6 +521,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Constraint
 :Constraint rdf:type owl:Class ;
             rdfs:subClassOf :Information_Entity .
+
+
+###  http://www.POKIMON#Contact
+:Contact rdf:type owl:Class ;
+         rdfs:subClassOf :Specifically_Dependent_Geological_Structure .
 
 
 ###  http://www.POKIMON#Context
@@ -516,6 +541,16 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Continuant_Aggregate
 :Continuant_Aggregate rdf:type owl:Class ;
                       rdfs:subClassOf :Continuant .
+
+
+###  http://www.POKIMON#Criterium
+:Criterium rdf:type owl:Class ;
+           rdfs:subClassOf :Information_Entity .
+
+
+###  http://www.POKIMON#Criterium_Unit_Distinction
+:Criterium_Unit_Distinction rdf:type owl:Class ;
+                            rdfs:subClassOf :Criterium .
 
 
 ###  http://www.POKIMON#Cross_Section
@@ -585,6 +620,16 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                              rdfs:subClassOf :Action_Specification .
 
 
+###  http://www.POKIMON#Dip
+:Dip rdf:type owl:Class ;
+     rdfs:subClassOf :Physical_Quality .
+
+
+###  http://www.POKIMON#Displacement
+:Displacement rdf:type owl:Class ;
+              rdfs:subClassOf :Physical_Quality .
+
+
 ###  http://www.POKIMON#Disposition
 :Disposition rdf:type owl:Class ;
              rdfs:subClassOf :Realizable_Entity .
@@ -608,6 +653,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Drawing
 :Drawing rdf:type owl:Class ;
          rdfs:subClassOf :Image .
+
+
+###  http://www.POKIMON#Erosive_Contact
+:Erosive_Contact rdf:type owl:Class ;
+                 rdfs:subClassOf :Contact .
 
 
 ###  http://www.POKIMON#Ersatz_Spatial_Location
@@ -959,6 +1009,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Interpreted_Origin
 :Interpreted_Origin rdf:type owl:Class ;
                     rdfs:subClassOf :Origin .
+
+
+###  http://www.POKIMON#Intrusive_Contact
+:Intrusive_Contact rdf:type owl:Class ;
+                   rdfs:subClassOf :Contact .
 
 
 ###  http://www.POKIMON#Inverse_Fault
@@ -1505,6 +1560,11 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Stratigraphic_Column
 :Stratigraphic_Column rdf:type owl:Class ;
                       rdfs:subClassOf :Conceptual_Geological_Model .
+
+
+###  http://www.POKIMON#Strike
+:Strike rdf:type owl:Class ;
+        rdfs:subClassOf :Physical_Quality .
 
 
 ###  http://www.POKIMON#Strike_Slip_Fault

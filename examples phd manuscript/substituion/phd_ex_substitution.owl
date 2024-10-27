@@ -1,0 +1,274 @@
+@prefix : <http://www.phd_ex_substitution#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.phd_ex_substitution> .
+
+<http://www.phd_ex_substitution> rdf:type owl:Ontology ;
+                                  owl:imports <http://www.POKIMON> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.phd_ex_substitution#block_1
+:block_1 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Rock_Body> ;
+         <http://www.POKIMON#has_Part> :part_1_unit_1 ,
+                                       :part_1_unit_2 ,
+                                       :part_1_unit_3 ,
+                                       :part_1_unit_4 ,
+                                       :part_1_unit_5 ,
+                                       :part_1_unit_6 .
+
+
+###  http://www.phd_ex_substitution#block_2
+:block_2 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Rock_Body> ;
+         <http://www.POKIMON#has_Part> :part_2_unit_1 ,
+                                       :part_2_unit_2 ,
+                                       :part_2_unit_3 ,
+                                       :part_2_unit_4 .
+
+
+###  http://www.phd_ex_substitution#block_3
+:block_3 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Rock_Body> ;
+         <http://www.POKIMON#has_Part> :part_1_unit_7 ,
+                                       :part_2_unit_5 ,
+                                       :part_2_unit_6 ,
+                                       :part_3_unit_3 ,
+                                       :part_3_unit_4 .
+
+
+###  http://www.phd_ex_substitution#cross_cutting_principle
+:cross_cutting_principle rdf:type owl:NamedIndividual ,
+                                  <http://www.POKIMON#Geological_Principle> .
+
+
+###  http://www.phd_ex_substitution#fault_1
+:fault_1 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Fault> ;
+         <http://www.POKIMON#is_Hosted_By> :block_1 ,
+                                           :block_2 .
+
+
+###  http://www.phd_ex_substitution#fault_1_displacement
+:fault_1_displacement rdf:type owl:NamedIndividual ,
+                               <http://www.POKIMON#Displacement> ;
+                      <http://www.POKIMON#has_Unit_Of_Measure> "centimeter" ;
+                      <http://www.POKIMON#has_Value> 50 .
+
+
+###  http://www.phd_ex_substitution#fault_2
+:fault_2 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Fault> ;
+         <http://www.POKIMON#is_Hosted_By> :block_2 ,
+                                           :block_3 .
+
+
+###  http://www.phd_ex_substitution#fault_2_displacement
+:fault_2_displacement rdf:type owl:NamedIndividual ,
+                               <http://www.POKIMON#Displacement> ;
+                      <http://www.POKIMON#has_Unit_Of_Measure> "centimeter" ;
+                      <http://www.POKIMON#has_Value> 50 .
+
+
+###  http://www.phd_ex_substitution#geomodel_1_faulted_layers
+:geomodel_1_faulted_layers rdf:type owl:NamedIndividual ,
+                                    <http://www.POKIMON#Space_Time_Geological_Model> ;
+                           <http://www.POKIMON#contradicts> :minimum_displacement_constraint ;
+                           <http://www.POKIMON#has_Semantic_Component> :block_1 ,
+                                                          :block_2 ,
+                                                          :block_3 ,
+                                                          :fault_1 ,
+                                                          :fault_2 ;
+                           <http://www.POKIMON#satisfies> :cross_cutting_principle .
+
+
+###  http://www.phd_ex_substitution#geomodel_intact_layers
+:geomodel_intact_layers rdf:type owl:NamedIndividual ,
+                                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+                        <http://www.POKIMON#has_Semantic_Component> :n_part_1_unit_1 ,
+                                                       :n_part_1_unit_2 ,
+                                                       :n_part_1_unit_3 ,
+                                                       :n_part_1_unit_4 ,
+                                                       :n_part_1_unit_5 ,
+                                                       :n_part_1_unit_6 ,
+                                                       :part_1_unit_7 ;
+                        <http://www.POKIMON#satisfies> :cross_cutting_principle ,
+                                                       :minimum_displacement_constraint ;
+                        <http://www.POKIMON#substitutes> :geomodel_1_faulted_layers .
+
+
+###  http://www.phd_ex_substitution#minimum_displacement_constraint
+:minimum_displacement_constraint rdf:type owl:NamedIndividual ,
+                                          <http://www.POKIMON#Constraint> ;
+                                 <http://www.POKIMON#has_Unit_Of_Measure> "meter" ;
+                                 <http://www.POKIMON#has_Value> 100 .
+
+
+###  http://www.phd_ex_substitution#n_part_1_unit_1
+:n_part_1_unit_1 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Rock_Body> ;
+                 <http://www.POKIMON#is_Part_Of> :unit1 .
+
+
+###  http://www.phd_ex_substitution#n_part_1_unit_2
+:n_part_1_unit_2 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Rock_Body> ;
+                 <http://www.POKIMON#is_Part_Of> :unit2 .
+
+
+###  http://www.phd_ex_substitution#n_part_1_unit_3
+:n_part_1_unit_3 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Rock_Body> ;
+                 <http://www.POKIMON#is_Part_Of> :unit3 .
+
+
+###  http://www.phd_ex_substitution#n_part_1_unit_4
+:n_part_1_unit_4 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Rock_Body> ;
+                 <http://www.POKIMON#is_Part_Of> :unit4 .
+
+
+###  http://www.phd_ex_substitution#n_part_1_unit_5
+:n_part_1_unit_5 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Rock_Body> ;
+                 <http://www.POKIMON#is_Part_Of> :unit5 .
+
+
+###  http://www.phd_ex_substitution#n_part_1_unit_6
+:n_part_1_unit_6 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Rock_Body> ;
+                 <http://www.POKIMON#is_Part_Of> :unit6 .
+
+
+###  http://www.phd_ex_substitution#part_1_unit_1
+:part_1_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit1 .
+
+
+###  http://www.phd_ex_substitution#part_1_unit_2
+:part_1_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit2 .
+
+
+###  http://www.phd_ex_substitution#part_1_unit_3
+:part_1_unit_3 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit3 .
+
+
+###  http://www.phd_ex_substitution#part_1_unit_4
+:part_1_unit_4 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit4 .
+
+
+###  http://www.phd_ex_substitution#part_1_unit_5
+:part_1_unit_5 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit5 .
+
+
+###  http://www.phd_ex_substitution#part_1_unit_6
+:part_1_unit_6 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit6 .
+
+
+###  http://www.phd_ex_substitution#part_1_unit_7
+:part_1_unit_7 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit7 .
+
+
+###  http://www.phd_ex_substitution#part_2_unit_1
+:part_2_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit1 .
+
+
+###  http://www.phd_ex_substitution#part_2_unit_2
+:part_2_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit2 .
+
+
+###  http://www.phd_ex_substitution#part_2_unit_3
+:part_2_unit_3 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit3 .
+
+
+###  http://www.phd_ex_substitution#part_2_unit_4
+:part_2_unit_4 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit4 .
+
+
+###  http://www.phd_ex_substitution#part_2_unit_5
+:part_2_unit_5 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit5 .
+
+
+###  http://www.phd_ex_substitution#part_2_unit_6
+:part_2_unit_6 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit6 .
+
+
+###  http://www.phd_ex_substitution#part_3_unit_3
+:part_3_unit_3 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit3 .
+
+
+###  http://www.phd_ex_substitution#part_3_unit_4
+:part_3_unit_4 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit4 .
+
+
+###  http://www.phd_ex_substitution#unit1
+:unit1 rdf:type owl:NamedIndividual ,
+                <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_substitution#unit2
+:unit2 rdf:type owl:NamedIndividual ,
+                <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_substitution#unit3
+:unit3 rdf:type owl:NamedIndividual ,
+                <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_substitution#unit4
+:unit4 rdf:type owl:NamedIndividual ,
+                <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_substitution#unit5
+:unit5 rdf:type owl:NamedIndividual ,
+                <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_substitution#unit6
+:unit6 rdf:type owl:NamedIndividual ,
+                <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_substitution#unit7
+:unit7 rdf:type owl:NamedIndividual ,
+                <http://www.POKIMON#Geological_Unit> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

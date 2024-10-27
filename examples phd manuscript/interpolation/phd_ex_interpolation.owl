@@ -1,0 +1,149 @@
+@prefix : <http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.phd_ex_interpolation> .
+
+<http://www.phd_ex_interpolation> rdf:type owl:Ontology ;
+                                   owl:imports <http://www.POKIMON> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.POKIMON#has_Origin
+<http://www.POKIMON#has_Origin> owl:inverseOf <http://www.POKIMON#is_Origin_Of> .
+
+
+###  http://www.POKIMON#is_Origin_Of
+<http://www.POKIMON#is_Origin_Of> rdfs:subPropertyOf <http://www.POKIMON#is_Quality_Of> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#boundary_over_study_area
+:boundary_over_study_area rdf:type owl:NamedIndividual ,
+                                   <http://www.POKIMON#Rock_Body_Boundary> ;
+                          <http://www.POKIMON#has_Quality> :dips_over_the_boundar_area .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#co_kriging_algorithm
+:co_kriging_algorithm rdf:type owl:NamedIndividual ,
+                               <http://www.POKIMON#Algorithm> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#dip_part_1
+:dip_part_1 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Dip> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#dip_part_2
+:dip_part_2 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Dip> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#dip_part_3
+:dip_part_3 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Dip> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#dip_part_4
+:dip_part_4 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Dip> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#dips_over_the_boundar_area
+:dips_over_the_boundar_area rdf:type owl:NamedIndividual ,
+                                     <http://www.POKIMON#Dip> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#geomodel_of_observations
+:geomodel_of_observations rdf:type owl:NamedIndividual ,
+                                   <http://www.POKIMON#Space_Time_Geological_Model> ;
+                          <http://www.POKIMON#has_Semantic_Component> :dip_part_1 ,
+                                                         :dip_part_2 ,
+                                                         :dip_part_3 ,
+                                                         :dip_part_4 ,
+                                                         :loc_part_1 ,
+                                                         :loc_part_2 ,
+                                                         :loc_part_3 ,
+                                                         :loc_part_4 ,
+                                                         :part_1 ,
+                                                         :part_2 ,
+                                                         :part_3 ,
+                                                         :part_4 .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#interpolation_process_1
+:interpolation_process_1 rdf:type owl:NamedIndividual ,
+                                  <http://www.POKIMON#Interpolation_Process> ;
+                         <http://www.POKIMON#has_Input> :boundary_over_study_area ,
+                                                        :geomodel_of_observations ;
+                         <http://www.POKIMON#has_Output> :resulting_geomodel_from_interpolation ;
+                         <http://www.POKIMON#is_Prescribed_By> :co_kriging_algorithm .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#loc_part_1
+:loc_part_1 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#loc_part_2
+:loc_part_2 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#loc_part_3
+:loc_part_3 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#loc_part_4
+:loc_part_4 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#part_1
+:part_1 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Rock_Body_Boundary> ;
+        <http://www.POKIMON#has_Quality> :dip_part_1 ,
+                                         :loc_part_1 ;
+        <http://www.POKIMON#is_Part_Of> :boundary_over_study_area .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#part_2
+:part_2 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Rock_Body_Boundary> ;
+        <http://www.POKIMON#has_Quality> :dip_part_2 ,
+                                         :loc_part_2 ;
+        <http://www.POKIMON#is_Part_Of> :boundary_over_study_area .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#part_3
+:part_3 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Rock_Body_Boundary> ;
+        <http://www.POKIMON#has_Quality> :dip_part_3 ,
+                                         :loc_part_3 ;
+        <http://www.POKIMON#is_Part_Of> :boundary_over_study_area .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#part_4
+:part_4 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Rock_Body_Boundary> ;
+        <http://www.POKIMON#has_Quality> :dip_part_4 ,
+                                         :loc_part_4 ;
+        <http://www.POKIMON#is_Part_Of> :boundary_over_study_area .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1292#resulting_geomodel_from_interpolation
+:resulting_geomodel_from_interpolation rdf:type owl:NamedIndividual ,
+                                                <http://www.POKIMON#Space_Time_Geological_Model> ;
+                                       <http://www.POKIMON#has_Semantic_Component> :boundary_over_study_area ,
+                                                                      :dips_over_the_boundar_area .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
