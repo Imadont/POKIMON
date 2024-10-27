@@ -22,6 +22,7 @@ To work with POKIMON, you will need:
 
 Getting Started
 
+    download the zip file from the current github repo. Recent advances can be found in the branch (POKIMON_beta)
     Load the Ontology: Open the POKIMON ontology file (new_pok.owl) in Protégé or another compatible ontology editor.
     Explore Use Cases: Review the examples in the Use Case Examples folder to understand how geological concepts and relationships are represented within POKIMON.
     Run SPARQL Queries: Use the SPARQL queries provided to explore POKIMON’s querying capabilities and retrieve geological information based on semantic relationships.
