@@ -1,0 +1,10 @@
+PREFIX pok: <http://www.POKIMON#>
+
+
+SELECT DISTINCT  ?geomodel   ?evaluation ?decision  ?eva_val (STR(?decis_value) AS ?decis_val) ?decis_value
+WHERE {
+  	?geomodel pok:has_Evaluation ?evaluation;
+		pok:is_Subject_Of ?decision.
+	?evaluation pok:has_Value ?eva_val.
+	?decision pok:has_Value ?decis_value.
+}

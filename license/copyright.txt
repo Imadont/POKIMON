@@ -1,0 +1,14 @@
+
+
+Authors: Imadeddine LAOUICI, Boyan BRODARIC
+	
+Copyright (c) 2024 Imadeddine LAOUICI, Boyan BRODARIC
+License: Licence_CeCILL-B_V1
+
+Involved organisations: BRGM, ISTO, NRC-CGS
+
+Funding and projects:
+* to be detailed
+
+Details about contribution in the project : 
+* to be detailed

@@ -1,0 +1,494 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/phd_geo_example#"
+     xml:base="http://www.example.org/phd_geo_example"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.example.org/phd_geo_example#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#resultFrom -->
+
+    <owl:AnnotationProperty rdf:about="http://www.example.org/phd_geo_example#resultFrom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#cuts -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/phd_geo_example#cuts">
+        <rdfs:domain rdf:resource="http://www.example.org/phd_geo_example#Fault"/>
+        <rdfs:range rdf:resource="http://www.example.org/phd_geo_example#GeologicalUnit"/>
+        <rdfs:label>cuts</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#isOlderThan -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/phd_geo_example#isOlderThan">
+        <owl:inverseOf rdf:resource="http://www.example.org/phd_geo_example#isYoungerThan"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#Fault"/>
+                    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#GeologicalUnit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#Fault"/>
+                    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#GeologicalUnit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label>isOlderThan</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#isYoungerThan -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/phd_geo_example#isYoungerThan">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#Fault"/>
+                    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#GeologicalUnit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#Fault"/>
+                    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#GeologicalUnit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label>isYoungerThan</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#resultsFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/phd_geo_example#resultsFrom">
+        <rdfs:domain rdf:resource="http://www.example.org/phd_geo_example#GeologicalObject"/>
+        <rdfs:range rdf:resource="http://www.example.org/phd_geo_example#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#hasTimeOfOccurrence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/phd_geo_example#hasTimeOfOccurrence">
+        <rdfs:domain rdf:resource="http://www.example.org/phd_geo_example#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label>hasTimeOfOccurrence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#DepositionEvent -->
+
+    <owl:Class rdf:about="http://www.example.org/phd_geo_example#DepositionEvent">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/phd_geo_example#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#Event -->
+
+    <owl:Class rdf:about="http://www.example.org/phd_geo_example#Event">
+        <rdfs:label>Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#Fault -->
+
+    <owl:Class rdf:about="http://www.example.org/phd_geo_example#Fault">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/phd_geo_example#GeologicalObject"/>
+        <rdfs:label>Fault</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#FaultingEvent -->
+
+    <owl:Class rdf:about="http://www.example.org/phd_geo_example#FaultingEvent">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/phd_geo_example#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#GeologicalObject -->
+
+    <owl:Class rdf:about="http://www.example.org/phd_geo_example#GeologicalObject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.example.org/phd_geo_example#resultsFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.org/phd_geo_example#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#GeologicalUnit -->
+
+    <owl:Class rdf:about="http://www.example.org/phd_geo_example#GeologicalUnit">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/phd_geo_example#GeologicalObject"/>
+        <rdfs:label>GeologicalUnit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#ListricFault -->
+
+    <owl:Class rdf:about="http://www.example.org/phd_geo_example#ListricFault">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/phd_geo_example#Fault"/>
+        <rdfs:label>ListricFault</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#Shear -->
+
+    <owl:Class rdf:about="http://www.example.org/phd_geo_example#Shear">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/phd_geo_example#Fault"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#SASZ -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/phd_geo_example#SASZ">
+        <rdf:type rdf:resource="http://www.example.org/phd_geo_example#Shear"/>
+        <resultsFrom rdf:resource="http://www.example.org/phd_geo_example#faulting_event_SASZ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#depos_cenozoic -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/phd_geo_example#depos_cenozoic">
+        <rdf:type rdf:resource="http://www.example.org/phd_geo_example#DepositionEvent"/>
+        <hasTimeOfOccurrence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</hasTimeOfOccurrence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#depos_ordovician -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/phd_geo_example#depos_ordovician">
+        <rdf:type rdf:resource="http://www.example.org/phd_geo_example#DepositionEvent"/>
+        <hasTimeOfOccurrence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">450.0</hasTimeOfOccurrence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#faulting_event_SASZ -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/phd_geo_example#faulting_event_SASZ">
+        <rdf:type rdf:resource="http://www.example.org/phd_geo_example#FaultingEvent"/>
+        <hasTimeOfOccurrence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</hasTimeOfOccurrence>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#gres_armoricain -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/phd_geo_example#gres_armoricain">
+        <rdf:type rdf:resource="http://www.example.org/phd_geo_example#GeologicalUnit"/>
+        <resultsFrom rdf:resource="http://www.example.org/phd_geo_example#depos_ordovician"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/phd_geo_example#neogene_units -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/phd_geo_example#neogene_units">
+        <rdf:type rdf:resource="http://www.example.org/phd_geo_example#GeologicalUnit"/>
+        <resultsFrom rdf:resource="http://www.example.org/phd_geo_example#depos_cenozoic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#fault">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#unit">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#objA">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#objB">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#eventA">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#eventB">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#timeA">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/phd_geo_example#timeB">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.example.org/phd_geo_example#Fault"/>
+                        <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#fault"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.example.org/phd_geo_example#GeologicalUnit"/>
+                                <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#unit"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.example.org/phd_geo_example#isOlderThan"/>
+                                        <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#unit"/>
+                                        <swrl:argument2 rdf:resource="http://www.example.org/phd_geo_example#fault"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.example.org/phd_geo_example#cuts"/>
+                        <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#fault"/>
+                        <swrl:argument2 rdf:resource="http://www.example.org/phd_geo_example#unit"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.example.org/phd_geo_example#GeologicalObject"/>
+                        <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#objA"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.example.org/phd_geo_example#GeologicalObject"/>
+                                <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#objB"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.example.org/phd_geo_example#resultsFrom"/>
+                                        <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#objA"/>
+                                        <swrl:argument2 rdf:resource="http://www.example.org/phd_geo_example#eventA"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.example.org/phd_geo_example#resultsFrom"/>
+                                                <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#objB"/>
+                                                <swrl:argument2 rdf:resource="http://www.example.org/phd_geo_example#eventB"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.example.org/phd_geo_example#hasTimeOfOccurrence"/>
+                                                        <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#eventA"/>
+                                                        <swrl:argument2 rdf:resource="http://www.example.org/phd_geo_example#timeA"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.example.org/phd_geo_example#hasTimeOfOccurrence"/>
+                                                                <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#eventB"/>
+                                                                <swrl:argument2 rdf:resource="http://www.example.org/phd_geo_example#timeB"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                                                        <swrl:arguments rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="http://www.example.org/phd_geo_example#timeA"/>
+                                                                            <rdf:Description rdf:about="http://www.example.org/phd_geo_example#timeB"/>
+                                                                        </swrl:arguments>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.example.org/phd_geo_example#isOlderThan"/>
+                        <swrl:argument1 rdf:resource="http://www.example.org/phd_geo_example#objB"/>
+                        <swrl:argument2 rdf:resource="http://www.example.org/phd_geo_example#objA"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

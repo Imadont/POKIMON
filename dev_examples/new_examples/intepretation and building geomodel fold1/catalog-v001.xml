@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.ex2_interpretation_fold1" uri="ex2_interpretation_fold1.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.ex2_evaluation_decision_fold1" uri="ex2_evaluation_decision_fold1.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.ex2_creation_of_model_fold1" uri="ex2_creation_of_model_fold1.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.ex2_process_select_situation" uri="ex2_pr_select_situation.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.ex2_situations" uri="ex2_situations.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.POKIMON" uri="file:/D:/ownCloud/modeling%20formalization/POKIMON/new_pok.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.ex2_observations" uri="ex2_observations.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.POKIMON" uri="file:/D:/ownCloud/modeling%20formalization/POKIMON/new_pok.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.process_of_decision" uri="pk_process_of_decision.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.init_situations" uri="pk_init_situations.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.process_of_evaluation" uri="pk_process_of_evaluation.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.conceptual_model_realization" uri="pk_conceptual_model_realization.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.conc_choos_conc" uri="pk_conceptual_model_choosing.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.info_retrieval" uri="pk_info_retrieval.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.process_select_situation" uri="pk_pr_select_situation.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.initial-situations" uri="initial_situations.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.initial_anomaly" uri="pk_initial_anomaly.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.initial_inputs" uri="pk_initial_inputs.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pokimon/observation" uri="observations.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.pk.observation" uri="observations.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.POKIMON" uri="file:/D:/ownCloud/modeling%20formalization/POKIMON/new_pok.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.POKIMON" uri="file:/D:/ownCloud/modeling%20formalization/POKIMON/new_pok.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.POKIMON" uri="file:/D:/ownCloud/modeling%20formalization/POKIMON/new_pok.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

@@ -1,0 +1,411 @@
+@prefix : <http://www.pk.observation#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.pk.observation> .
+
+<http://www.pk.observation> rdf:type owl:Ontology ;
+                             owl:imports <http://www.POKIMON> .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.POKIMON#Observed_Fact
+<http://www.POKIMON#Observed_Fact> rdf:type owl:Class .
+
+
+###  http://www.pk.observation#Geological_Map
+:Geological_Map rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.POKIMON#Space_Time_Geological_Model> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.pk.observation#descr_1
+:descr_1 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_10
+:descr_10 rdf:type owl:NamedIndividual ,
+                   <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_11
+:descr_11 rdf:type owl:NamedIndividual ,
+                   <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_2
+:descr_2 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_3
+:descr_3 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_4
+:descr_4 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_5
+:descr_5 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_6
+:descr_6 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_7
+:descr_7 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_8
+:descr_8 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#descr_9
+:descr_9 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Description> .
+
+
+###  http://www.pk.observation#fact_ob_1
+:fact_ob_1 rdf:type owl:NamedIndividual ,
+                    <http://www.POKIMON#Observed_Fact> ;
+           <http://www.POKIMON#is_About> :sample_1_carbo .
+
+
+###  http://www.pk.observation#fact_ob_10
+:fact_ob_10 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Observed_Fact> ;
+            <http://www.POKIMON#is_About> :sample_10_trias .
+
+
+###  http://www.pk.observation#fact_ob_11
+:fact_ob_11 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Observed_Fact> ;
+            <http://www.POKIMON#is_About> :sample_11_trias .
+
+
+###  http://www.pk.observation#fact_ob_2
+:fact_ob_2 rdf:type owl:NamedIndividual ,
+                    <http://www.POKIMON#Observed_Fact> ;
+           <http://www.POKIMON#is_About> :sample_2_carbo .
+
+
+###  http://www.pk.observation#fact_ob_3
+:fact_ob_3 rdf:type owl:NamedIndividual ,
+                    <http://www.POKIMON#Observed_Fact> ;
+           <http://www.POKIMON#is_About> :sample_3_carbo .
+
+
+###  http://www.pk.observation#fact_ob_4
+:fact_ob_4 rdf:type owl:NamedIndividual ,
+                    <http://www.POKIMON#Observed_Fact> ;
+           <http://www.POKIMON#is_About> :sample_4_carbo .
+
+
+###  http://www.pk.observation#fact_ob_5
+:fact_ob_5 rdf:type owl:NamedIndividual ,
+                    <http://www.POKIMON#Observed_Fact> ;
+           <http://www.POKIMON#is_About> :sample_5_carbo .
+
+
+###  http://www.pk.observation#fact_ob_6
+:fact_ob_6 rdf:type owl:NamedIndividual ,
+                    <http://www.POKIMON#Observed_Fact> ;
+           <http://www.POKIMON#is_About> :sample_6_carbo .
+
+
+###  http://www.pk.observation#fact_ob_7
+:fact_ob_7 rdf:type owl:NamedIndividual ,
+                    <http://www.POKIMON#Observed_Fact> ;
+           <http://www.POKIMON#is_About> :sample_7_carbo .
+
+
+###  http://www.pk.observation#fact_ob_8
+:fact_ob_8 rdf:type owl:NamedIndividual ,
+                    <http://www.POKIMON#Observed_Fact> ;
+           <http://www.POKIMON#is_About> :sample_8_trias .
+
+
+###  http://www.pk.observation#fact_ob_9
+:fact_ob_9 rdf:type owl:NamedIndividual ,
+                    <http://www.POKIMON#Observed_Fact> ;
+           <http://www.POKIMON#is_About> :sample_9_trias .
+
+
+###  http://www.pk.observation#formation_brejeira_carbo
+:formation_brejeira_carbo rdf:type owl:NamedIndividual ,
+                                   <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.pk.observation#formation_gres_de_silves_trias
+:formation_gres_de_silves_trias rdf:type owl:NamedIndividual ,
+                                         <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.pk.observation#info_1
+:info_1 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#has_Part> :descr_1 ;
+        <http://www.POKIMON#is_About> :sample_1_carbo ;
+        <http://www.POKIMON#satisfies> :fact_ob_1 .
+
+
+###  http://www.pk.observation#info_10
+:info_10 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Space_Time_Geological_Model> ;
+         <http://www.POKIMON#bearer_Of> :observed_origin ;
+         <http://www.POKIMON#has_Part> :descr_10 ;
+         <http://www.POKIMON#is_About> :sample_10_trias ;
+         <http://www.POKIMON#satisfies> :fact_ob_10 .
+
+
+###  http://www.pk.observation#info_11
+:info_11 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Space_Time_Geological_Model> ;
+         <http://www.POKIMON#bearer_Of> :observed_origin ;
+         <http://www.POKIMON#has_Part> :descr_11 ;
+         <http://www.POKIMON#is_About> :sample_11_trias ;
+         <http://www.POKIMON#satisfies> :fact_ob_11 .
+
+
+###  http://www.pk.observation#info_2
+:info_2 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#has_Part> :descr_2 ;
+        <http://www.POKIMON#is_About> :sample_2_carbo ;
+        <http://www.POKIMON#satisfies> :fact_ob_2 .
+
+
+###  http://www.pk.observation#info_3
+:info_3 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#has_Part> :descr_3 ;
+        <http://www.POKIMON#is_About> :sample_3_carbo ;
+        <http://www.POKIMON#satisfies> :fact_ob_3 .
+
+
+###  http://www.pk.observation#info_4
+:info_4 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#has_Part> :descr_4 ;
+        <http://www.POKIMON#is_About> :sample_4_carbo ;
+        <http://www.POKIMON#satisfies> :fact_ob_4 .
+
+
+###  http://www.pk.observation#info_5
+:info_5 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#has_Part> :descr_5 ;
+        <http://www.POKIMON#is_About> :sample_5_carbo ;
+        <http://www.POKIMON#satisfies> :fact_ob_5 .
+
+
+###  http://www.pk.observation#info_6
+:info_6 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#has_Part> :descr_6 ;
+        <http://www.POKIMON#is_About> :sample_6_carbo ;
+        <http://www.POKIMON#satisfies> :fact_ob_6 .
+
+
+###  http://www.pk.observation#info_7
+:info_7 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#has_Part> :descr_7 ;
+        <http://www.POKIMON#is_About> :sample_7_carbo ;
+        <http://www.POKIMON#satisfies> :fact_ob_7 .
+
+
+###  http://www.pk.observation#info_8
+:info_8 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#has_Part> :descr_8 ;
+        <http://www.POKIMON#is_About> :sample_8_trias ;
+        <http://www.POKIMON#satisfies> :fact_ob_8 .
+
+
+###  http://www.pk.observation#info_9
+:info_9 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Space_Time_Geological_Model> ;
+        <http://www.POKIMON#bearer_Of> :observed_origin ;
+        <http://www.POKIMON#has_Part> :descr_9 ;
+        <http://www.POKIMON#is_About> :sample_9_trias ;
+        <http://www.POKIMON#satisfies> :fact_ob_9 .
+
+
+###  http://www.pk.observation#loc_orig_1
+:loc_orig_1 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_10
+:loc_orig_10 rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_11
+:loc_orig_11 rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_2
+:loc_orig_2 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_3
+:loc_orig_3 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_4
+:loc_orig_4 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_5
+:loc_orig_5 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_6
+:loc_orig_6 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_7
+:loc_orig_7 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_8
+:loc_orig_8 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#loc_orig_9
+:loc_orig_9 rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.observation#minimal_size_for_obj_in_gmdlng_1
+:minimal_size_for_obj_in_gmdlng_1 rdf:type owl:NamedIndividual ,
+                                           <http://www.POKIMON#Constraint> .
+
+
+###  http://www.pk.observation#minimal_wavelength_for_folds_in_gmdlng_1
+:minimal_wavelength_for_folds_in_gmdlng_1 rdf:type owl:NamedIndividual ,
+                                                   <http://www.POKIMON#Constraint> .
+
+
+###  http://www.pk.observation#observed_origin
+:observed_origin rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Observed_Origin> .
+
+
+###  http://www.pk.observation#realism_for_geomodelling_pr1
+:realism_for_geomodelling_pr1 rdf:type owl:NamedIndividual ,
+                                       <http://www.POKIMON#Constraint> .
+
+
+###  http://www.pk.observation#sample_10_trias
+:sample_10_trias rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Rock_Body> ;
+                 <http://www.POKIMON#has_Quality> :loc_orig_10 ;
+                 <http://www.POKIMON#is_Part_Of> :formation_gres_de_silves_trias .
+
+
+###  http://www.pk.observation#sample_11_trias
+:sample_11_trias rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Rock_Body> ;
+                 <http://www.POKIMON#has_Quality> :loc_orig_11 ;
+                 <http://www.POKIMON#is_Part_Of> :formation_gres_de_silves_trias .
+
+
+###  http://www.pk.observation#sample_1_carbo
+:sample_1_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :loc_orig_1 ;
+                <http://www.POKIMON#is_Part_Of> :formation_brejeira_carbo .
+
+
+###  http://www.pk.observation#sample_2_carbo
+:sample_2_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :loc_orig_2 ;
+                <http://www.POKIMON#is_Part_Of> :formation_brejeira_carbo .
+
+
+###  http://www.pk.observation#sample_3_carbo
+:sample_3_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :loc_orig_3 ;
+                <http://www.POKIMON#is_Part_Of> :formation_brejeira_carbo .
+
+
+###  http://www.pk.observation#sample_4_carbo
+:sample_4_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :loc_orig_4 ;
+                <http://www.POKIMON#is_Part_Of> :formation_brejeira_carbo .
+
+
+###  http://www.pk.observation#sample_5_carbo
+:sample_5_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :loc_orig_5 ;
+                <http://www.POKIMON#is_Part_Of> :formation_brejeira_carbo .
+
+
+###  http://www.pk.observation#sample_6_carbo
+:sample_6_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :loc_orig_6 ;
+                <http://www.POKIMON#is_Part_Of> :formation_brejeira_carbo .
+
+
+###  http://www.pk.observation#sample_7_carbo
+:sample_7_carbo rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :loc_orig_7 ;
+                <http://www.POKIMON#is_Part_Of> :formation_brejeira_carbo .
+
+
+###  http://www.pk.observation#sample_8_trias
+:sample_8_trias rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :loc_orig_8 ;
+                <http://www.POKIMON#is_Part_Of> :formation_gres_de_silves_trias .
+
+
+###  http://www.pk.observation#sample_9_trias
+:sample_9_trias rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Rock_Body> ;
+                <http://www.POKIMON#has_Quality> :loc_orig_9 ;
+                <http://www.POKIMON#is_Part_Of> :formation_gres_de_silves_trias .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

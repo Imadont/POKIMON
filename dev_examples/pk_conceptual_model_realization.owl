@@ -1,0 +1,148 @@
+@prefix : <http://www.pk.conceptual_model_realization#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.pk.conceptual_model_realization> .
+
+<http://www.pk.conceptual_model_realization> rdf:type owl:Ontology ;
+                                              owl:imports <http://www.pk.conc_choos_conc> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.pk.conc_choos_conc#pr_choosing_conc_model_fold1
+<http://www.pk.conc_choos_conc#pr_choosing_conc_model_fold1> <http://www.POKIMON#bearer_Of> <http://www.pk.conc_choos_conc#techn_deterministic_conc_model_choos> ;
+                                                             <http://www.POKIMON#has_Input> <http://www.pk.info_retrieval#context_for_selected_situ1> ;
+                                                             <http://www.POKIMON#has_Output> <http://www.pk.info_retrieval#conc_model_about_fold_1> ;
+                                                             <http://www.POKIMON#is_Prescribed_By> <http://www.pk.conc_choos_conc#algo_choosing_conc_model_1> .
+
+
+###  http://www.pk.conceptual_model_realization#act_spec_model_update_using_ML
+:act_spec_model_update_using_ML rdf:type owl:NamedIndividual ,
+                                         <http://www.POKIMON#ML_Specification> .
+
+
+###  http://www.pk.conceptual_model_realization#act_spec_realization_process_using_inference
+:act_spec_realization_process_using_inference rdf:type owl:NamedIndividual ,
+                                                       <http://www.POKIMON#Action_Specification> .
+
+
+###  http://www.pk.conceptual_model_realization#algo_realization_of_models_using_inference
+:algo_realization_of_models_using_inference rdf:type owl:NamedIndividual ,
+                                                     <http://www.POKIMON#Algorithm> ;
+                                            <http://www.POKIMON#has_Part> :act_spec_realization_process_using_inference ,
+                                                                          :obj_spec_realization .
+
+
+###  http://www.pk.conceptual_model_realization#algo_updating_models
+:algo_updating_models rdf:type owl:NamedIndividual ,
+                               <http://www.POKIMON#Algorithm> ;
+                      <http://www.POKIMON#has_Part> :act_spec_model_update_using_ML ,
+                                                    :obj_update .
+
+
+###  http://www.pk.conceptual_model_realization#amplitude_fold1
+:amplitude_fold1 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Amplitude> .
+
+
+###  http://www.pk.conceptual_model_realization#dce_proposition_desc_fold1
+:dce_proposition_desc_fold1 rdf:type owl:NamedIndividual ,
+                                     <http://www.POKIMON#Proposition_Content_Entity> .
+
+
+###  http://www.pk.conceptual_model_realization#loc_rock_body_hos_fold1
+:loc_rock_body_hos_fold1 rdf:type owl:NamedIndividual ,
+                                  <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.conceptual_model_realization#location2_part12
+:location2_part12 rdf:type owl:NamedIndividual ,
+                           <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.conceptual_model_realization#location_fold1
+:location_fold1 rdf:type owl:NamedIndividual ,
+                         <http://www.POKIMON#Original_Spatial_Location> .
+
+
+###  http://www.pk.conceptual_model_realization#obj_spec_realization
+:obj_spec_realization rdf:type owl:NamedIndividual ,
+                               <http://www.POKIMON#Objective_Specification> .
+
+
+###  http://www.pk.conceptual_model_realization#obj_update
+:obj_update rdf:type owl:NamedIndividual ,
+                     <http://www.POKIMON#Objective_Specification> .
+
+
+###  http://www.pk.conceptual_model_realization#pr_realization_of_fold1
+:pr_realization_of_fold1 rdf:type owl:NamedIndividual ,
+                                  <http://www.POKIMON#Planned_Process> ;
+                         <http://www.POKIMON#bearer_Of> :technique_using_reasoning ;
+                         <http://www.POKIMON#has_Input> <http://www.pk.info_retrieval#conc_model_about_fold_1> ,
+                                                        <http://www.pk.info_retrieval#context_for_selected_situ1> ;
+                         <http://www.POKIMON#has_Output> :amplitude_fold1 ,
+                                                         :location_fold1 ,
+                                                         :shape_fold1 ,
+                                                         :spc_time_mod_fold1 ,
+                                                         :wavelength_fold1 ;
+                         <http://www.POKIMON#is_Prescribed_By> :algo_realization_of_models_using_inference .
+
+
+###  http://www.pk.conceptual_model_realization#pr_update_conc_model_situ2
+:pr_update_conc_model_situ2 rdf:type owl:NamedIndividual ,
+                                     <http://www.POKIMON#Planned_Process> ;
+                            <http://www.POKIMON#bearer_Of> :technique_ML_based ;
+                            <http://www.POKIMON#has_Input> <http://www.pk.info_retrieval#context_for_selected_situ2_anom> ,
+                                                           <http://www.pk.initial_inputs#info_12> ;
+                            <http://www.POKIMON#has_Output> :location2_part12 ;
+                            <http://www.POKIMON#is_Prescribed_By> :algo_updating_models .
+
+
+###  http://www.pk.conceptual_model_realization#rock_body_hosting_fold1
+:rock_body_hosting_fold1 rdf:type owl:NamedIndividual ,
+                                  <http://www.POKIMON#Rock_Body> ;
+                         <http://www.POKIMON#has_Quality> :loc_rock_body_hos_fold1 ;
+                         <http://www.POKIMON#is_Part_Of> <http://www.pk.observation#formation_brejeira_carbo> .
+
+
+###  http://www.pk.conceptual_model_realization#shape_fold1
+:shape_fold1 rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Shape> .
+
+
+###  http://www.pk.conceptual_model_realization#spc_time_mod_fold1
+:spc_time_mod_fold1 rdf:type owl:NamedIndividual ,
+                             <http://www.POKIMON#Space_Time_Geological_Model> ;
+                    <http://www.POKIMON#has_Part> :dce_proposition_desc_fold1 ;
+                    <http://www.POKIMON#satisfies> <http://www.pk.info_retrieval#conc_model_about_fold_1> .
+
+
+###  http://www.pk.conceptual_model_realization#technique_ML_based
+:technique_ML_based rdf:type owl:NamedIndividual ,
+                             <http://www.POKIMON#ML_Based> .
+
+
+###  http://www.pk.conceptual_model_realization#technique_using_reasoning
+:technique_using_reasoning rdf:type owl:NamedIndividual ,
+                                    <http://www.POKIMON#Logical_Reasoning_Based> .
+
+
+###  http://www.pk.conceptual_model_realization#wavelength_fold1
+:wavelength_fold1 rdf:type owl:NamedIndividual ,
+                           <http://www.POKIMON#Wavelength> .
+
+
+###  http://www.pk.info_retrieval#fold_1
+<http://www.pk.info_retrieval#fold_1> <http://www.POKIMON#has_Quality> :amplitude_fold1 ,
+                                                                       :location_fold1 ,
+                                                                       :shape_fold1 ,
+                                                                       :wavelength_fold1 ;
+                                      <http://www.POKIMON#is_Hosted_By> :rock_body_hosting_fold1 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

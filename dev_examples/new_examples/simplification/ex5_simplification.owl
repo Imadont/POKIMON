@@ -1,0 +1,189 @@
+@prefix : <http://www.ex5_simplification#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.ex5_simplification> .
+
+<http://www.ex5_simplification> rdf:type owl:Ontology ;
+                                 owl:imports <http://www.POKIMON> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.ex5_simplification#detailed_geomodel_for_stabilization_modeling
+:detailed_geomodel_for_stabilization_modeling rdf:type owl:NamedIndividual ,
+                                                       <http://www.POKIMON#Space_Time_Geological_Model> ;
+                                              <http://www.POKIMON#is_About> :part_1_unit_1 ,
+																			:part_2_unit_1 ,
+																			:part_3_unit_1 ,
+																			:part_4_unit_1 ,
+																			:part_5_unit_1 ,
+																			:part_6_unit_1 ,
+																			:part_7_unit_1 ,
+																			:part_1_unit_2 ,
+																			:part_2_unit_2 ,
+																			:part_3_unit_2 ,
+																			:part_4_unit_2 ,
+																			:part_5_unit_2 ,
+																			:part_6_unit_2 ,
+																			:part_7_unit_2 ,
+																			:part_8_unit_2 ,
+																			:part_9_unit_2 ,
+																			:part_1_unit_3 ,
+																			:part_2_unit_3 .
+
+
+###  http://www.ex5_simplification#n_part_unit_1
+:n_part_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_1 .
+
+
+###  http://www.ex5_simplification#n_part_unit_2
+:n_part_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#n_part_unit_3
+:n_part_unit_3 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_3 .
+
+
+###  http://www.ex5_simplification#part_1_unit_1
+:part_1_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_1 .
+
+
+###  http://www.ex5_simplification#part_2_unit_1
+:part_2_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_1 .
+
+
+###  http://www.ex5_simplification#part_3_unit_1
+:part_3_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_1 .
+
+
+###  http://www.ex5_simplification#part_4_unit_1
+:part_4_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_1 .
+
+
+###  http://www.ex5_simplification#part_5_unit_1
+:part_5_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_1 .
+
+
+###  http://www.ex5_simplification#part_6_unit_1
+:part_6_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_1 .
+
+
+###  http://www.ex5_simplification#part_7_unit_1
+:part_7_unit_1 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_1 .
+
+
+###  http://www.ex5_simplification#part_1_unit_2
+:part_1_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#part_2_unit_2
+:part_2_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#part_3_unit_2
+:part_3_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#part_4_unit_2
+:part_4_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#part_5_unit_2
+:part_5_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#part_6_unit_2
+:part_6_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#part_7_unit_2
+:part_7_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#part_8_unit_2
+:part_8_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#part_9_unit_2
+:part_9_unit_2 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_2 .
+
+
+###  http://www.ex5_simplification#part_1_unit_3
+:part_1_unit_3 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_3 .
+
+
+###  http://www.ex5_simplification#part_2_unit_3
+:part_2_unit_3 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> ;
+               <http://www.POKIMON#is_Part_Of> :unit_3 .
+
+
+###  http://www.ex5_simplification#simplified_geomodel_for_stakeholders
+:simplified_geomodel_for_stakeholders rdf:type owl:NamedIndividual ,
+                                               <http://www.POKIMON#Space_Time_Geological_Model> ;
+                                      <http://www.POKIMON#is_About> :n_part_unit_1 ,
+                                                                    :n_part_unit_2 ,
+                                                                    :n_part_unit_3 ;
+                                      <http://www.POKIMON#simplifies> :detailed_geomodel_for_stabilization_modeling .
+
+
+###  http://www.ex5_simplification#unit_1
+:unit_1 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.ex5_simplification#unit_2
+:unit_2 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.ex5_simplification#unit_3
+:unit_3 rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

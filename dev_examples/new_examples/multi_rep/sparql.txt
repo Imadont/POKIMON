@@ -1,0 +1,10 @@
+
+PREFIX pok: <http://www.POKIMON#>
+
+SELECT DISTINCT ?inter_prss  ?inputs ?outputs ?parts
+WHERE  {
+   	?inter_prss rdf:type pok:Interpretation_Process;
+			pok:has_Input ?inputs;
+			pok:has_Output ?outputs; 
+}
+

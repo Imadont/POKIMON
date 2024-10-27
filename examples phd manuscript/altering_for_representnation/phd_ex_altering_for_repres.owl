@@ -1,0 +1,258 @@
+@prefix : <http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.phd_ex_altering_for_repres> .
+
+<http://www.phd_ex_altering_for_repres> rdf:type owl:Ontology ;
+                                         owl:imports <http://www.POKIMON> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.phd_ex_altering_for_repres#block_1
+:block_1 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Rock_Body> ;
+         <http://www.POKIMON#has_Part> :part_1_unit_A ,
+                                       :part_1_unit_B .
+
+
+###  http://www.phd_ex_altering_for_repres#block_2
+:block_2 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Rock_Body> ;
+         <http://www.POKIMON#has_Part> :part_2_unit_A ,
+                                       :part_2_unit_B .
+
+
+###  http://www.phd_ex_altering_for_repres#block_3
+:block_3 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Rock_Body> ;
+         <http://www.POKIMON#has_Part> :part_3_unit_A ,
+                                       :part_3_unit_B .
+
+
+###  http://www.phd_ex_altering_for_repres#block_4
+:block_4 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Rock_Body> ;
+         <http://www.POKIMON#has_Part> :part_4_unit_A ,
+                                       :part_4_unit_B .
+
+
+###  http://www.phd_ex_altering_for_repres#conceptual_altering_geomodel
+:conceptual_altering_geomodel rdf:type owl:NamedIndividual ,
+                                       <http://www.POKIMON#Conceptual_Geological_Model> ;
+                              <http://www.POKIMON#alters_For_Representation> :conceptual_realistic_geomodel ;
+                              <http://www.POKIMON#has_Semantic_Component> :contact_AB1_M ,
+                                                             :contact_AB2_AB1 ,
+                                                             :contact_AB3_AB2 ,
+                                                             :contact_AB4_AB3 ,
+                                                             :contact_C_AB4 ,
+                                                             :unit_AB1 ,
+                                                             :unit_AB2 ,
+                                                             :unit_AB3 ,
+                                                             :unit_AB4 ,
+                                                             :unit_C ,
+                                                             :unit_M .
+
+
+###  http://www.phd_ex_altering_for_repres#conceptual_realistic_geomodel
+:conceptual_realistic_geomodel rdf:type owl:NamedIndividual ,
+                                        <http://www.POKIMON#Conceptual_Geological_Model> ;
+                               <http://www.POKIMON#has_Semantic_Component> :contact_A_M ,
+                                                              :contact_B_A ,
+                                                              :contact_C_B ,
+                                                              :unit_A ,
+                                                              :unit_B ,
+                                                              :unit_C ,
+                                                              :unit_M .
+
+
+###  http://www.phd_ex_altering_for_repres#contact_AB1_M
+:contact_AB1_M rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Erosive_Contact> ;
+               <http://www.POKIMON#has_Overlying_rock_Body> :unit_AB1 ;
+               <http://www.POKIMON#has_Underlying_rock_Body> :unit_M .
+
+
+###  http://www.phd_ex_altering_for_repres#contact_AB2_AB1
+:contact_AB2_AB1 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Conformable_Contact> ;
+                 <http://www.POKIMON#has_Overlying_rock_Body> :unit_AB2 ;
+                 <http://www.POKIMON#has_Underlying_rock_Body> :unit_AB1 .
+
+
+###  http://www.phd_ex_altering_for_repres#contact_AB3_AB2
+:contact_AB3_AB2 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Conformable_Contact> ;
+                 <http://www.POKIMON#has_Overlying_rock_Body> :unit_AB3 ;
+                 <http://www.POKIMON#has_Underlying_rock_Body> :unit_AB2 .
+
+
+###  http://www.phd_ex_altering_for_repres#contact_AB4_AB3
+:contact_AB4_AB3 rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Conformable_Contact> ;
+                 <http://www.POKIMON#has_Overlying_rock_Body> :unit_AB4 ;
+                 <http://www.POKIMON#has_Underlying_rock_Body> :unit_AB3 .
+
+
+###  http://www.phd_ex_altering_for_repres#contact_A_M
+:contact_A_M rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Erosive_Contact> ;
+             <http://www.POKIMON#has_Overlying_rock_Body> :unit_A ;
+             <http://www.POKIMON#has_Underlying_rock_Body> :unit_M .
+
+
+###  http://www.phd_ex_altering_for_repres#contact_B_A
+:contact_B_A rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Conformable_Contact> ;
+             <http://www.POKIMON#has_Overlying_rock_Body> :unit_B ;
+             <http://www.POKIMON#has_Underlying_rock_Body> :unit_A .
+
+
+###  http://www.phd_ex_altering_for_repres#contact_C_AB4
+:contact_C_AB4 rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Erosive_Contact> ;
+               <http://www.POKIMON#has_Overlying_rock_Body> :unit_C ;
+               <http://www.POKIMON#has_Underlying_rock_Body> :unit_AB1 ,
+                                                             :unit_AB2 ,
+                                                             :unit_AB3 ,
+                                                             :unit_AB4 .
+
+
+###  http://www.phd_ex_altering_for_repres#contact_C_B
+:contact_C_B rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Conformable_Contact> ;
+             <http://www.POKIMON#has_Overlying_rock_Body> :unit_C ;
+             <http://www.POKIMON#has_Underlying_rock_Body> :unit_B .
+
+
+###  http://www.phd_ex_altering_for_repres#part_2_unit_A
+:part_2_unit_A rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> .
+
+
+###  http://www.phd_ex_altering_for_repres#part_3_unit_A
+:part_3_unit_A rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> .
+
+
+###  http://www.phd_ex_altering_for_repres#part_4_unit_A
+:part_4_unit_A rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> .
+
+
+###  http://www.phd_ex_altering_for_repres#space_time_realistic_geomodel
+:space_time_realistic_geomodel rdf:type owl:NamedIndividual ,
+                                        <http://www.POKIMON#Space_Time_Geological_Model> ;
+                               <http://www.POKIMON#has_Semantic_Component> :block_1 ,
+                                                              :block_2 ,
+                                                              :block_3 ,
+                                                              :block_4 ,
+                                                              :fault_1 ,
+                                                              :fault_2 ,
+                                                              :fault_3 ,
+                                                              :part_unit_C ,
+                                                              :part_unit_M ;
+                               <http://www.POKIMON#satisfies> :conceptual_realistic_geomodel .
+
+
+###  http://www.phd_ex_altering_for_repres#unit_A
+:unit_A rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_altering_for_repres#unit_AB1
+:unit_AB1 rdf:type owl:NamedIndividual ,
+                   <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_altering_for_repres#unit_AB2
+:unit_AB2 rdf:type owl:NamedIndividual ,
+                   <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_altering_for_repres#unit_AB3
+:unit_AB3 rdf:type owl:NamedIndividual ,
+                   <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_altering_for_repres#unit_AB4
+:unit_AB4 rdf:type owl:NamedIndividual ,
+                   <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_altering_for_repres#unit_B
+:unit_B rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_altering_for_repres#unit_C
+:unit_C rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.phd_ex_altering_for_repres#unit_M
+:unit_M rdf:type owl:NamedIndividual ,
+                 <http://www.POKIMON#Geological_Unit> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#fault_1
+:fault_1 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Fault> ;
+         <http://www.POKIMON#is_Hosted_By> :block_1 ,
+                                           :block_2 .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#fault_2
+:fault_2 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Fault> ;
+         <http://www.POKIMON#is_Hosted_By> :block_2 ,
+                                           :block_3 .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#fault_3
+:fault_3 rdf:type owl:NamedIndividual ,
+                  <http://www.POKIMON#Fault> ;
+         <http://www.POKIMON#is_Hosted_By> :block_3 ,
+                                           :block_4 .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#part_1_unit_A
+:part_1_unit_A rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#part_1_unit_B
+:part_1_unit_B rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#part_2_unit_B
+:part_2_unit_B rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#part_3_unit_B
+:part_3_unit_B rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#part_4_unit_B
+:part_4_unit_B rdf:type owl:NamedIndividual ,
+                        <http://www.POKIMON#Rock_Body> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#part_unit_C
+:part_unit_C rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Rock_Body> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1317#part_unit_M
+:part_unit_M rdf:type owl:NamedIndividual ,
+                      <http://www.POKIMON#Rock_Body> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

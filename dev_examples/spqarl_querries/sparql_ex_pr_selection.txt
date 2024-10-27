@@ -1,0 +1,45 @@
+PREFIX pok: <http://www.POKIMON#>
+
+
+
+
+###########################################
+all instances of Planned_Process that are related to an algorithm
+
+
+SELECT ?processes ?related ?algo 
+WHERE {
+	?processes rdf:type/rdfs:subClassOf* pok:Planned_Process ;
+			   ?related ?algo .
+	?algo rdf:type pok:Algorithm.
+	   }
+
+############################################
+all instances of Planned_Process that are related to an algorithm and their inputs and outputs
+
+
+SELECT DISTINCT ?processes ?related ?algo ?inputs  ?outputs
+WHERE {
+	?processes rdf:type/rdfs:subClassOf* pok:Planned_Process ;
+			   ?related ?algo .
+	?algo rdf:type pok:Algorithm.
+	?processes pok:has_Input ?inputs.
+	?processes pok:has_Output ?outputs.
+	
+}
+
+############################################
+
+PREFIX pok: <http://www.POKIMON#>
+PREFIX st: <http://www.pk.observation#>
+
+
+
+SELECT DISTINCT ?subject ?x 
+WHERE  {
+	{?subject rdf:type pok:Geological_Model} UNION {?subject rdf:type/rdfs:subClassOf* pok:Geological_Model}	         
+   	?subject pok:is_About ?x. 
+    	?x rdf:type pok:Rock_Body .   
+            ?x pok:is_Part_Of st:st_imad_unit_perm.   	   
+  	               
+}

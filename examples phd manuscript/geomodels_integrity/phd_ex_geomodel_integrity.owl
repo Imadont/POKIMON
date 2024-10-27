@@ -1,0 +1,105 @@
+@prefix : <http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.phd_ex_geomodel_integrity> .
+
+<http://www.phd_ex_geomodel_integrity> rdf:type owl:Ontology ;
+                                        owl:imports <http://www.POKIMON> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#conceptual_geomodel_one_fold
+:conceptual_geomodel_one_fold rdf:type owl:NamedIndividual ,
+                                       <http://www.POKIMON#Conceptual_Geological_Model> ;
+                              <http://www.POKIMON#has_Semantic_Component> :first_order_fold .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#conceptual_geomodel_two_folds
+:conceptual_geomodel_two_folds rdf:type owl:NamedIndividual ,
+                                        <http://www.POKIMON#Conceptual_Geological_Model> ;
+                               <http://www.POKIMON#has_Semantic_Component> :first_order_fold ,
+                                                                           :second_order_fold .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#first_order_fold
+:first_order_fold rdf:type owl:NamedIndividual ,
+                           <http://www.POKIMON#Fold> ;
+                  <http://www.POKIMON#has_Quality> :wavelength_tight ,
+                                                   :wavelength_wide ;
+                  <http://www.POKIMON#is_Hosted_By> :part_of_boundary_1 ,
+                                                    :part_of_boundary_2 ,
+                                                    :part_of_boundary_3 .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#geomodel_1_wide_fold
+:geomodel_1_wide_fold rdf:type owl:NamedIndividual ,
+                               <http://www.POKIMON#Space_Time_Geological_Model> ;
+                      owl:sameAs :geomodel_2_tight_fold ;
+                      <http://www.POKIMON#has_Semantic_Component> :first_order_fold ,
+                                                                  :wavelength_wide ;
+                      <http://www.POKIMON#satisfies> :conceptual_geomodel_one_fold .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#geomodel_2_tight_fold
+:geomodel_2_tight_fold rdf:type owl:NamedIndividual ,
+                                <http://www.POKIMON#Space_Time_Geological_Model> ;
+                       <http://www.POKIMON#has_Semantic_Component> :first_order_fold ,
+                                                                   :wavelength_tight ;
+                       <http://www.POKIMON#satisfies> :conceptual_geomodel_one_fold .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#geomodel_3_two_folds
+:geomodel_3_two_folds rdf:type owl:NamedIndividual ,
+                               <http://www.POKIMON#Space_Time_Geological_Model> ;
+                      <http://www.POKIMON#has_Semantic_Component> :first_order_fold ,
+                                                                  :second_order_fold ,
+                                                                  :wavelength_secondary_fold ,
+                                                                  :wavelength_wide ;
+                      <http://www.POKIMON#satisfies> :conceptual_geomodel_two_folds .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#part_of_boundary_1
+:part_of_boundary_1 rdf:type owl:NamedIndividual ,
+                             <http://www.POKIMON#Rock_Body_Boundary> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#part_of_boundary_2
+:part_of_boundary_2 rdf:type owl:NamedIndividual ,
+                             <http://www.POKIMON#Rock_Body_Boundary> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#part_of_boundary_3
+:part_of_boundary_3 rdf:type owl:NamedIndividual ,
+                             <http://www.POKIMON#Rock_Body_Boundary> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#second_order_fold
+:second_order_fold rdf:type owl:NamedIndividual ,
+                            <http://www.POKIMON#Fold> ;
+                   <http://www.POKIMON#has_Quality> :wavelength_secondary_fold ;
+                   <http://www.POKIMON#is_Hosted_By> :part_of_boundary_1 ,
+                                                     :part_of_boundary_2 ,
+                                                     :part_of_boundary_3 .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#wavelength_secondary_fold
+:wavelength_secondary_fold rdf:type owl:NamedIndividual ,
+                                    <http://www.POKIMON#Wavelength> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#wavelength_tight
+:wavelength_tight rdf:type owl:NamedIndividual ,
+                           <http://www.POKIMON#Wavelength> .
+
+
+###  http://www.semanticweb.org/ilaouici/ontologies/untitled-ontology-1290#wavelength_wide
+:wavelength_wide rdf:type owl:NamedIndividual ,
+                          <http://www.POKIMON#Wavelength> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

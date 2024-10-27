@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.POKIMON" uri="file:/D:/ownCloud/modeling%20formalization/POKIMON/new_pok.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.POKIMON" uri="file:/D:/ownCloud/modeling%20formalization/POKIMON/new_pok.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1728061389331" name="http://www.ex_phd_con_sptm_multi_rep" uri="ex_phd_con_sptm_multi_rep.owl"/>
+    </group>
+</catalog>
