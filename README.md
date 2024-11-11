@@ -1,6 +1,6 @@
 # POKIMON: An Ontological Model for Geological Modeling
 
-POKIMON (Processes, Observation, Information, Knowledge, and Modeling ONtology) is an evolving ontology designed to support geological modeling by establishing semantic and structural relations between geological entities. This model enables users to represent, manage, and retrieve geological knowledge with enriched semantic detail, enhancing the effectiveness of geological data management and querying, principally for the 3D modeling field.
+POKIMON (Processes, Observation, Information, Knowledge, and Modeling ONtology) is an evolving ontology designed to support geological modeling by establishing semantic and structural relations between geological entities and their analogues in the modeling space. This model enables users to represent, manage, and retrieve geological knowledge with enriched semantic detail, enhancing the effectiveness of geological data management and querying, principally for the 3D modeling field.
 
 Note: This ontology is always under development, and this release represents a beta version. Future updates will include expanded concepts, relationships, and use cases as the model evolves to better capture complex geological knowledge.
 ## Contents
