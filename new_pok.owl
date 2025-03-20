@@ -4,7 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.POKIMON> .
+@base <http://www.POKIMON#> .
 
 <http://www.POKIMON> rdf:type owl:Ontology .
 
@@ -96,12 +96,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                    owl:inverseOf :is_Anomalic_Part_Of .
 
 
-###  http://www.POKIMON#has_Depiction_Component
-:has_Depiction_Component rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :has_Part ;
-                         owl:inverseOf :provides_Depiction_Component_For .
-
-
 ###  http://www.POKIMON#has_Dimension
 :has_Dimension rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :has_Quality ;
@@ -176,7 +170,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#has_Semantic_Component
 :has_Semantic_Component rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf :has_Part ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
                         owl:inverseOf :provides_Semantic_Component_For .
 
 
@@ -305,7 +299,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#is_Satisfied_By
 :is_Satisfied_By rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :has_Specific_Dependant ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
                  owl:inverseOf :satisfies .
 
 
@@ -368,7 +362,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#satisfies
 :satisfies rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :is_Specifically_Dependant_On ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
            rdfs:comment "a model sastisfies an information entity" .
 
 
@@ -467,15 +461,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
           rdfs:subClassOf :Fold .
 
 
-###  http://www.POKIMON#Assumed_Fact
-:Assumed_Fact rdf:type owl:Class ;
-              rdfs:subClassOf :Fact ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :bearer_Of ;
-                                owl:someValuesFrom :Assumed_Origin
-                              ] .
-
-
 ###  http://www.POKIMON#Assumed_Origin
 :Assumed_Origin rdf:type owl:Class ;
                 rdfs:subClassOf :Origin .
@@ -560,7 +545,7 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#Decision
 :Decision rdf:type owl:Class ;
-          rdfs:subClassOf :Information_Entity ,
+          rdfs:subClassOf :Realizable_Entity ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :is_Output_Of ;
                             owl:someValuesFrom :Decision_Process
@@ -699,16 +684,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                     rdfs:subClassOf <http://www.POKIMON#3D_Structural_Modeling> .
 
 
-###  http://www.POKIMON#Fact
-:Fact rdf:type owl:Class ;
-      rdfs:subClassOf :Information_Entity ,
-                      :Specifically_Dependent_Continuant ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :is_Specifically_Dependant_On ;
-                        owl:someValuesFrom owl:Thing
-                      ] .
-
-
 ###  http://www.POKIMON#Fault
 :Fault rdf:type owl:Class ;
        rdfs:subClassOf :Specifically_Dependent_Geological_Structure .
@@ -761,11 +736,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Fold_Limb
 :Fold_Limb rdf:type owl:Class ;
            rdfs:subClassOf :Specifically_Dependent_Geological_Structure .
-
-
-###  http://www.POKIMON#Functional_Entity
-:Functional_Entity rdf:type owl:Class ;
-                   rdfs:subClassOf :Realizable_Entity .
 
 
 ###  http://www.POKIMON#Generically_Dependent_Continuant
@@ -997,15 +967,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                           rdfs:subClassOf :Selection_Process .
 
 
-###  http://www.POKIMON#Interpreted_Fact
-:Interpreted_Fact rdf:type owl:Class ;
-                  rdfs:subClassOf :Fact ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :bearer_Of ;
-                                    owl:someValuesFrom :Interpreted_Origin
-                                  ] .
-
-
 ###  http://www.POKIMON#Interpreted_Origin
 :Interpreted_Origin rdf:type owl:Class ;
                     rdfs:subClassOf :Origin .
@@ -1153,15 +1114,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Observation_Process
 :Observation_Process rdf:type owl:Class ;
                      rdfs:subClassOf :Planned_Process .
-
-
-###  http://www.POKIMON#Observed_Fact
-:Observed_Fact rdf:type owl:Class ;
-               rdfs:subClassOf :Fact ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :bearer_Of ;
-                                 owl:someValuesFrom :Observed_Origin
-                               ] .
 
 
 ###  http://www.POKIMON#Observed_Origin
@@ -1436,7 +1388,32 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 ###  http://www.POKIMON#Semantic_Content_Entity
 :Semantic_Content_Entity rdf:type owl:Class ;
-                         rdfs:subClassOf :Information_Content_Entity .
+                         owl:equivalentClass [ owl:intersectionOf ( :Information_Content_Entity
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :has_Semantic_Component ;
+                                                                      owl:someValuesFrom owl:Thing
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :Information_Content_Entity ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :has_Origin ;
+                                           owl:someValuesFrom :Origin
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :has_Quality ;
+                                           owl:someValuesFrom :Quality
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :is_Output_Of ;
+                                           owl:someValuesFrom :Planned_Process
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :is_Part_Of ;
+                                           owl:someValuesFrom :Model
+                                         ] ;
+                         rdfs:comment "is output of information generation process" .
 
 
 ###  http://www.POKIMON#Shape
@@ -1675,4 +1652,4 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                                             rdfs:subClassOf :Modeling_Process .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
