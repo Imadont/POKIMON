@@ -437,20 +437,6 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
           rdfs:subClassOf :Proposition_Content_Entity .
 
 
-###  http://www.POKIMON#Anomaly
-:Anomaly rdf:type owl:Class ;
-         rdfs:subClassOf :Situation ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :has_Anomalic_Part ;
-                           owl:someValuesFrom owl:Thing
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :is_Output_Of ;
-                           owl:someValuesFrom :Evaluation_Process
-                         ] ;
-         rdfs:comment "A specific situation where some entities are not inconsistent according to a rule, law or any entity that governs these entities" .
-
-
 ###  http://www.POKIMON#Anticline
 :Anticline rdf:type owl:Class ;
            rdfs:subClassOf :Fold .
@@ -949,6 +935,20 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                        rdfs:subClassOf :Estimation_Process .
 
 
+###  http://www.POKIMON#Interpretation_Anomaly
+:Interpretation_Anomaly rdf:type owl:Class ;
+                        rdfs:subClassOf :Interpretaton_Situatiion ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :has_Anomalic_Part ;
+                                          owl:someValuesFrom owl:Thing
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :is_Output_Of ;
+                                          owl:someValuesFrom :Evaluation_Process
+                                        ] ;
+                        rdfs:comment "A specific situation where some entities are not inconsistent according to a rule, law or any entity that governs these entities" .
+
+
 ###  http://www.POKIMON#Interpretation_Process
 :Interpretation_Process rdf:type owl:Class ;
                         rdfs:subClassOf :Planned_Process ,
@@ -965,6 +965,19 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 ###  http://www.POKIMON#Interpretation_Selection
 :Interpretation_Selection rdf:type owl:Class ;
                           rdfs:subClassOf :Selection_Process .
+
+
+###  http://www.POKIMON#Interpretaton_Situatiion
+:Interpretaton_Situatiion rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( :Situation
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :has_Part ;
+                                                                       owl:allValuesFrom :Semantic_Content_Entity
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf :Situation .
 
 
 ###  http://www.POKIMON#Interpreted_Origin
@@ -1025,21 +1038,22 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 :Model rdf:type owl:Class ;
        owl:equivalentClass [ owl:intersectionOf ( :Information_Content_Entity
                                                   [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :is_Generically_Dependant_On ;
-                                                    owl:someValuesFrom :Depiction_Content_Entity
+                                                    owl:onProperty :has_Part ;
+                                                    owl:someValuesFrom :Semantic_Content_Entity
                                                   ]
                                                   [ rdf:type owl:Restriction ;
                                                     owl:onProperty :satisfies ;
                                                     owl:someValuesFrom :Information_Entity
                                                   ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :has_Part ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass :Depiction_Content_Entity
+                                                  ]
                                                 ) ;
                              rdf:type owl:Class
                            ] ;
-       rdfs:subClassOf :Information_Content_Entity ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :bearer_Of ;
-                         owl:someValuesFrom :Origin
-                       ] .
+       rdfs:subClassOf :Information_Content_Entity .
 
 
 ###  http://www.POKIMON#Modeling_Process
