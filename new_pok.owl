@@ -374,7 +374,9 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 
 
 ###  http://www.POKIMON#substitutes
-:substitutes rdf:type owl:ObjectProperty .
+:substitutes rdf:type owl:ObjectProperty ;
+             rdfs:domain :Geomodel ;
+             rdfs:range :Geomodel .
 
 
 #################################################################
@@ -475,6 +477,10 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                                                                   owl:onProperty :has_Quality ;
                                                                   owl:allValuesFrom :Original_Spatial_Location
                                                                 ]
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :substitutes ;
+                                               owl:allValuesFrom :Conceptual_Geological_Model
                                              ] ;
                              rdfs:comment "a model missing its exact spatial locations (could have the global geometry without the location of its parts)" .
 
@@ -1487,6 +1493,10 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty :satisfies ;
                                                owl:someValuesFrom :Conceptual_Geological_Model
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :substitutes ;
+                                               owl:allValuesFrom :Space_Time_Geological_Model
                                              ] ;
                              rdfs:comment "A model located both in space and time" .
 
