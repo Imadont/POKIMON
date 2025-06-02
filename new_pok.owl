@@ -959,6 +959,10 @@ xsd:anySimpleType rdf:type rdfs:Datatype .
 :Interpretation_Process rdf:type owl:Class ;
                         rdfs:subClassOf :Planned_Process ,
                                         [ rdf:type owl:Restriction ;
+                                          owl:onProperty :has_Input ;
+                                          owl:someValuesFrom :Situation
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
                                           owl:onProperty :has_Output ;
                                           owl:someValuesFrom :Model
                                         ] ,
