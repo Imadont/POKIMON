@@ -674,14 +674,6 @@
     
 
 
-    <!-- http://www.POKIMON#POK:Complex_Modify -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Complex_Modify">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Modifying_Entity_Process"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.POKIMON#POK:Conceptual_Geological_Model -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Conceptual_Geological_Model">
@@ -822,6 +814,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Input"/>
                 <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Geomodel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Output"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Decision"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -967,6 +965,12 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Estimation_Process">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Planned_Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Input"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Quality"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -991,6 +995,18 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Evaluation_Process">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Planned_Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Input"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Information_Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Input"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Output"/>
@@ -1950,6 +1966,26 @@
     
 
 
+    <!-- http://www.POKIMON#POK:Representation_Process -->
+
+    <owl:Class rdf:about="http://www.POKIMON#POK:Representation_Process">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Planned_Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Input"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Output"/>
+                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.POKIMON#POK:Representational_Quality -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Representational_Quality">
@@ -2171,14 +2207,6 @@
                 <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Independent_Continuant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Simple_Modify -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Simple_Modify">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Modifying_Entity_Process"/>
     </owl:Class>
     
 
