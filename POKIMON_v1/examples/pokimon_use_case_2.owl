@@ -1,0 +1,463 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/laouici/ontologies/2025/5/untitled-ontology-86/"
+     xml:base="http://www.semanticweb.org/laouici/ontologies/2025/5/untitled-ontology-86/"
+     xmlns:POK="http://www.POKIMON#POK:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owlready_ontology="http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#">
+    <owl:Ontology rdf:about="http://www.POKIMON_use_case_2">
+        <owl:imports rdf:resource="http://www.POKIMON"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#fault_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#fault_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Fault"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#fault_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#fault_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Fault"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_1_unit_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_1_unit_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_1_unit_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_1_unit_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_1_unit_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_1_unit_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_1_unit_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_1_unit_4">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_1_unit_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_1_unit_5">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_1_unit_6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_1_unit_6">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_1_unit_7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_1_unit_7">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_2_unit_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_2_unit_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_2_unit_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_2_unit_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_2_unit_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_2_unit_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_2_unit_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_2_unit_4">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_2_unit_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_2_unit_5">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_2_unit_6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_2_unit_6">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_2_unit_7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_2_unit_7">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_3_unit_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_3_unit_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_3_unit_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_3_unit_4">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#part_3_unit_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#part_3_unit_5">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#semantic_content_entity_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#semantic_content_entity_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#fault_1"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#fault_2"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_1"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_2"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_3"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_4"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_5"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_6"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_7"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_1"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_2"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_3"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_4"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_5"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_6"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_7"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_3_unit_3"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_3_unit_4"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#part_3_unit_5"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_1"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_2"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_3"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_4"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_5"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_6"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#semantic_content_entity_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#semantic_content_entity_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_a"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_b"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_c"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_d"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_e"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_f"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_g"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#semantic_content_entity_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#semantic_content_entity_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_x"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_y"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_z"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#space_time_geomodel_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#space_time_geomodel_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Space_Time_Geological_Model"/>
+        <POK:details rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_2"/>
+        <POK:details rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_1"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#semantic_content_entity_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#space_time_geomodel_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#space_time_geomodel_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Space_Time_Geological_Model"/>
+        <POK:details rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_2"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#semantic_content_entity_2"/>
+        <POK:simplifies rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#space_time_geomodel_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#space_time_geomodel_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Space_Time_Geological_Model"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#semantic_content_entity_3"/>
+        <POK:simplifies rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_1"/>
+        <POK:simplifies rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_1"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_1"/>
+        <POK:hosts rdf:resource="http://www.POKIMON_use_case_2#fault_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_2"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_2"/>
+        <POK:hosts rdf:resource="http://www.POKIMON_use_case_2#fault_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_3_unit_3"/>
+        <POK:hosts rdf:resource="http://www.POKIMON_use_case_2#fault_1"/>
+        <POK:hosts rdf:resource="http://www.POKIMON_use_case_2#fault_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_4">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_4"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_4"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_3_unit_4"/>
+        <POK:hosts rdf:resource="http://www.POKIMON_use_case_2#fault_1"/>
+        <POK:hosts rdf:resource="http://www.POKIMON_use_case_2#fault_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_5">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_5"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_5"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_3_unit_5"/>
+        <POK:hosts rdf:resource="http://www.POKIMON_use_case_2#fault_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_6">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_6"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_6"/>
+        <POK:hosts rdf:resource="http://www.POKIMON_use_case_2#fault_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_7">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_1_unit_7"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#part_2_unit_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_a">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_b">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_c -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_c">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_d -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_d">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_e -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_e">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_f -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_f">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_g -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_g">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_x -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_x">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_y -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_y">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_2#unit_z -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#unit_z">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Unit"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

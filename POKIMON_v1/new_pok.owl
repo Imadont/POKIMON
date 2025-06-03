@@ -308,6 +308,12 @@
     
 
 
+    <!-- http://www.POKIMON#POK:is_Above -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:is_Above"/>
+    
+
+
     <!-- http://www.POKIMON#POK:is_Concretized_By -->
 
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:is_Concretized_By">
@@ -1521,6 +1527,14 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Kriging">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.POKIMON#POK:Lithology -->
+
+    <owl:Class rdf:about="http://www.POKIMON#POK:Lithology">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Physical_Quality"/>
     </owl:Class>
     
 
