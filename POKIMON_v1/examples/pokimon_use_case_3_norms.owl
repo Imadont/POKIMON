@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/laouici/ontologies/2025/5/untitled-ontology-110/"
+     xml:base="http://www.semanticweb.org/laouici/ontologies/2025/5/untitled-ontology-110/"
+     xmlns:POK="http://www.POKIMON#POK:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owlready_ontology="http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#">
+    <owl:Ontology rdf:about="http://www.POKIMON_use_case_3_norms">
+        <owl:imports rdf:resource="http://www.POKIMON"/>
+        <owl:imports rdf:resource="http://www.POKIMON_use_case_3_final_geomodel"/>
+        <owl:imports rdf:resource="http://www.POKIMON_use_case_3_iteration_1"/>
+        <owl:imports rdf:resource="http://www.POKIMON_use_case_3_situations"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#fold_final -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#fold_final">
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#age_final_fold"/>
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#angle_final_geomodel"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#geomodel_final -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#geomodel_final">
+        <POK:satisfies rdf:resource="http://www.POKIMON_use_case_3_norms#max_inter_limb_angle"/>
+        <POK:satisfies rdf:resource="http://www.POKIMON_use_case_3_norms#superposition_law"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#surface_2 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#surface_2">
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#age_surf_2"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#surface_3 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#surface_3">
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#age_surf_3"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_iteration_1#surface_1 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_iteration_1#surface_1">
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#age_surf_1"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#age_final_fold -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#age_final_fold">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Age"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#age_gentle_fold -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#age_gentle_fold">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Age"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#age_surf_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#age_surf_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Age"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#age_surf_11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#age_surf_11">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Age"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#age_surf_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#age_surf_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Age"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#age_surf_22 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#age_surf_22">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Age"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#age_surf_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#age_surf_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Age"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#age_surf_33 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#age_surf_33">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Age"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#angle_final_geomodel -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#angle_final_geomodel">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Inter_Limb_Angle"/>
+        <POK:has_Value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">110</POK:has_Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#angle_gentle_fold_geomodel -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#angle_gentle_fold_geomodel">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Inter_Limb_Angle"/>
+        <POK:has_Value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">160</POK:has_Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#decision_geomodel_final -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#decision_geomodel_final">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Decision"/>
+        <POK:inheres_In rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#geomodel_final"/>
+        <POK:has_Value>accepted</POK:has_Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#decision_geomodel_gentle_fold -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#decision_geomodel_gentle_fold">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Decision"/>
+        <POK:inheres_In rdf:resource="http://www.POKIMON_use_case_3_norms#geomodel_gentle_fold"/>
+        <POK:has_Value>refused</POK:has_Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#evaluation_geomodel_final -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#evaluation_geomodel_final">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Evaluation"/>
+        <POK:inheres_In rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#geomodel_final"/>
+        <POK:has_Value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10</POK:has_Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#evaluation_geomodel_gentle_fold -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#evaluation_geomodel_gentle_fold">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Evaluation"/>
+        <POK:inheres_In rdf:resource="http://www.POKIMON_use_case_3_norms#geomodel_gentle_fold"/>
+        <POK:has_Value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</POK:has_Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#fold_gentle -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#fold_gentle">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Fold"/>
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#age_gentle_fold"/>
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#angle_gentle_fold_geomodel"/>
+        <POK:is_Hosted_By rdf:resource="http://www.POKIMON_use_case_3_norms#surface_11"/>
+        <POK:is_Hosted_By rdf:resource="http://www.POKIMON_use_case_3_norms#surface_22"/>
+        <POK:is_Hosted_By rdf:resource="http://www.POKIMON_use_case_3_norms#surface_33"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#geomodel_gentle_fold -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#geomodel_gentle_fold">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Space_Time_Geological_Model"/>
+        <POK:contradicts rdf:resource="http://www.POKIMON_use_case_3_norms#max_inter_limb_angle"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_norms#sce_gentle_fold"/>
+        <POK:satisfies rdf:resource="http://www.POKIMON_use_case_3_norms#superposition_law"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#max_inter_limb_angle -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#max_inter_limb_angle">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Constraint"/>
+        <POK:has_Value rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</POK:has_Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#sce_gentle_fold -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#sce_gentle_fold">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_norms#fold_gentle"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_norms#surface_11"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_norms#surface_22"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_norms#surface_33"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#superposition_law -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#superposition_law">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Geological_Law"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#surface_11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#surface_11">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body_Boundary"/>
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#age_surf_11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#surface_22 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#surface_22">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body_Boundary"/>
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#age_surf_22"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_norms#surface_33 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_norms#surface_33">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body_Boundary"/>
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_norms#age_surf_33"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

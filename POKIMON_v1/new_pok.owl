@@ -567,9 +567,7 @@
 
     <!-- http://www.POKIMON#POK:has_Value -->
 
-    <owl:DatatypeProperty rdf:about="http://www.POKIMON#POK:has_Value">
-        <rdfs:domain rdf:resource="http://www.POKIMON#POK:Quality"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.POKIMON#POK:has_Value"/>
     
 
 
@@ -608,6 +606,14 @@
     
 
 
+    <!-- http://www.POKIMON#POK:Age -->
+
+    <owl:Class rdf:about="http://www.POKIMON#POK:Age">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Temporal_Quality"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.POKIMON#POK:Agent -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Agent">
@@ -636,22 +642,6 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Analysis">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Proposition_Content_Entity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Anticline -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Anticline">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Fold"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Antiform -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Antiform">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Fold"/>
     </owl:Class>
     
 
@@ -701,14 +691,6 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>a model missing its exact spatial locations (could have the global geometry without the location of its parts)</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Conformable_Contact -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Conformable_Contact">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Contact"/>
     </owl:Class>
     
 
@@ -939,14 +921,6 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Drawing">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Image"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Erosive_Contact -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Erosive_Contact">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Contact"/>
     </owl:Class>
     
 
@@ -1415,6 +1389,14 @@
     
 
 
+    <!-- http://www.POKIMON#POK:Inter_Limb_Angle -->
+
+    <owl:Class rdf:about="http://www.POKIMON#POK:Inter_Limb_Angle">
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Physical_Quality"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.POKIMON#POK:Interpolation_Process -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Interpolation_Process">
@@ -1495,22 +1477,6 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Interpreted_Origin">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Origin"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Intrusive_Contact -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Intrusive_Contact">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Contact"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Inverse_Fault -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Inverse_Fault">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Fault"/>
     </owl:Class>
     
 
@@ -1700,14 +1666,6 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Normal_Fault -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Normal_Fault">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Fault"/>
     </owl:Class>
     
 
@@ -2407,34 +2365,10 @@
     
 
 
-    <!-- http://www.POKIMON#POK:Strike_Slip_Fault -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Strike_Slip_Fault">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Fault"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.POKIMON#POK:Summary -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Summary">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Proposition_Content_Entity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Syncline -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Syncline">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Fold"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Synform -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Synform">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Fold"/>
     </owl:Class>
     
 

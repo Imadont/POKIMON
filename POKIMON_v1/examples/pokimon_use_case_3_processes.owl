@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/laouici/ontologies/2025/5/untitled-ontology-107/"
+     xml:base="http://www.semanticweb.org/laouici/ontologies/2025/5/untitled-ontology-107/"
+     xmlns:POK="http://www.POKIMON#POK:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owlready_ontology="http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#">
+    <owl:Ontology rdf:about="http://www.POKIMON_use_case_3_processes">
+        <owl:imports rdf:resource="http://www.POKIMON"/>
+        <owl:imports rdf:resource="http://www.POKIMON_use_case_3_final_geomodel"/>
+        <owl:imports rdf:resource="http://www.POKIMON_use_case_3_iteration_1"/>
+        <owl:imports rdf:resource="http://www.POKIMON_use_case_3_situations"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#interp_proces_final -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#interp_proces_final">
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#decision_process_final_geomodel"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#estimation_process_surf_1"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#evaluation_process_final_geomodel"/>
+        <POK:is_Prescribed_By rdf:resource="http://www.POKIMON_use_case_3_processes#interpretation_algorithm"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_iteration_1#sce_surf_1 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_iteration_1#sce_surf_1">
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_iteration_1#surface_1 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_iteration_1#surface_1">
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#action_sepc_kriging -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#action_sepc_kriging">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Action_Specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#action_spec_nearest_neigh -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#action_spec_nearest_neigh">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Action_Specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#decision_algorithm -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#decision_algorithm">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Decision_Algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#decision_final -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#decision_final">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Decision"/>
+        <POK:inheres_In rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#geomodel_final"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#decision_process_final_geomodel -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#decision_process_final_geomodel">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Decision_Process"/>
+        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#geomodel_final"/>
+        <POK:has_Output rdf:resource="http://www.POKIMON_use_case_3_processes#decision_final"/>
+        <POK:is_Prescribed_By rdf:resource="http://www.POKIMON_use_case_3_processes#decision_algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#estimation_process_surf_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#estimation_process_surf_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Estimation_Process"/>
+        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities"/>
+        <POK:is_Prescribed_By rdf:resource="http://www.POKIMON_use_case_3_processes#ordinary_kriging_algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#evaluation_algrithm -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#evaluation_algrithm">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Evaluation_Algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#evaluation_final -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#evaluation_final">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Evaluation"/>
+        <POK:inheres_In rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#geomodel_final"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#evaluation_process_final_geomodel -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#evaluation_process_final_geomodel">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Evaluation_Process"/>
+        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#geomodel_final"/>
+        <POK:has_Output rdf:resource="http://www.POKIMON_use_case_3_processes#evaluation_final"/>
+        <POK:is_Prescribed_By rdf:resource="http://www.POKIMON_use_case_3_processes#evaluation_algrithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#interpretation_algorithm -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#interpretation_algorithm">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#nearest_neighbor_algorithm -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#nearest_neighbor_algorithm">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Algorithm"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#action_spec_nearest_neigh"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#objective_spec_values_estimation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#objective_spec_values_estimation -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#objective_spec_values_estimation">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Objective_Specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#ordinary_kriging_algorithm -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#ordinary_kriging_algorithm">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Algorithm"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#action_sepc_kriging"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#objective_spec_values_estimation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Quality"/>
+        <POK:has_Value>&apos;some values&apos;</POK:has_Value>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/laouici/ontologies/2025/5/untitled-ontology-94/"
+     xml:base="http://www.semanticweb.org/laouici/ontologies/2025/5/untitled-ontology-94/"
+     xmlns:POK="http://www.POKIMON#POK:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owlready_ontology="http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#">
+    <owl:Ontology rdf:about="http://www.POKIMON_use_case_3_final_geomodel">
+        <owl:imports rdf:resource="http://www.POKIMON"/>
+        <owl:imports rdf:resource="http://www.POKIMON_use_case_3_iteration_1"/>
+        <owl:imports rdf:resource="http://www.POKIMON_use_case_3_situations"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#fold_final -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#fold_final">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Fold"/>
+        <POK:is_Hosted_By rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_2"/>
+        <POK:is_Hosted_By rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_3"/>
+        <POK:is_Hosted_By rdf:resource="http://www.POKIMON_use_case_3_iteration_1#surface_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#geomodel_final -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#geomodel_final">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Space_Time_Geological_Model"/>
+        <POK:explains rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_1"/>
+        <POK:explains rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_2"/>
+        <POK:explains rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_final"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#interp_proces_final -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#interp_proces_final">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Interpretation_Process"/>
+        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_1"/>
+        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_2"/>
+        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_3"/>
+        <POK:has_Output rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#geomodel_final"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#sce_final -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_final">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#fold_final"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_2"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_3"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_iteration_1#sce_surf_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#surface_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#surface_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body_Boundary"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#part_1_sur_2"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#part_2_sur_2"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#part_3_sur_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#surface_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#surface_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Rock_Body_Boundary"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#part_1_sur_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#part_2_sur_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#part_3_sur_3"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
