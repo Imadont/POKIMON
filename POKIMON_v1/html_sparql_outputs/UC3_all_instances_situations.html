@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 700px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#6c17bf", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "www.POKIMON_use_case_3_situations", "label": "www.POKIMON\nuse\ncase_3\nsituations", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "Ontology", "label": "Ontology", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "www.POKIMON", "label": "www.POKIMON", "shape": "dot", "size": 35}, {"color": "#9a1ada", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "POK:has_Part", "label": "POK:has\nPart", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "AnnotationProperty", "label": "AnnotationProperty", "shape": "dot", "size": 35}, {"color": "#9a1ada", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "POK:has_Semantic_Component", "label": "POK:has\nSemantic\nComponent", "shape": "dot", "size": 35}, {"color": "#8c6831", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "POK:Rock_Body_Boundary", "label": "POK:Rock\nBody\nBoundary", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "Class", "label": "Class", "shape": "dot", "size": 35}, {"color": "#8c6831", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "POK:Semantic_Content_Entity", "label": "POK:Semantic\nContent\nEntity", "shape": "dot", "size": 35}, {"color": "#8c6831", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "POK:Situation", "label": "POK:Situation", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "interpretation_situation_1", "label": "interpretation\nsituation\n1", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "NamedIndividual", "label": "NamedIndividual", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "POK:Interpretaton_Situatiion", "label": "POK:Interpretaton\nSituatiion", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_1", "label": "o_1", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_2", "label": "o_2", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_3", "label": "o_3", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_4", "label": "o_4", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "interpretation_situation_2", "label": "interpretation\nsituation\n2", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_5", "label": "o_5", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_6", "label": "o_6", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_7", "label": "o_7", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "interpretation_situation_3", "label": "interpretation\nsituation\n3", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_10", "label": "o_10", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_8", "label": "o_8", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "o_9", "label": "o_9", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_1_sur_1", "label": "part_1\nsur_1", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_3_sur_3", "label": "part_3\nsur_3", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_2_sur_1", "label": "part_2\nsur_1", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_3_sur_1", "label": "part_3\nsur_1", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_4_sur_1", "label": "part_4\nsur_1", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_1_sur_2", "label": "part_1\nsur_2", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_2_sur_2", "label": "part_2\nsur_2", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_3_sur_2", "label": "part_3\nsur_2", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_1_sur_3", "label": "part_1\nsur_3", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 12, "vadjust": -65}, "id": "part_2_sur_3", "label": "part_2\nsur_3", "shape": "dot", "size": 35}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "black", "font": {"size": 12}, "from": "www.POKIMON_use_case_3_situations", "label": "type", "length": 250, "to": "Ontology"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "www.POKIMON_use_case_3_situations", "label": "imports", "length": 250, "to": "www.POKIMON"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "POK:has_Part", "label": "type", "length": 250, "to": "AnnotationProperty"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "POK:has_Semantic_Component", "label": "type", "length": 250, "to": "AnnotationProperty"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "POK:Rock_Body_Boundary", "label": "type", "length": 250, "to": "Class"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "POK:Semantic_Content_Entity", "label": "type", "length": 250, "to": "Class"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "POK:Situation", "label": "type", "length": 250, "to": "Class"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_1", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_1", "label": "type", "length": 250, "to": "POK:Interpretaton_Situatiion"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_1", "label": "POK:has_Part", "length": 250, "to": "o_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_1", "label": "POK:has_Part", "length": 250, "to": "o_2"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_1", "label": "POK:has_Part", "length": 250, "to": "o_3"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_1", "label": "POK:has_Part", "length": 250, "to": "o_4"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_1", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_1", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_1", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_1_sur_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_2", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_2", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_2", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_2_sur_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_3", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_3", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_3", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_3_sur_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_4", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_4", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_4", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_4_sur_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_2", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_2", "label": "type", "length": 250, "to": "POK:Interpretaton_Situatiion"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_2", "label": "POK:has_Part", "length": 250, "to": "o_5"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_2", "label": "POK:has_Part", "length": 250, "to": "o_6"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_2", "label": "POK:has_Part", "length": 250, "to": "o_7"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_5", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_5", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_5", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_1_sur_2"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_6", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_6", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_6", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_2_sur_2"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_7", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_7", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_7", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_3_sur_2"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_3", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_3", "label": "type", "length": 250, "to": "POK:Interpretaton_Situatiion"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_3", "label": "POK:has_Part", "length": 250, "to": "o_10"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_3", "label": "POK:has_Part", "length": 250, "to": "o_8"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "interpretation_situation_3", "label": "POK:has_Part", "length": 250, "to": "o_9"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_10", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_10", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_10", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_3_sur_3"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_8", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_8", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_8", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_1_sur_3"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_9", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_9", "label": "type", "length": 250, "to": "POK:Semantic_Content_Entity"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "o_9", "label": "POK:has_Semantic_Component", "length": 250, "to": "part_2_sur_3"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_1_sur_1", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_1_sur_1", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_3_sur_3", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_3_sur_3", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_2_sur_1", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_2_sur_1", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_3_sur_1", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_3_sur_1", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_4_sur_1", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_4_sur_1", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_1_sur_2", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_1_sur_2", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_2_sur_2", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_2_sur_2", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_3_sur_2", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_3_sur_2", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_1_sur_3", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_1_sur_3", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_2_sur_3", "label": "type", "length": 250, "to": "NamedIndividual"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "part_2_sur_3", "label": "type", "length": 250, "to": "POK:Rock_Body_Boundary"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"enabled": true, "barnesHut": {"gravitationalConstant": -8000, "centralGravity": 0.3, "springLength": 300, "springConstant": 0.04, "damping": 0.09, "avoidOverlap": 1}, "minVelocity": 0.75}, "edges": {"smooth": {"type": "continuous"}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

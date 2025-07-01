@@ -66,10 +66,37 @@
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_final">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
-        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#fold_final"/>
-        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_2"/>
-        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_3"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_final_fold"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_2"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_3"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_iteration_1#sce_surf_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#sce_final_fold -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_final_fold">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#fold_final"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#sce_surf_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_2">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#sce_surf_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_3"/>
     </owl:NamedIndividual>
     
 

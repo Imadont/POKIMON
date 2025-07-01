@@ -80,7 +80,7 @@
     <!-- http://www.POKIMON_use_case_3_situations#interpretation_situation_1 -->
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_situations#interpretation_situation_1">
-        <rdf:type rdf:resource="http://www.POKIMON#POK:Situation"/>
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Interpretaton_Situatiion"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#o_1"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#o_2"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#o_3"/>
@@ -92,7 +92,7 @@
     <!-- http://www.POKIMON_use_case_3_situations#interpretation_situation_2 -->
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_situations#interpretation_situation_2">
-        <rdf:type rdf:resource="http://www.POKIMON#POK:Situation"/>
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Interpretaton_Situatiion"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#o_5"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#o_6"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#o_7"/>
@@ -103,7 +103,7 @@
     <!-- http://www.POKIMON_use_case_3_situations#interpretation_situation_3 -->
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_situations#interpretation_situation_3">
-        <rdf:type rdf:resource="http://www.POKIMON#POK:Situation"/>
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Interpretaton_Situatiion"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#o_10"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#o_8"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_situations#o_9"/>
