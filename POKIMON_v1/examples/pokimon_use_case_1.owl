@@ -46,7 +46,7 @@
     <!-- http://www.POKIMON_use_case_1#depiction_content_entity_sketch -->
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_1#depiction_content_entity_sketch">
-        <rdf:type rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Figurative_Content_Entity"/>
     </owl:NamedIndividual>
     
 
