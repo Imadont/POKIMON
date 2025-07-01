@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1751293551715" name="http://www.phd_ex_interpolation" uri="compac.owl/phd_ex_interpolation.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1751293551715" name="shadowed:http://www.phd_ex_interpolation" uri="compact.owl/phd_ex_interpolation.owl"/>
+    </group>
+</catalog>
