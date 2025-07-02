@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 700px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#6fcc55", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "geomodel_final", "label": "geomodel\nfinal", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "sce_final", "label": "sce\nfinal", "shape": "dot", "size": 35}, {"color": "#6fcc55", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "geomodel_surf_1", "label": "geomodel\nsurf_1", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "sce_surf_1", "label": "sce\nsurf_1", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "interpretation_situation_1", "label": "interpretation\nsituation\n1", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "interpretation_situation_2", "label": "interpretation\nsituation\n2", "shape": "dot", "size": 35}, {"color": "#8B9095", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "interpretation_situation_3", "label": "interpretation\nsituation\n3", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "sce_final_fold", "label": "sce\nfinal\nfold", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "sce_surf_2", "label": "sce\nsurf_2", "shape": "dot", "size": 35}, {"color": "#5D7A8C", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "sce_surf_3", "label": "sce\nsurf_3", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "fold_final", "label": "fold\nfinal", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "surface_2", "label": "surface\n2", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "surface_3", "label": "surface\n3", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "fold_1", "label": "fold_1", "shape": "dot", "size": 35}, {"color": "#ccb655", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "surface_1", "label": "surface\n1", "shape": "dot", "size": 35}, {"color": "#EC51F4", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "interpreted_origin_4", "label": "interpreted\norigin\n4", "shape": "dot", "size": 35}, {"color": "#EC51F4", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "interpreted_origin_2", "label": "interpreted\norigin\n2", "shape": "dot", "size": 35}, {"color": "#EC51F4", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "interpreted_origin_3", "label": "interpreted\norigin\n3", "shape": "dot", "size": 35}, {"color": "#EC51F4", "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": -55}, "id": "interpreted_origin", "label": "interpreted\norigin", "shape": "dot", "size": 35}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "black", "font": {"size": 12}, "from": "geomodel_final", "label": "POK:has_Part", "length": 150, "to": "sce_final"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "geomodel_final", "label": "POK:explains", "length": 150, "to": "interpretation_situation_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "geomodel_final", "label": "POK:explains", "length": 150, "to": "interpretation_situation_2"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "geomodel_final", "label": "POK:explains", "length": 150, "to": "interpretation_situation_3"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_final", "label": "POK:has_Semantic_Component", "length": 150, "to": "sce_final_fold"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_final", "label": "POK:has_Semantic_Component", "length": 150, "to": "sce_surf_2"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_final", "label": "POK:has_Semantic_Component", "length": 150, "to": "sce_surf_3"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_final", "label": "POK:has_Semantic_Component", "length": 150, "to": "sce_surf_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "geomodel_surf_1", "label": "POK:has_Part", "length": 150, "to": "sce_surf_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "geomodel_surf_1", "label": "POK:explains", "length": 150, "to": "interpretation_situation_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_surf_1", "label": "POK:has_Semantic_Component", "length": 150, "to": "fold_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_surf_1", "label": "POK:has_Semantic_Component", "length": 150, "to": "surface_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_surf_1", "label": "POK:has_Origin", "length": 150, "to": "interpreted_origin"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_final_fold", "label": "POK:has_Semantic_Component", "length": 150, "to": "fold_final"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_final_fold", "label": "POK:has_Origin", "length": 150, "to": "interpreted_origin_4"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_surf_2", "label": "POK:has_Semantic_Component", "length": 150, "to": "surface_2"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_surf_2", "label": "POK:has_Origin", "length": 150, "to": "interpreted_origin_2"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_surf_3", "label": "POK:has_Semantic_Component", "length": 150, "to": "surface_3"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "sce_surf_3", "label": "POK:has_Origin", "length": 150, "to": "interpreted_origin_3"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"enabled": true, "barnesHut": {"gravitationalConstant": -8000, "centralGravity": 0.3, "springLength": 300, "springConstant": 0.04, "damping": 0.09, "avoidOverlap": 1}, "minVelocity": 0.75}, "edges": {"smooth": {"type": "continuous"}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

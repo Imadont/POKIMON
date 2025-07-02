@@ -31,9 +31,51 @@
     <!-- http://www.POKIMON_use_case_3_final_geomodel#interp_proces_final -->
 
     <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#interp_proces_final">
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_iteration_1#interp_process_iter_1"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#decision_process_final_geomodel"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#estimation_process_surf2_3"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#estimation_process_surf_1"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#evaluation_process_final_geomodel"/>
+        <POK:is_Prescribed_By rdf:resource="http://www.POKIMON_use_case_3_processes#interpretation_algorithm"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#sce_surf_2 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_2">
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_processes#surf_2_quality"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#sce_surf_3 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_3">
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_processes#surf_3_quality"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#surface_2 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#surface_2">
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_processes#surf_2_quality"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#surface_3 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_final_geomodel#surface_3">
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_processes#surf_3_quality"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_iteration_1#interp_process_iter_1 -->
+
+    <rdf:Description rdf:about="http://www.POKIMON_use_case_3_iteration_1#interp_process_iter_1">
         <POK:is_Prescribed_By rdf:resource="http://www.POKIMON_use_case_3_processes#interpretation_algorithm"/>
     </rdf:Description>
     
@@ -42,7 +84,7 @@
     <!-- http://www.POKIMON_use_case_3_iteration_1#sce_surf_1 -->
 
     <rdf:Description rdf:about="http://www.POKIMON_use_case_3_iteration_1#sce_surf_1">
-        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_processes#surf_1_quality"/>
     </rdf:Description>
     
 
@@ -50,7 +92,7 @@
     <!-- http://www.POKIMON_use_case_3_iteration_1#surface_1 -->
 
     <rdf:Description rdf:about="http://www.POKIMON_use_case_3_iteration_1#surface_1">
-        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities"/>
+        <POK:has_Quality rdf:resource="http://www.POKIMON_use_case_3_processes#surf_1_quality"/>
     </rdf:Description>
     
 
@@ -58,6 +100,30 @@
     <!-- http://www.POKIMON_use_case_3_processes#action_sepc_kriging -->
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#action_sepc_kriging">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Action_Specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#action_spec_decis -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#action_spec_decis">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Action_Specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#action_spec_eva -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#action_spec_eva">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Action_Specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#action_spec_interpretation -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#action_spec_interpretation">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Action_Specification"/>
     </owl:NamedIndividual>
     
@@ -74,7 +140,9 @@
     <!-- http://www.POKIMON_use_case_3_processes#decision_algorithm -->
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#decision_algorithm">
-        <rdf:type rdf:resource="http://www.POKIMON#POK:Decision_Algorithm"/>
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Algorithm"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#action_spec_decis"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#objective_spec_decision"/>
     </owl:NamedIndividual>
     
 
@@ -99,11 +167,22 @@
     
 
 
+    <!-- http://www.POKIMON_use_case_3_processes#estimation_process_surf2_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#estimation_process_surf2_3">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Estimation_Process"/>
+        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_processes#surf_2_quality"/>
+        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_processes#surf_3_quality"/>
+        <POK:is_Prescribed_By rdf:resource="http://www.POKIMON_use_case_3_processes#nearest_neighbor_algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.POKIMON_use_case_3_processes#estimation_process_surf_1 -->
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#estimation_process_surf_1">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Estimation_Process"/>
-        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities"/>
+        <POK:has_Input rdf:resource="http://www.POKIMON_use_case_3_processes#surf_1_quality"/>
         <POK:is_Prescribed_By rdf:resource="http://www.POKIMON_use_case_3_processes#ordinary_kriging_algorithm"/>
     </owl:NamedIndividual>
     
@@ -112,7 +191,9 @@
     <!-- http://www.POKIMON_use_case_3_processes#evaluation_algrithm -->
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#evaluation_algrithm">
-        <rdf:type rdf:resource="http://www.POKIMON#POK:Evaluation_Algorithm"/>
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Algorithm"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#action_spec_eva"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#objective_spec_eval"/>
     </owl:NamedIndividual>
     
 
@@ -141,6 +222,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#interpretation_algorithm">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Algorithm"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#action_spec_interpretation"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#objective_spec_interpetation"/>
     </owl:NamedIndividual>
     
 
@@ -151,6 +234,30 @@
         <rdf:type rdf:resource="http://www.POKIMON#POK:Algorithm"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#action_spec_nearest_neigh"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_processes#objective_spec_values_estimation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#objective_spec_decision -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#objective_spec_decision">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Objective_Specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#objective_spec_eval -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#objective_spec_eval">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Objective_Specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#objective_spec_interpetation -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#objective_spec_interpetation">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Objective_Specification"/>
     </owl:NamedIndividual>
     
 
@@ -173,11 +280,27 @@
     
 
 
-    <!-- http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities -->
+    <!-- http://www.POKIMON_use_case_3_processes#surf_1_quality -->
 
-    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#surf_1_interpolated_qualities">
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#surf_1_quality">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Quality"/>
         <POK:has_Value>&apos;some values&apos;</POK:has_Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#surf_2_quality -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#surf_2_quality">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Quality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_processes#surf_3_quality -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_processes#surf_3_quality">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Quality"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

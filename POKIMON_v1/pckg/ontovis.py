@@ -67,9 +67,9 @@ class OntoVis:
         directed = kwargs.get("directed", True)
         max_label_length = kwargs.get('max_label_length', 7)
 
-        node_font_size = kwargs.get("edge_length", 12)
-        node_font_color = kwargs.get("edge_length", "#000000")
-        node_font_location = kwargs.get("edge_length", -65)
+        node_font_size = kwargs.get("node_font_size", 12)
+        node_font_color = kwargs.get("node_font_color", "#000000")
+        node_font_location = kwargs.get("node_font_location", -65)
 
         node_font = kwargs.get("node_font", {"size": node_font_size, "color": node_font_color, "face": "arial", "vadjust": node_font_location})
 
@@ -77,27 +77,46 @@ class OntoVis:
         net = Network(height=net_height, width=net_width, directed=directed)
 
         # Customize physics options
-        net.set_options("""
-        var options = {
-        "physics": {
-            "enabled": true,
-            "barnesHut": {
-            "gravitationalConstant": -8000,
-            "centralGravity": 0.3,
-            "springLength": 300,
-            "springConstant": 0.04,
-            "damping": 0.09,
-            "avoidOverlap": 1
+        static_layout = kwargs.get("static_layout", False)
+        if static_layout:
+            net.set_options("""
+            var options = {
+            "physics": { "enabled": false },
+            "layout": { "improvedLayout": false },
+            "interaction": {
+                "dragNodes": true,
+                "dragView": true,
+                "zoomView": true
             },
-            "minVelocity": 0.75
-        },
-        "edges": {
-            "smooth": {
-            "type": "continuous"
+            "edges": {
+                "smooth": {
+                "type": "continuous"
+                }
             }
-        }
-        }
-        """)
+            }
+            """)
+        else:
+            net.set_options("""
+            var options = {
+            "physics": {
+                "enabled": true,
+                "barnesHut": {
+                "gravitationalConstant": -8000,
+                "centralGravity": 0.05,
+                "springLength": 300,
+                "springConstant": 0.04,
+                "damping": 0.09,
+                "avoidOverlap": 1
+                },
+                "minVelocity": 0.05
+            },
+            "edges": {
+                "smooth": {
+                "type": "continuous"
+                }
+            }
+            }
+            """)
 
 
         for node in network_graph.graph.nodes():
@@ -126,40 +145,7 @@ class OntoVis:
         net.write_html(output_html_path)
 
 
-    def generate_html_from_network_graph_obs(self, query, ouput_html_path = "full_ontology_graph1.html", ):        
-        network_graph = self.build_network_graph(query)
-
-        # Visualize
-        net = Network(height="700px", width="100%", directed=True)
-        for node in network_graph.graph.nodes():
-            node_type = network_graph.node_types.get(node, "Unknown")
-            color = self.get_color_for_class(node_type)
-            net.add_node(
-                node,
-                label=node,
-                shape="dot",
-                size=35,
-                color=color,
-                font={
-                    "size": 12,
-                    "color": "#000000" ,
-                    "face": "arial",
-                    "vadjust": -50  # center the label vertically
-                }
-            )
-
-        for src, tgt, data in network_graph.graph.edges(data=True):
-            net.add_edge(
-                src,
-                tgt,
-                label=data.get("label", ""),
-                arrows="to",
-                font={"size": 10},
-                length=250
-            )
-
-        net.write_html(ouput_html_path)    
-
+    
 
     def get_node_type(self, uri ):
         g = self.global_graph
