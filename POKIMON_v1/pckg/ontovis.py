@@ -4,6 +4,7 @@ from pyvis.network import Network
 
 from matplotlib import cm
 import random
+import math
 
 class NetworkGraph:
     def __init__(self):
@@ -54,6 +55,7 @@ class OntoVis:
     
     def generate_html_from_network_graph(self, query, output_html_path="full_ontology_graph1.html", **kwargs):
         network_graph = self.build_network_graph(query)
+        nodes = list(network_graph.graph.nodes())
 
         # Default rendering params
         node_size = kwargs.get("node_size", 35)
@@ -74,6 +76,10 @@ class OntoVis:
         node_font = kwargs.get("node_font", {"size": node_font_size, "color": node_font_color, "face": "arial", "vadjust": node_font_location})
 
 
+        num_nodes = len(nodes)
+        # Define box area based on number of nodes and node size
+        box_size = int(math.sqrt(num_nodes)) * node_size * 7
+        
         net = Network(height=net_height, width=net_width, directed=directed)
 
         # Customize physics options
@@ -119,18 +125,28 @@ class OntoVis:
             """)
 
 
-        for node in network_graph.graph.nodes():
+        #############
+        for node in nodes:
             node_type = network_graph.node_types.get(node, "Unknown")
             color = self.get_color_for_class(node_type)
-            net.add_node(
-                node,
-                label=OntoVis.format_label(node, max_label_length),
-                shape=node_shape,
-                size=node_size,
-                color=color,
-                font=node_font
-            )
 
+            node_kwargs = {
+                "label": OntoVis.format_label(node, max_label_length),
+                "shape": node_shape,
+                "size": node_size,
+                "color": color,
+                "font": node_font
+            }
+
+            if static_layout:
+                # Assign random position within the box
+                x = random.randint(-box_size // 2, box_size // 2)
+                y = random.randint(-box_size // 2, box_size // 2)
+                node_kwargs.update({"x": x, "y": y, "fixed": {"x": False, "y": False}})
+
+            net.add_node(node, **node_kwargs)
+
+        #############
         for src, tgt, data in network_graph.graph.edges(data=True):
             net.add_edge(
                 src,
