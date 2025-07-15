@@ -730,7 +730,10 @@
 
     <!-- http://www.POKIMON#POK:Continuant -->
 
-    <owl:Class rdf:about="http://www.POKIMON#POK:Continuant"/>
+    <owl:Class rdf:about="http://www.POKIMON#POK:Continuant">
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000002</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -889,6 +892,8 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Disposition">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Realizable_Entity"/>
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000016</rdfs:comment>
     </owl:Class>
     
 
@@ -1086,14 +1091,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Generically_Dependent_Geological_Structure -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Generically_Dependent_Geological_Structure">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Generically_Dependent_Continuant"/>
+        <rdfs:comment>GDC: BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000031</rdfs:comment>
     </owl:Class>
     
 
@@ -1268,6 +1267,8 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Immaterial_Entity">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Independent_Continuant"/>
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000141</rdfs:comment>
     </owl:Class>
     
 
@@ -1306,6 +1307,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:comment>IC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000004</rdfs:comment>
     </owl:Class>
     
 
@@ -1547,6 +1550,8 @@
                 <owl:allValuesFrom rdf:resource="http://www.POKIMON#POK:Material_Entity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000040</rdfs:comment>
     </owl:Class>
     
 
@@ -1696,7 +1701,10 @@
 
     <!-- http://www.POKIMON#POK:Occurrent -->
 
-    <owl:Class rdf:about="http://www.POKIMON#POK:Occurrent"/>
+    <owl:Class rdf:about="http://www.POKIMON#POK:Occurrent">
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000003</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1878,6 +1886,8 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000019</rdfs:comment>
     </owl:Class>
     
 
@@ -1910,6 +1920,8 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Realizable_Entity">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Specifically_Dependent_Continuant"/>
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000017</rdfs:comment>
     </owl:Class>
     
 
@@ -2061,6 +2073,8 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Role">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Realizable_Entity"/>
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000023</rdfs:comment>
     </owl:Class>
     
 
@@ -2281,6 +2295,8 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Spatial_Region">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Immaterial_Entity"/>
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000006</rdfs:comment>
     </owl:Class>
     
 
@@ -2323,6 +2339,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000020</rdfs:comment>
     </owl:Class>
     
 
