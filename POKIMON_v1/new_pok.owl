@@ -641,14 +641,6 @@ original uri : https://spec.industrialontologies.org/ontology/core/Core/ActionSp
     
 
 
-    <!-- http://www.POKIMON#POK:Analysis -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Analysis">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Proposition_Content_Entity"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.POKIMON#POK:Assumed_Origin -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Assumed_Origin">
@@ -702,6 +694,7 @@ original uri : https://spec.industrialontologies.org/ontology/core/Core/ActionSp
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Connectionist_Content_Entity">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
+        <rdfs:isDefinedBy>Connectionist Content Entity: the model is represented through a connectionist pattern such as a machine-learning model or the configuration of neurons in a mind (for mental representations).</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -710,6 +703,7 @@ original uri : https://spec.industrialontologies.org/ontology/core/Core/ActionSp
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Constraint">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Information_Entity"/>
+        <rdfs:isDefinedBy>Constraint is an information entity that sets limits on certain aspects of  entities within a model.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -847,14 +841,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000002</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>an information content entity based on the paradigms of representations</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Description -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Description">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Proposition_Content_Entity"/>
+        <rdfs:isDefinedBy>The Depiction Content Entity (DCE) reflects the representational paradigm for a specific representation. E.g. an interpreted collection of geological units and their relations (SCEs) can be represented in text, as a cross-section, 2D map, or 3D model (DCEs).</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1021,14 +1008,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000016</rdfs:comment>
     
 
 
-    <!-- http://www.POKIMON#POK:Fault_Core_Zone -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Fault_Core_Zone">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Spatial_Region"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.POKIMON#POK:Feature_Space -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Feature_Space">
@@ -1046,6 +1025,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000016</rdfs:comment>
     <owl:Class rdf:about="http://www.POKIMON#POK:Figurative_Content_Entity">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
         <rdfs:comment>any type of figure</rdfs:comment>
+        <rdfs:isDefinedBy>Figurative Content Entity: the model is represented using a figure. The figure can be volumetric, such as a 3D geometric model using explicit or implicit surfaces, or planar, such as a sketch, image, section, or transect.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1129,6 +1109,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000031</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Geological_Process">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Natural_Process"/>
+        <rdfs:isDefinedBy>Geological processes are unplanned natural processes that output geological objects, structures, features or qualities of them. These are govenred by geological norms</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1349,13 +1330,14 @@ original uri: http://purl.obolibrary.org/obo/IAO_0000030</rdfs:comment>
     <!-- http://www.POKIMON#POK:Information_Entity -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Information_Entity">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Continuant"/>
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Immaterial_Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.POKIMON#POK:is_About"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy>An information entity is an independent immaterial continuant that, unlike an information content entity, does not require representation to exist.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1364,6 +1346,7 @@ original uri: http://purl.obolibrary.org/obo/IAO_0000030</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Input">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Role"/>
+        <rdfs:isDefinedBy>A role is a realizable entity that inheres in a continuant and is manifested when the continuant participates in a process, specifically as an input to that process</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1472,6 +1455,7 @@ original uri: http://purl.obolibrary.org/obo/IAO_0000030</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Situation"/>
+        <rdfs:isDefinedBy>An Interpretation Situation is an Independent Continuant that is collection of SCEs with their  entities either lacking attributes or deviating from established norms, e.g. some isolated parts of a geological surface that were observed, a fold that is interpreted without location and amplitude, or a normal fault exhibiting reverse displacement.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1642,6 +1626,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000040</rdfs:comment>
                 <owl:allValuesFrom rdf:resource="http://www.POKIMON#POK:Geological_Law"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy>Natural processes are non anthropic processes</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1672,6 +1657,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000040</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy>Norm is an information entity that governs the behavior of other entities.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1739,6 +1725,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000003</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Output">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Role"/>
+        <rdfs:isDefinedBy>A realizable entity that inheres in a continuant and is manifested when the continuant participates in a process, specifically as an output to that process</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1873,6 +1860,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000015</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Proposition_Content_Entity">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
+        <rdfs:isDefinedBy>Proposition Content Entity: the model is represented using a sequence of terms from a language for artifacts such as reports, papers, and map sidebars.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -2180,6 +2168,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000023</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>is output of information generation process</rdfs:comment>
+        <rdfs:isDefinedBy>The Semantic Content Entity (SCE) provides interpretative information for a an entity, such as a record of the process of its interpretation, related uncertainty, and origin, e.g. observed.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -2356,6 +2345,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000020</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Rock_Body"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy>A temporarily mapping of the class geological structures from GSO (original GSO uri https://w3id.org/gso/1.0/geology/Geologic_Structure). It considers contacts, faults, and folds as geologic structures</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -2372,14 +2362,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000020</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Strike">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Physical_Quality"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Summary -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Summary">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Proposition_Content_Entity"/>
     </owl:Class>
     
 
@@ -2439,6 +2421,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000020</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Process"/>
+        <rdfs:isDefinedBy>Unplanned processes are not prescribed by a plan specification but instead are governed by norms</rdfs:isDefinedBy>
     </owl:Class>
     
 
