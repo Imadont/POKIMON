@@ -586,6 +586,8 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Action_Specification">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Information_Content_Entity"/>
+        <rdfs:comment>IOF entity
+original uri : https://spec.industrialontologies.org/ontology/core/Core/ActionSpecification</rdfs:comment>
     </owl:Class>
     
 
@@ -626,6 +628,7 @@
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Algorithm">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Plan_Specification"/>
+        <rdfs:isDefinedBy>a subtype of plan specficiations, one that is a finite, ordered set of unambiguous instructions for solving a problem or performing a computation that, when executed, produces a result and halts in a finite amount of time. Then, an algorithm prescribes a specific planned process by defining an action specification (the precise steps or computations) aimed at achieving an objective specification (the intended result).</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1162,6 +1165,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000031</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Information_Entity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy>A specific subtype of models used to describe geological entities</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1243,12 +1247,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000031</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.POKIMON#POK:is_Specifically_Dependant_On"/>
                 <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:IA"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.POKIMON#POK:is_Specifically_Dependant_On"/>
-                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Syntax"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1342,6 +1340,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000004</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.POKIMON#POK:Information_Entity"/>
+        <rdfs:comment>SDC IAO entity
+original uri: http://purl.obolibrary.org/obo/IAO_0000030</rdfs:comment>
     </owl:Class>
     
 
@@ -1580,6 +1580,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000040</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Information_Content_Entity"/>
+        <rdfs:isDefinedBy>an ICE that points to real  entities via the is about relation. Each model has a Semantic Content Entity (SCE) and a Description Content Entity (DCE) as essential parts. The model is internally specifically dependent on the SCE, and internally specifically dependent on the DCE. The dependence is internal because the SCE and DCE are parts of the geomodel (which excludes the model from specifically depending on the SCE in the BFO sense).</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1679,6 +1680,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000040</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Objective_Specification">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Information_Content_Entity"/>
+        <rdfs:comment>IOF entity
+original uri :https://spec.industrialontologies.org/ontology/core/Core/ObjectiveSpecification</rdfs:comment>
     </owl:Class>
     
 
@@ -1796,6 +1799,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000003</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Objective_Specification"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>IOF entity
+original uri : https://spec.industrialontologies.org/ontology/core/Core/PlanSpecification</rdfs:comment>
     </owl:Class>
     
 
@@ -1834,6 +1839,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000003</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Disposition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>IOF entity
+original uri : https://spec.industrialontologies.org/ontology/core/Core/PlannedProcess</rdfs:comment>
     </owl:Class>
     
 
@@ -1842,14 +1849,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000003</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Probabilistic">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Technique"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Procedure -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Procedure">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Plan_Specification"/>
     </owl:Class>
     
 
@@ -1864,6 +1863,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000003</rdfs:comment>
                 <owl:allValuesFrom rdf:resource="http://www.POKIMON#POK:Process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>SDC BFO entity
+original uri: http://purl.obolibrary.org/obo/BFO_0000015</rdfs:comment>
     </owl:Class>
     
 
@@ -2359,14 +2360,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000020</rdfs:comment>
     
 
 
-    <!-- http://www.POKIMON#POK:Strategy -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Strategy">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Plan_Specification"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.POKIMON#POK:Stratigraphic_Column -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Stratigraphic_Column">
@@ -2387,14 +2380,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000020</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Summary">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Proposition_Content_Entity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Syntax -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Syntax">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Plan_Specification"/>
     </owl:Class>
     
 
@@ -2486,14 +2471,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000020</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Wavelength">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Physical_Quality"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Workflow -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Workflow">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Plan_Specification"/>
     </owl:Class>
     
 
