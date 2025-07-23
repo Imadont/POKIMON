@@ -142,6 +142,7 @@
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_iteration_1#geomodel_surf_1">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Space_Time_Geological_Model"/>
         <POK:explains rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_1"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_iteration_1#sce_fold_1"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_iteration_1#sce_surf_1"/>
     </owl:NamedIndividual>
     
@@ -157,10 +158,28 @@
     
 
 
-    <!-- http://www.POKIMON_use_case_3_iteration_1#interpreted_origin -->
+    <!-- http://www.POKIMON_use_case_3_iteration_1#origin_fold_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_iteration_1#interpreted_origin">
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_iteration_1#origin_fold_1">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Interpreted_Origin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_iteration_1#origin_surf_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_iteration_1#origin_surf_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Interpreted_Origin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.POKIMON_use_case_3_iteration_1#sce_fold_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_iteration_1#sce_fold_1">
+        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
+        <POK:has_Origin rdf:resource="http://www.POKIMON_use_case_3_iteration_1#origin_fold_1"/>
+        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_iteration_1#fold_1"/>
     </owl:NamedIndividual>
     
 
@@ -169,8 +188,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_iteration_1#sce_surf_1">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
-        <POK:has_Origin rdf:resource="http://www.POKIMON_use_case_3_iteration_1#interpreted_origin"/>
-        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_iteration_1#fold_1"/>
+        <POK:has_Origin rdf:resource="http://www.POKIMON_use_case_3_iteration_1#origin_surf_1"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_iteration_1#surface_1"/>
     </owl:NamedIndividual>
     

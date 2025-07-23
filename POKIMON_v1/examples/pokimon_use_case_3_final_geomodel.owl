@@ -45,7 +45,10 @@
         <POK:explains rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_1"/>
         <POK:explains rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_2"/>
         <POK:explains rdf:resource="http://www.POKIMON_use_case_3_situations#interpretation_situation_3"/>
-        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_final"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_final_fold"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_2"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_3_iteration_1#sce_surf_1"/>
     </owl:NamedIndividual>
     
 
@@ -62,38 +65,26 @@
     
 
 
-    <!-- http://www.POKIMON_use_case_3_final_geomodel#interpreted_origin_2 -->
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#origin_final_fold -->
 
-    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#interpreted_origin_2">
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#origin_final_fold">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Interpreted_Origin"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.POKIMON_use_case_3_final_geomodel#interpreted_origin_3 -->
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#origin_surf_2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#interpreted_origin_3">
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#origin_surf_2">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Interpreted_Origin"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.POKIMON_use_case_3_final_geomodel#interpreted_origin_4 -->
+    <!-- http://www.POKIMON_use_case_3_final_geomodel#origin_surf_3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#interpreted_origin_4">
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#origin_surf_3">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Interpreted_Origin"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.POKIMON_use_case_3_final_geomodel#sce_final -->
-
-    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_final">
-        <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
-        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_final_fold"/>
-        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_2"/>
-        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_3"/>
-        <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_iteration_1#sce_surf_1"/>
     </owl:NamedIndividual>
     
 
@@ -102,7 +93,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_final_fold">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
-        <POK:has_Origin rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#interpreted_origin_4"/>
+        <POK:has_Origin rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#origin_final_fold"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#fold_final"/>
     </owl:NamedIndividual>
     
@@ -112,7 +103,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_2">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
-        <POK:has_Origin rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#interpreted_origin_2"/>
+        <POK:has_Origin rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#origin_surf_2"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_2"/>
     </owl:NamedIndividual>
     
@@ -122,7 +113,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_3_final_geomodel#sce_surf_3">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
-        <POK:has_Origin rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#interpreted_origin_3"/>
+        <POK:has_Origin rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#origin_surf_3"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_3_final_geomodel#surface_3"/>
     </owl:NamedIndividual>
     
