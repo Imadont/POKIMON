@@ -23,15 +23,6 @@
     
 
 
-    <!-- http://www.POKIMON#POK:Criteria_For_Selection -->
-
-    <owl:AnnotationProperty rdf:about="http://www.POKIMON#POK:Criteria_For_Selection">
-        <owlr:python_name>POK:Criteria_For_Selection</owlr:python_name>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#python_name -->
 
     <owl:AnnotationProperty rdf:about="http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#python_name"/>
@@ -63,6 +54,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.POKIMON#has_Depiction_Component -->
+
+    <owl:ObjectProperty rdf:about="http://www.POKIMON#has_Depiction_Component">
+        <rdfs:domain rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
+        <rdfs:isDefinedBy>holds between a DCE and its representational components, e.g. size or scale.</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
     
 
 
@@ -99,6 +99,7 @@
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:contradicts">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.POKIMON#POK:is_Contradicted_By"/>
+        <rdfs:isDefinedBy>indicate  whether an entity contravenes a governing entity. The intent is to specify whether entities in a model discconform to general knowledge (norms or constraints), or whether entities in distinct geomodels are disconformant because the general knowledge they satisfy is disconformant. This relations hold between: (1) geomodels; (2) geomodels or SCEs and a norm or constraint; (3) SCEs in different geomodels.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
     
 
@@ -107,7 +108,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:details">
         <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#POK:substitutes"/>
-        <owl:inverseOf rdf:resource="http://www.POKIMON#POK:is_Detailed_By"/>
+        <owl:inverseOf rdf:resource="http://www.POKIMON#POK:simplifies"/>
+        <rdfs:isDefinedBy>a specialization of the substitutes relation for the cases in which the replacement model has increased (detailed) complexity, e.g. due to a change in geographical scale.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
     
 
@@ -117,6 +119,7 @@
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:explains">
         <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#POK:is_About"/>
         <owl:inverseOf rdf:resource="http://www.POKIMON#POK:is_Explained_By"/>
+        <rdfs:isDefinedBy>holds between a model and a situation, such that the model explains the situation by satisfying and not contradicting relevant norms, constraints, and conceptual models.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
     
 
@@ -151,14 +154,6 @@
     <!-- http://www.POKIMON#POK:has_Disposition_To -->
 
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:has_Disposition_To"/>
-    
-
-
-    <!-- http://www.POKIMON#POK:has_Disposition_To_Be_Represented_In -->
-
-    <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:has_Disposition_To_Be_Represented_In">
-        <rdfs:range rdf:resource="http://www.POKIMON#POK:Reference_Space"/>
-    </owl:ObjectProperty>
     
 
 
@@ -251,13 +246,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:has_Semantic_Component">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:isDefinedBy>holds between an SCE and a geological l entity</rdfs:isDefinedBy>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.POKIMON#POK:has_Shape -->
-
-    <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:has_Shape"/>
     
 
 
@@ -330,14 +320,6 @@
     
 
 
-    <!-- http://www.POKIMON#POK:is_Detailed_By -->
-
-    <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:is_Detailed_By">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.POKIMON#POK:is_Evaluation_Of -->
 
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:is_Evaluation_Of">
@@ -388,6 +370,7 @@
     <!-- http://www.POKIMON#POK:is_Origin_Of -->
 
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:is_Origin_Of">
+        <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#POK:is_Quality_Of"/>
         <rdfs:domain rdf:resource="http://www.POKIMON#POK:Origin"/>
     </owl:ObjectProperty>
     
@@ -440,15 +423,6 @@
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:is_Satisfied_By">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.POKIMON#POK:satisfies"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.POKIMON#POK:is_Simplified_By -->
-
-    <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:is_Simplified_By">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.POKIMON#POK:simplifies"/>
     </owl:ObjectProperty>
     
 
@@ -512,7 +486,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:satisfies">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:comment>a model sastisfies an information entity</rdfs:comment>
+        <rdfs:comment>Indicate  whether an entity conform to a governing entity. The intent is to specify whether entities in a model conform to general knowledge (norms or constraints), or whether entities in distinct geomodels are conformant because the general knowledge they satisfy is conformant. This relations hold between: (1) geomodels; (2) geomodels or SCEs and a norm or constraint; (3) SCEs in different geomodels.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -523,6 +497,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.POKIMON#POK:substitutes"/>
         <rdfs:domain rdf:resource="http://www.POKIMON#POK:Model"/>
         <rdfs:range rdf:resource="http://www.POKIMON#POK:Model"/>
+        <rdfs:isDefinedBy>a specialization of the substitutes relation for the cases in which the replacement model has reduced (simplified) ) complexity, e.g. due to a change in geographical scale.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
     
 
@@ -532,6 +507,7 @@
     <owl:ObjectProperty rdf:about="http://www.POKIMON#POK:substitutes">
         <rdfs:domain rdf:resource="http://www.POKIMON#POK:Geomodel"/>
         <rdfs:range rdf:resource="http://www.POKIMON#POK:Geomodel"/>
+        <rdfs:isDefinedBy>holds between models, to replace one with another, typically because the replacement satisfies more things and is deemed to be superior.  Models can only be substituted by the same kind of model, e.g. conceptual models by conceptual models and space-time models by space-time models.</rdfs:isDefinedBy>
     </owl:ObjectProperty>
     
 
@@ -620,6 +596,7 @@ original uri : https://spec.industrialontologies.org/ontology/core/Core/ActionSp
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Agent">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Independent_Continuant"/>
+        <rdfs:isDefinedBy>An independent continuant that has the capacity to act, initiate processes, or bring about changes in reality through intentional or goal-directed activity. An agent may be a natural organism, an artificial system, or a collective entity, provided it has the capability to perform actions that influence other entities or states of affairs.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -694,7 +671,7 @@ original uri : https://spec.industrialontologies.org/ontology/core/Core/ActionSp
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Connectionist_Content_Entity">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
-        <rdfs:isDefinedBy>Connectionist Content Entity: the model is represented through a connectionist pattern such as a machine-learning model or the configuration of neurons in a mind (for mental representations).</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>A depicion content entity whose representational form is realized through a connectionist pattern, such as the weight configurations of an artificial neural network or the synaptic connections and activation patterns in a biological neural system. The representational structure is typically of such complexity that humans cannot directly or intuitively interpret its content without specialized analytical methods or tools.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -703,7 +680,8 @@ original uri : https://spec.industrialontologies.org/ontology/core/Core/ActionSp
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Constraint">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Information_Entity"/>
-        <rdfs:isDefinedBy>Constraint is an information entity that sets limits on certain aspects of  entities within a model.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>An information entity that specifies a limitation or restriction on possible states, actions, or values.
+Examples: “budget cannot exceed $10,000”; “temperature must remain between 2 °C and 8 °C during storage”.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -746,14 +724,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000002</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Criterium">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Information_Entity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.POKIMON#POK:Criterium_Unit_Distinction -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Criterium_Unit_Distinction">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Criterium"/>
+        <rdfs:isDefinedBy>An information entity that specifies a standard, property, or condition used to judge, select, or classify something.
+Examples: “must be over 18 years old to vote”; “p-value ≤ 0.05 is considered significant”.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -769,19 +741,15 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000002</rdfs:comment>
     <!-- http://www.POKIMON#POK:Decision -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Decision">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Realizable_Entity"/>
+        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Information_Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.POKIMON#POK:is_Output_Of"/>
                 <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Decision_Process"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.POKIMON#POK:is_Specifically_Dependant_On"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:isDefinedBy>An information entity that results from a deliberative decision process, specifying a chosen course of action or selected option among alternatives.
+Examples: “approve the merger”; “launch the product in Q3”, &quot;accept a geomodel&quot;.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -841,7 +809,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000002</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>an information content entity based on the paradigms of representations</rdfs:comment>
-        <rdfs:isDefinedBy>The Depiction Content Entity (DCE) reflects the representational paradigm for a specific representation. E.g. an interpreted collection of geological units and their relations (SCEs) can be represented in text, as a cross-section, 2D map, or 3D model (DCEs).</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>An information content entity that embodies a specific representational paradigm used to convey the content of a semantic content of a model. A depiction content entity specifies how a given subject matter is represented, regardless of the particular domain. Examples include textual descriptions, pictorial depictions, geometric models, or connectionist patterns.
+Scope: DCEs capture the representational form rather than the subject matter itself. The same underlying semantic content of a model may be realized in multiple depiction content entities using different modalities.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1025,7 +994,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000016</rdfs:comment>
     <owl:Class rdf:about="http://www.POKIMON#POK:Figurative_Content_Entity">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
         <rdfs:comment>any type of figure</rdfs:comment>
-        <rdfs:isDefinedBy>Figurative Content Entity: the model is represented using a figure. The figure can be volumetric, such as a 3D geometric model using explicit or implicit surfaces, or planar, such as a sketch, image, section, or transect.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>A depiction content entity whose representation is realized through a figure, either volumetric (e.g., a 3D geometric model using explicit or implicit surfaces) or planar (e.g., a sketch, image, section, map transect). The representation encodes information primarily in spatial, geometric, or pictorial form, intended to convey meaning through visual structure.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1084,6 +1053,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000031</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Geological_Law">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Norm"/>
+        <rdfs:isDefinedBy>A norm that expresses a fundamental, empirically established regularity in geological phenomena, holding universally within the domain of geology.
+Examples: Law of Superposition (in sedimentary strata, older layers lie beneath younger ones), Law of Original Horizontality.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1101,6 +1072,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000031</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Geological_Principle">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Norm"/>
+        <rdfs:isDefinedBy>A norm that expresses a widely accepted foundational guideline or conceptual rule used in geological reasoning and interpretation. Geological principles may not have the universality of laws but are essential for inference and analysis.
+Examples: Principle of Uniformitarianism (“the present is the key to the past”), Principle of Cross-Cutting Relationships.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1337,7 +1310,8 @@ original uri: http://purl.obolibrary.org/obo/IAO_0000030</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:isDefinedBy>An information entity is an independent immaterial continuant that, unlike an information content entity, does not require representation to exist.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>An independent continuant that consists of a unit of information, which exists regardless of whether it is currently represented, stored, or communicated. An information entity may have representations, but its existence is not dependent on them.
+Examples: the knowledge that water boils at 100 °C at standard pressure, the decision to approve a budget (even if never documented).</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1631,14 +1605,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000040</rdfs:comment>
     
 
 
-    <!-- http://www.POKIMON#POK:Neural_Network_Content_Entity -->
-
-    <owl:Class rdf:about="http://www.POKIMON#POK:Neural_Network_Content_Entity">
-        <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Connectionist_Content_Entity"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.POKIMON#POK:Non_Physical_Temporal_Quality -->
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Non_Physical_Temporal_Quality">
@@ -1657,7 +1623,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000040</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:isDefinedBy>Norm is an information entity that governs the behavior of other entities.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>An information entity that specifies, describes, or prescribes a regularity, principle, or standard — whether arising from natural phenomena, social conventions, or formal regulations — that is used to govern the behaviour of other entities. Norms may be human-created or discovered features of the natural world.
+Examples: the law of gravity, Ohm’s law, rules of chess.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -1860,7 +1827,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000015</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Proposition_Content_Entity">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Depiction_Content_Entity"/>
-        <rdfs:isDefinedBy>Proposition Content Entity: the model is represented using a sequence of terms from a language for artifacts such as reports, papers, and map sidebars.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>A depicition content entity whose representation is realized through a sequence of terms from a language, whether natural or formal, such as those used in textual artifacts (e.g., reports, research papers, map annotations). The representation encodes meaning primarily through syntactic and semantic structures in the chosen language.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -2026,18 +1993,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000017</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Rock_Body">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Material_Entity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Shape"/>
-                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Shape"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Shape"/>
-                <owl:allValuesFrom rdf:resource="http://www.POKIMON#POK:Shape"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -2080,6 +2035,8 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000023</rdfs:comment>
 
     <owl:Class rdf:about="http://www.POKIMON#POK:Scientific_Geological_Theory">
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Norm"/>
+        <rdfs:isDefinedBy>A norm that constitutes a coherent, empirically supported explanatory framework in geology, integrating multiple laws, principles, and observations to account for a wide range of geological phenomena.
+Examples: Plate Tectonic Theory, Continental Drift Theory (historical form), Theory of Seafloor Spreading.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -2168,7 +2125,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000023</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>is output of information generation process</rdfs:comment>
-        <rdfs:isDefinedBy>The Semantic Content Entity (SCE) provides interpretative information for a an entity, such as a record of the process of its interpretation, related uncertainty, and origin, e.g. observed.</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy>An information content entity that represents the abstract semantic part of a model—what the model is about in reality. Like any ICE an SCE is about a portion of reality; the one that the model is about. The SCE captures the model’s meaning formally  within a given domain ontology, making it copiable and transferable without loss of semantic content. The SCE is related to the modeled entity via has_Semantic_Component relation. An SCE can be realized in multiple depiction content entities (DCEs) without changing its meaning—independent of any particular depiction paradigm.</rdfs:isDefinedBy>
     </owl:Class>
     
 
@@ -2232,24 +2189,6 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000023</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://www.POKIMON#POK:Geomodel"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Disposition_To_Be_Represented_In"/>
-                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Spatial_Space"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Disposition_To_Be_Represented_In"/>
-                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Spatio_Temporal_Space"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.POKIMON#POK:has_Disposition_To_Be_Represented_In"/>
-                <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Temporal_Space"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.POKIMON#POK:satisfies"/>
                 <owl:someValuesFrom rdf:resource="http://www.POKIMON#POK:Conceptual_Geological_Model"/>
             </owl:Restriction>
@@ -2260,7 +2199,7 @@ original uri: http://purl.obolibrary.org/obo/BFO_0000023</rdfs:comment>
                 <owl:allValuesFrom rdf:resource="http://www.POKIMON#POK:Space_Time_Geological_Model"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>A model located both in space and time</rdfs:comment>
+        <rdfs:comment>A model about some geological entities located precisly both in space and time</rdfs:comment>
     </owl:Class>
     
 
