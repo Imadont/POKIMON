@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 700px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#8bcc55", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "conceptual_geomodel_1", "label": "conceptual\ngeomodel\n1", "shape": "box", "size": 35, "x": -596, "y": -380}, {"color": "#188dd6", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "depiction_content_entity_sketch", "label": "depiction\ncontent\nentity\nsketch", "shape": "box", "size": 35, "x": -477, "y": 270}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_lithology_a", "label": "semantic\ncontent\nentity\nlithology\na", "shape": "box", "size": 35, "x": -412, "y": -347}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_lithology_b", "label": "semantic\ncontent\nentity\nlithology\nb", "shape": "box", "size": 35, "x": 503, "y": 278}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_unit_a", "label": "semantic\ncontent\nentity\nunit_a", "shape": "box", "size": 35, "x": 279, "y": -432}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_unit_b", "label": "semantic\ncontent\nentity\nunit_b", "shape": "box", "size": 35, "x": 415, "y": -112}, {"color": "#6fcc55", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "space_time_geomodel_1", "label": "space\ntime\ngeomodel\n1", "shape": "box", "size": 35, "x": 387, "y": 485}, {"color": "#188dd6", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "depiction_content_entity_3D", "label": "depiction\ncontent\nentity\n3D", "shape": "box", "size": 35, "x": 376, "y": -364}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_lithology_aa", "label": "semantic\ncontent\nentity\nlithology\naa", "shape": "box", "size": 35, "x": 500, "y": 173}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_lithology_bb", "label": "semantic\ncontent\nentity\nlithology\nbb", "shape": "box", "size": 35, "x": -208, "y": 40}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_unit_aa", "label": "semantic\ncontent\nentity\nunit_aa", "shape": "box", "size": 35, "x": 517, "y": 121}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_unit_bb", "label": "semantic\ncontent\nentity\nunit_bb", "shape": "box", "size": 35, "x": 610, "y": -176}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_s_location_aa", "label": "semantic\ncontent\nentity\ns\nlocation\naa", "shape": "box", "size": 35, "x": 385, "y": 485}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_s_location_bb", "label": "semantic\ncontent\nentity\ns\nlocation\nbb", "shape": "box", "size": 35, "x": -9, "y": -184}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_t_location_aa", "label": "semantic\ncontent\nentity\nt\nlocation\naa", "shape": "box", "size": 35, "x": 524, "y": 488}, {"color": "#5D7A8C", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "semantic_content_entity_t_location_bb", "label": "semantic\ncontent\nentity\nt\nlocation\nbb", "shape": "box", "size": 35, "x": -204, "y": -273}, {"color": "#6fcc55", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "space_time_geomodel_2", "label": "space\ntime\ngeomodel\n2", "shape": "box", "size": 35, "x": -254, "y": -177}, {"color": "#188dd6", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "depiction_content_entity_text", "label": "depiction\ncontent\nentity\ntext", "shape": "box", "size": 35, "x": -194, "y": -538}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "lithology_a", "label": "lithology\na", "shape": "box", "size": 35, "x": 354, "y": -449}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "lithology_aa", "label": "lithology\naa", "shape": "box", "size": 35, "x": 317, "y": 50}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "lithology_b", "label": "lithology\nb", "shape": "box", "size": 35, "x": -280, "y": -579}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "lithology_bb", "label": "lithology\nbb", "shape": "box", "size": 35, "x": -405, "y": 275}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "precise_space_location_unit_aa", "label": "precise\nspace\nlocation\nunit_aa", "shape": "box", "size": 35, "x": 133, "y": 351}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "precise_space_location_unit_bb", "label": "precise\nspace\nlocation\nunit_bb", "shape": "box", "size": 35, "x": 18, "y": 242}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "precise_time_location_unit_aa", "label": "precise\ntime\nlocation\nunit_aa", "shape": "box", "size": 35, "x": 276, "y": -498}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "precise_time_location_unit_bb", "label": "precise\ntime\nlocation\nunit_bb", "shape": "box", "size": 35, "x": 367, "y": -220}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "unit_a", "label": "unit_a", "shape": "box", "size": 35, "x": 200, "y": 224}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "unit_aa", "label": "unit_aa", "shape": "box", "size": 35, "x": 12, "y": 440}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "unit_b", "label": "unit_b", "shape": "box", "size": 35, "x": -315, "y": -169}, {"color": "#ccb655", "fixed": {"x": false, "y": false}, "font": {"color": "#000000", "face": "arial", "size": 14, "vadjust": 0}, "id": "unit_bb", "label": "unit_bb", "shape": "box", "size": 35, "x": 298, "y": -484}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "black", "font": {"size": 12}, "from": "conceptual_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "depiction_content_entity_sketch"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "conceptual_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_lithology_a"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "conceptual_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_lithology_b"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "conceptual_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_unit_a"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "conceptual_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_unit_b"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_lithology_a", "label": "POK:has_Semantic_Component", "length": 220, "to": "lithology_a"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_lithology_b", "label": "POK:has_Semantic_Component", "length": 220, "to": "lithology_b"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_unit_a", "label": "POK:has_Semantic_Component", "length": 220, "to": "unit_a"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_unit_b", "label": "POK:has_Semantic_Component", "length": 220, "to": "unit_b"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "depiction_content_entity_3D"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_lithology_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_lithology_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_unit_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_unit_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_s_location_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_s_location_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_t_location_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_t_location_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_1", "label": "POK:satisfies", "length": 220, "to": "conceptual_geomodel_1"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_lithology_aa", "label": "POK:has_Semantic_Component", "length": 220, "to": "lithology_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_lithology_bb", "label": "POK:has_Semantic_Component", "length": 220, "to": "lithology_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_unit_aa", "label": "POK:has_Semantic_Component", "length": 220, "to": "unit_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_unit_bb", "label": "POK:has_Semantic_Component", "length": 220, "to": "unit_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_s_location_aa", "label": "POK:has_Semantic_Component", "length": 220, "to": "precise_space_location_unit_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_s_location_bb", "label": "POK:has_Semantic_Component", "length": 220, "to": "precise_space_location_unit_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_t_location_aa", "label": "POK:has_Semantic_Component", "length": 220, "to": "precise_time_location_unit_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "semantic_content_entity_t_location_bb", "label": "POK:has_Semantic_Component", "length": 220, "to": "precise_time_location_unit_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:has_Part", "length": 220, "to": "depiction_content_entity_text"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_lithology_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_lithology_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_unit_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_unit_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_s_location_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_s_location_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_t_location_aa"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:has_Part", "length": 220, "to": "semantic_content_entity_t_location_bb"}, {"arrows": "to", "color": "black", "font": {"size": 12}, "from": "space_time_geomodel_2", "label": "POK:satisfies", "length": 220, "to": "conceptual_geomodel_1"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"enabled": false}, "layout": {"improvedLayout": false}, "interaction": {"dragNodes": true, "dragView": true, "zoomView": true}, "edges": {"smooth": {"type": "continuous"}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

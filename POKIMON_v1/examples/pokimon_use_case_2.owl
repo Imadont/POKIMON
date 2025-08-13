@@ -201,9 +201,9 @@
     
 
 
-    <!-- http://www.POKIMON_use_case_2#semantic_content_entity_1 -->
+    <!-- http://www.POKIMON_use_case_2#semantic_content_entities_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#semantic_content_entity_1">
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#semantic_content_entities_1">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#fault_1"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#fault_2"/>
@@ -235,9 +235,9 @@
     
 
 
-    <!-- http://www.POKIMON_use_case_2#semantic_content_entity_2 -->
+    <!-- http://www.POKIMON_use_case_2#semantic_content_entities_2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#semantic_content_entity_2">
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#semantic_content_entities_2">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_t"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_u"/>
@@ -250,9 +250,9 @@
     
 
 
-    <!-- http://www.POKIMON_use_case_2#semantic_content_entity_3 -->
+    <!-- http://www.POKIMON_use_case_2#semantic_content_entities_3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#semantic_content_entity_3">
+    <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#semantic_content_entities_3">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Semantic_Content_Entity"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_a"/>
         <POK:has_Semantic_Component rdf:resource="http://www.POKIMON_use_case_2#unit_b"/>
@@ -268,7 +268,7 @@
         <POK:details rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_2"/>
         <POK:details rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_3"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_1"/>
-        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#semantic_content_entity_1"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#semantic_content_entities_1"/>
     </owl:NamedIndividual>
     
 
@@ -279,7 +279,7 @@
         <rdf:type rdf:resource="http://www.POKIMON#POK:Space_Time_Geological_Model"/>
         <POK:details rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_3"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_2"/>
-        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#semantic_content_entity_2"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#semantic_content_entities_2"/>
         <POK:simplifies rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_1"/>
     </owl:NamedIndividual>
     
@@ -290,7 +290,7 @@
     <owl:NamedIndividual rdf:about="http://www.POKIMON_use_case_2#space_time_geomodel_3">
         <rdf:type rdf:resource="http://www.POKIMON#POK:Space_Time_Geological_Model"/>
         <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#depiction_content_entity_cartoon_3"/>
-        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#semantic_content_entity_3"/>
+        <POK:has_Part rdf:resource="http://www.POKIMON_use_case_2#semantic_content_entities_3"/>
         <POK:simplifies rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_1"/>
         <POK:simplifies rdf:resource="http://www.POKIMON_use_case_2#space_time_geomodel_2"/>
     </owl:NamedIndividual>
